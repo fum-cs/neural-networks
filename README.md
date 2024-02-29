@@ -1,6 +1,6 @@
 ![](lectures/img/572_banner.png)
 
-## Computer Science Dept, Ferdowsi University of Mashhad
+## Computer Science Dept., Ferdowsi University of Mashhad
 
 # Neural Networks
 
@@ -10,35 +10,9 @@ An introduction to Neural Networks with Python and Pytorch which covers optmizat
 
 2024 Instructor: Mahmood Amintoosi
 
-### Lectures
+---
 
-Find the lecture schedule below. I'm developing new material for this course, but I've included links to [Tomas Beuzen](https://ubc-mds.github.io/DSCI_572_sup-learn-2) lectures and other useful videos for those that are interested.
-
-| # | Topic  | Optional Watching/Reading |
-|---|--------|--------------|
-| 1 | [Floating Point Errors](lectures/lecture1_floating-point.ipynb) | <ul><li>[Float Toy](https://evanw.github.io/float-toy/)</li><li>Chapter 2 of Ascher and Greif's book, [available online for students](http://epubs.siam.org/doi/book/10.1137/9780898719987) (you must be on campus wifi)</li></ul> |
-| 2 | [Optimization and Gradient Descent](lectures/lecture2_gradient-descent.ipynb) | <ul><li>[Mike's old optimization video](https://youtu.be/bzj1L997uT8?t=67)</li><li>[Mike's old gradient descent video](https://youtu.be/ao34xqQvuT4)</li></ul> |
-| 3 | [Stochastic Gradient Descent](lectures/lecture3_stochastic-gradient-descent.ipynb) | <ul><li>[Mike's old stochastic gradient video](https://youtu.be/lmqV5Z5HZzc?t=106)</li></ul> |
-| 4 | [Introduction to Neural Networks & PyTorch](lectures/lecture4_pytorch-neural-networks-pt1.ipynb) | <ul><li>[3Blue1Brown's video - But what is a Neural Network?](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)</li><li> [StatQuest's video - Neural Networks Part 1: Inside the Black Box](https://www.youtube.com/watch?v=CqOfi41LfDw)</li><li>[Second part of Mike's old neural network video](https://youtu.be/w60cKkCV_Qk?t=1466)</li><li>[DL Book Chapter 6](http://www.deeplearningbook.org/) </li></ul>|
-| 5 | [Training Neural Networks](lectures/lecture5_neural-networks-pt2.ipynb) | <ul><li>[3Blue1Brown's video - Gradient descent, how neural networks learn](https://www.youtube.com/watch?v=IHZwWFHWa-w&index=2&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)</li><li>[StatQuest's video - Neural Networks Part 2: Backpropagation Main Ideas](https://www.youtube.com/watch?v=IN2XmBhILt4)</li><li>[Mike's old neural network fit video](https://youtu.be/3l9pyhpxGtU?t=124) (last 15 min is about convolutions)</li></ul>
-| 6 | Convolutional Neural Networks Part 1 | <ul><li>[Mike's old convolutional neural network video](https://youtu.be/qb01ggeiT_g)</li><li>[Convolutional Neural Networks](http://cs231n.github.io/convolutional-networks/)</li><li>[A guide to convolution arithmetic for deep learning](https://arxiv.org/pdf/1603.07285.pdf)</li><li>[An Intuitive Explanation of Convolutional Neural Networks](https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/)</li><li>[DL Book Chapter 9](http://www.deeplearningbook.org/)</li></ul>|
-| 7 |  Convolutional Neural Networks Part 2 | TBD|
-| 8 |  Advanced Neural Networks | TBD |
-
-### Labs and Quizzes
-
-You are responsible for the following deliverables, which will determine your course grade:
-
-| Assessment       | Weight |
-|------------------|--------|
-| Lab Assignment 1 | 15%    |
-| Lab Assignment 2 | 15%    |
-| Quiz 1           | 20%    |
-| Lab Assignment 3 | 15%    |
-| Lab Assignment 4 | 15%    |
-| Quiz 2           | 20%    |
-
-Labs are Jupyter notebooks comprised of more comprehensive exercises aimed at demonstrating and reinforcing concepts learned during lectures. Quizzes will be conducted on Canvas in week 3 and week 5, are open book and are typically 40 mins long with a focus on short-answer questions. More information on quizzes will be provided closer to their dates.
+I should mention that the original material was from [Tomas Beuzen's course github](https://github.com/UBC-MDS/DSCI_572_sup-learn-2). I have  modified his repository to suit my own needs andpreferences. I would like to thank him for his great work and generosity.
 
 
 ## Optional Reference/Learning Materials
