@@ -1,0 +1,5 @@
+notebooks/_build
+notebooks/_build/*/
+__pycache__
+data/MNIST
+data/MNIST/*/

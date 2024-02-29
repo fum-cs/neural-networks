@@ -1,0 +1,19 @@
+format: jb-book
+root: index
+chapters:
+- file: lecture0_introduction
+- file: lecture1_floating-point
+- file: lecture2_1_Regression
+- file: lecture2_2_gradient-descent
+- file: lecture3_stochastic-gradient-descent
+- file: lecture4_pytorch-neural-networks-pt1
+- file: lecture5_neural-networks-pt2
+- file: lecture6_cnns-pt1
+- file: lecture7_cnns-pt2
+- file: appendixA_gradients
+- file: appendixB_logistic-loss
+- file: appendixC_computing-derivatives
+- file: appendixD_tensor-basics
+- file: appendixE_pytorch-autograd
+- file: appendixF_pytorch-optimizers
+# - file: appendixF_bitmoji-CNN
