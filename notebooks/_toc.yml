@@ -5,7 +5,8 @@ chapters:
 - file: lecture1_floating-point
 - file: lecture2_1_Regression
 - file: lecture2_2_gradient-descent
-- file: lecture3_stochastic-gradient-descent
+- file: lecture3_1_stochastic-gradient-descent
+- file: lecture3_2_logistic-regression
 - file: lecture4_pytorch-neural-networks-pt1
 - file: lecture5_neural-networks-pt2
 - file: lecture6_cnns-pt1

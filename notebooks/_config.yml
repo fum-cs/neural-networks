@@ -10,13 +10,14 @@ copyright: "2024. CC0 Licensed - Computer Science Dept., Ferdowsi University of 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
+  execute_notebooks: cache
   # execute_notebooks: force
-  execute_notebooks: off
-  timeout: -1
-  exclude_patterns:
-    - 'S*'
-    - '09*'
-    - '10*'
+  # execute_notebooks: off
+  # timeout: -1
+  # exclude_patterns:
+  #   - 'S*'
+  #   - '09*'
+  #   - '10*'
 
 # Include slides
 # sphinx:
