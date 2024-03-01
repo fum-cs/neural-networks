@@ -10,11 +10,14 @@ copyright: "2024. CC0 Licensed - Computer Science Dept., Ferdowsi University of 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: cache
+  # execute_notebooks: auto
+  # execute_notebooks: cache
   # execute_notebooks: force
-  # execute_notebooks: off
+  execute_notebooks: off
   # timeout: -1
-  # exclude_patterns:
+  exclude_patterns:
+    - lecture8*
+    - appendixG_bitmoji*
   #   - 'S*'
   #   - '09*'
   #   - '10*'
