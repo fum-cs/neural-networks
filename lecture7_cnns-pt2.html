@@ -182,11 +182,15 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lecture0_introduction.html">Introduction to the Course</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture1_floating-point.html">Floating Point Numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture2_1_regression.html">Regression</a></li>
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="lecture2_2_gradient-descent.html">Gradient Descent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture3_1_stochastic-gradient-descent.html">Stochastic Gradient Descent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture3_2_logistic-regression.html">Logistic Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture4_pytorch-neural-networks-pt1.html">Introduction to Pytorch &amp; Neural Networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture5_neural-networks-pt2.html">Training Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture2_3_stochastic-gradient-descent.html">Stochastic Gradient Descent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture3_neural-networks-basics.html">Introduction to Pytorch &amp; Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture4_neural-networks-for-classification.html">Neural Networks for Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture5_neural-networks-regularization.html">Regularization and Dropout in Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture6_cnns-pt1.html">Introduction to Convolutional Neural Networks</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Advanced Convolutional Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixA_gradients.html">Appendix A: Gradients Review</a></li>
@@ -195,7 +199,6 @@
 <li class="toctree-l1"><a class="reference internal" href="appendixD_tensor-basics.html">Appendix D: Basics of Numpy and Tensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixE_pytorch-autograd.html">Appendix E: Auto Differentiation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixF_pytorch-optimizers.html">Appendix F: Optimization</a></li>
-
 </ul>
 
     </div>
@@ -708,7 +711,7 @@ First sample: (&#39;data/bitmoji_rgb/train/not_tom\\bitmoji_10187.png&#39;, 0)
     Image data type: &lt;class &#39;torch.Tensor&#39;&gt;
    Image batch size: torch.Size([64, 3, 64, 64])
   Target batch size: torch.Size([64])
-       Batch memory: 6.83 mb
+       Batch memory: 6.86 mb
 </pre></div>
 </div>
 </div>
@@ -888,7 +891,7 @@ First sample: (&#39;data/bitmoji_rgb/train/not_tom\\bitmoji_10187.png&#39;, 0)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/03cedc14134df700bca80b04c2353e93ee3ab910f5071129222ea7b9ce5e7ee9.png" src="_images/03cedc14134df700bca80b04c2353e93ee3ab910f5071129222ea7b9ce5e7ee9.png" />
+<img alt="_images/8fdf644f012cf02ea67e40201d1254a76363ac97dae39dc66477518043f3b270.png" src="_images/8fdf644f012cf02ea67e40201d1254a76363ac97dae39dc66477518043f3b270.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1095,7 +1098,7 @@ First sample: (&#39;data/bitmoji_rgb/train/not_tom\\bitmoji_10187.png&#39;, 0)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.40234375
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.513671875
 </pre></div>
 </div>
 </div>
@@ -1135,31 +1138,35 @@ First sample: (&#39;data/bitmoji_rgb/train/not_tom\\bitmoji_10187.png&#39;, 0)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO 03-01 10:59:31] ax.service.utils.instantiation: Created search space: SearchSpace(parameters=[RangeParameter(name=&#39;lr&#39;, parameter_type=FLOAT, range=[1e-06, 0.4], log_scale=True), RangeParameter(name=&#39;beta1&#39;, parameter_type=FLOAT, range=[0.5, 0.999])], parameter_constraints=[]).
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO 03-01 10:59:31] ax.modelbridge.dispatch_utils: Using Models.BOTORCH_MODULAR since there are more ordered parameters than there are categories for the unordered categorical parameters.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO 03-01 10:59:31] ax.modelbridge.dispatch_utils: Calculating the number of remaining initialization trials based on num_initialization_trials=None max_initialization_trials=None num_tunable_parameters=2 num_trials=None use_batch_trials=False
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO 03-01 10:59:31] ax.modelbridge.dispatch_utils: calculated num_initialization_trials=5
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO 03-01 10:59:31] ax.modelbridge.dispatch_utils: num_completed_initialization_trials=0 num_remaining_initialization_trials=5
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO 03-01 10:59:31] ax.modelbridge.dispatch_utils: `verbose`, `disable_progbar`, and `jit_compile` are not yet supported when using `choose_generation_strategy` with ModularBoTorchModel, dropping these arguments.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO 03-01 10:59:31] ax.modelbridge.dispatch_utils: Using Bayesian Optimization generation strategy: GenerationStrategy(name=&#39;Sobol+BoTorch&#39;, steps=[Sobol for 5 trials, BoTorch for subsequent trials]). Iterations after 5 will take longer to generate due to model-fitting.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO 03-01 10:59:31] ax.service.managed_loop: Started full optimization with 20 steps.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO 03-01 10:59:31] ax.service.managed_loop: Running optimization trial 1...
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO 02-15 14:26:38] ax.service.utils.instantiation: Created search space: SearchSpace(parameters=[RangeParameter(name=&#39;lr&#39;, parameter_type=FLOAT, range=[1e-06, 0.4], log_scale=True), RangeParameter(name=&#39;beta1&#39;, parameter_type=FLOAT, range=[0.5, 0.999])], parameter_constraints=[]).
+[INFO 02-15 14:26:38] ax.modelbridge.dispatch_utils: Using Models.BOTORCH_MODULAR since there are more ordered parameters than there are categories for the unordered categorical parameters.
+[INFO 02-15 14:26:38] ax.modelbridge.dispatch_utils: Calculating the number of remaining initialization trials based on num_initialization_trials=None max_initialization_trials=None num_tunable_parameters=2 num_trials=None use_batch_trials=False
+[INFO 02-15 14:26:38] ax.modelbridge.dispatch_utils: calculated num_initialization_trials=5
+[INFO 02-15 14:26:38] ax.modelbridge.dispatch_utils: num_completed_initialization_trials=0 num_remaining_initialization_trials=5
+[INFO 02-15 14:26:38] ax.modelbridge.dispatch_utils: `verbose`, `disable_progbar`, and `jit_compile` are not yet supported when using `choose_generation_strategy` with ModularBoTorchModel, dropping these arguments.
+[INFO 02-15 14:26:38] ax.modelbridge.dispatch_utils: Using Bayesian Optimization generation strategy: GenerationStrategy(name=&#39;Sobol+BoTorch&#39;, steps=[Sobol for 5 trials, BoTorch for subsequent trials]). Iterations after 5 will take longer to generate due to model-fitting.
+[INFO 02-15 14:26:38] ax.service.managed_loop: Started full optimization with 20 steps.
+[INFO 02-15 14:26:38] ax.service.managed_loop: Running optimization trial 1...
+[INFO 02-15 14:27:58] ax.service.managed_loop: Running optimization trial 2...
+[INFO 02-15 14:29:00] ax.service.managed_loop: Running optimization trial 3...
+[INFO 02-15 14:30:03] ax.service.managed_loop: Running optimization trial 4...
+[INFO 02-15 14:31:02] ax.service.managed_loop: Running optimization trial 5...
+[INFO 02-15 14:31:58] ax.service.managed_loop: Running optimization trial 6...
+[INFO 02-15 14:32:58] ax.service.managed_loop: Running optimization trial 7...
+[INFO 02-15 14:33:56] ax.service.managed_loop: Running optimization trial 8...
+[INFO 02-15 14:35:18] ax.service.managed_loop: Running optimization trial 9...
+[INFO 02-15 14:36:17] ax.service.managed_loop: Running optimization trial 10...
+[INFO 02-15 14:37:13] ax.service.managed_loop: Running optimization trial 11...
+[INFO 02-15 14:38:10] ax.service.managed_loop: Running optimization trial 12...
+[INFO 02-15 14:39:07] ax.service.managed_loop: Running optimization trial 13...
+[INFO 02-15 14:40:05] ax.service.managed_loop: Running optimization trial 14...
+[INFO 02-15 14:41:01] ax.service.managed_loop: Running optimization trial 15...
+[INFO 02-15 14:41:01] ax.modelbridge.base: Untransformed parameter 0.40000000000000013 greater than upper bound 0.4, clamping
+[INFO 02-15 14:41:56] ax.service.managed_loop: Running optimization trial 16...
+[INFO 02-15 14:42:55] ax.service.managed_loop: Running optimization trial 17...
+[INFO 02-15 14:43:58] ax.service.managed_loop: Running optimization trial 18...
+[INFO 02-15 14:45:04] ax.service.managed_loop: Running optimization trial 19...
+[INFO 02-15 14:46:02] ax.service.managed_loop: Running optimization trial 20...
 </pre></div>
 </div>
 </div>

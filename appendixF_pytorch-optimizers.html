@@ -181,11 +181,15 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lecture0_introduction.html">Introduction to the Course</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture1_floating-point.html">Floating Point Numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture2_1_regression.html">Regression</a></li>
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="lecture2_2_gradient-descent.html">Gradient Descent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture3_1_stochastic-gradient-descent.html">Stochastic Gradient Descent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture3_2_logistic-regression.html">Logistic Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture4_pytorch-neural-networks-pt1.html">Introduction to Pytorch &amp; Neural Networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture5_neural-networks-pt2.html">Training Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture2_3_stochastic-gradient-descent.html">Stochastic Gradient Descent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture3_neural-networks-basics.html">Introduction to Pytorch &amp; Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture4_neural-networks-for-classification.html">Neural Networks for Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture5_neural-networks-regularization.html">Regularization and Dropout in Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture6_cnns-pt1.html">Introduction to Convolutional Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture7_cnns-pt2.html">Advanced Convolutional Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixA_gradients.html">Appendix A: Gradients Review</a></li>
@@ -194,7 +198,6 @@
 <li class="toctree-l1"><a class="reference internal" href="appendixD_tensor-basics.html">Appendix D: Basics of Numpy and Tensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixE_pytorch-autograd.html">Appendix E: Auto Differentiation</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Appendix F: Optimization</a></li>
-
 </ul>
 
     </div>
@@ -421,7 +424,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Appendix F: Optimization</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-introduction">Notebook Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-colab-only">Google Colab only!</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizing-by-hand">Optimizing “by hand”</a><ul class="nav section-nav flex-column">
@@ -439,12 +441,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3D Plot - Optimization process</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#don-t-forget-to-download-the-notebook-otherwise-your-changes-may-be-lost">Don’t forget to download the notebook, otherwise your changes may be lost</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#autograd-optimization-modules">&lt; <span class="xref myst">Autograd</span> | Optimization | <span class="xref myst">Modules</span> &gt;</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -571,16 +568,6 @@ tensor([0.051])
 tensor([0.032])
 tensor([0.021])
 tensor([0.013])
-tensor([0.009])
-tensor([0.005])
-tensor([0.003])
-tensor([0.002])
-tensor([0.001])
-tensor([0.001])
-tensor([0.001])
-tensor([0.000])
-tensor([0.000])
-tensor([0.000])
 </pre></div>
 </div>
 </div>
@@ -757,16 +744,6 @@ You can play with learning rates, optimizers and also define new functions to op
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">live_plot</span> <span class="kn">import</span> <span class="n">init_2dplot</span><span class="p">,</span> <span class="n">add_point_2d</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">live_plot</span> <span class="kn">import</span> <span class="n">init_2dplot</span><span class="p">,</span> <span class="n">add_point_2d</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;live_plot&#39;
 </pre></div>
 </div>
 </div>
@@ -2802,17 +2779,9 @@ if (IPython.notebook.kernel !== null) {
 }
 </script><div class="output text_html"><div id='f5220f95-f1bf-4950-b59b-8434b1d56485'></div></div></div>
 </div>
-</section>
-</section>
 <hr class="docutils" />
-<section id="don-t-forget-to-download-the-notebook-otherwise-your-changes-may-be-lost">
-<h2>Don’t forget to download the notebook, otherwise your changes may be lost<a class="headerlink" href="#don-t-forget-to-download-the-notebook-otherwise-your-changes-may-be-lost" title="Link to this heading">#</a></h2>
-<p><img alt="Download the notebook" src="figures/notebook-download.png" /></p>
-<!--NAVIGATION-->
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="autograd-optimization-modules">
-<h1>&lt; <a class="reference internal" href="#2_Autograd.ipynb"><span class="xref myst">Autograd</span></a> | Optimization | <a class="reference internal" href="#4-Modules.ipynb"><span class="xref myst">Modules</span></a> &gt;<a class="headerlink" href="#autograd-optimization-modules" title="Link to this heading">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -2870,7 +2839,6 @@ if (IPython.notebook.kernel !== null) {
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Appendix F: Optimization</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-introduction">Notebook Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-colab-only">Google Colab only!</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizing-by-hand">Optimizing “by hand”</a><ul class="nav section-nav flex-column">
@@ -2888,12 +2856,7 @@ if (IPython.notebook.kernel !== null) {
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3D Plot - Optimization process</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#don-t-forget-to-download-the-notebook-otherwise-your-changes-may-be-lost">Don’t forget to download the notebook, otherwise your changes may be lost</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#autograd-optimization-modules">&lt; <span class="xref myst">Autograd</span> | Optimization | <span class="xref myst">Modules</span> &gt;</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>

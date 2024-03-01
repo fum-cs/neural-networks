@@ -182,11 +182,15 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lecture0_introduction.html">Introduction to the Course</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture1_floating-point.html">Floating Point Numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture2_1_regression.html">Regression</a></li>
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="lecture2_2_gradient-descent.html">Gradient Descent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture3_1_stochastic-gradient-descent.html">Stochastic Gradient Descent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture3_2_logistic-regression.html">Logistic Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture4_pytorch-neural-networks-pt1.html">Introduction to Pytorch &amp; Neural Networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture5_neural-networks-pt2.html">Training Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture2_3_stochastic-gradient-descent.html">Stochastic Gradient Descent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture3_neural-networks-basics.html">Introduction to Pytorch &amp; Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture4_neural-networks-for-classification.html">Neural Networks for Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture5_neural-networks-regularization.html">Regularization and Dropout in Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture6_cnns-pt1.html">Introduction to Convolutional Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture7_cnns-pt2.html">Advanced Convolutional Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixA_gradients.html">Appendix A: Gradients Review</a></li>
@@ -195,7 +199,6 @@
 <li class="toctree-l1"><a class="reference internal" href="appendixD_tensor-basics.html">Appendix D: Basics of Numpy and Tensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixE_pytorch-autograd.html">Appendix E: Auto Differentiation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixF_pytorch-optimizers.html">Appendix F: Optimization</a></li>
-
 </ul>
 
     </div>
@@ -736,7 +739,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.        , 0.99996482, 0.        , 0.        ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.        , 0.96693003, 0.        , 0.        ])
 </pre></div>
 </div>
 </div>
@@ -749,7 +752,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.        , 0.99996482, 0.        , 0.        ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.        , 0.96693003, 0.        , 0.        ])
 </pre></div>
 </div>
 </div>
@@ -784,7 +787,7 @@ Evaluated function!
 Evaluated function!
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.        , 0.99996481, 0.        , 0.        ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.        , 0.96692991, 0.        , 0.        ])
 </pre></div>
 </div>
 </div>
@@ -800,7 +803,7 @@ Evaluated function!
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Evaluated function!
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.        , 0.99996482, 0.        , 0.        ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.        , 0.96693003, 0.        , 0.        ])
 </pre></div>
 </div>
 </div>
@@ -825,7 +828,7 @@ Evaluated function!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1.0, 1.0807833373172016, 1.792304555090538]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1.0, 1.47473816783086, 0.006071603461563197]
 </pre></div>
 </div>
 </div>
@@ -838,7 +841,7 @@ Evaluated function!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.        , 1.        , 1.08078334, 1.79230456])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.        , 1.        , 1.47473817, 0.0060716 ])
 </pre></div>
 </div>
 </div>
@@ -867,7 +870,7 @@ Evaluated function!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.51584476, -1.02274915,  0.        ,  0.        ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.50481976, -0.75510706,  0.        ,  0.        ])
 </pre></div>
 </div>
 </div>
@@ -880,7 +883,7 @@ Evaluated function!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.51584476, -1.02274915,  0.        ,  0.        ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.50481976, -0.75510706,  0.        ,  0.        ])
 </pre></div>
 </div>
 </div>
@@ -903,8 +906,8 @@ Evaluated function!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.73371148, -0.48199048,  0.62429607,  0.71767374,  2.4009906 ,
-        1.06808728, -1.5856293 ,  0.37474765,  0.39550527,  1.05540011])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.32446092,  0.26091872, -0.1419678 , -0.42330993, -1.59834009,
+        0.10263705,  0.38253942,  1.41289999,  0.45768552, -1.32655359])
 </pre></div>
 </div>
 </div>
@@ -920,8 +923,8 @@ Evaluated function!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.73371148, -0.48199048,  0.62429607,  0.71767374,  2.40099061,
-        1.06808728, -1.58562931,  0.37474765,  0.39550526,  1.05540011])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.32446091,  0.26091874, -0.14196778, -0.42330993, -1.59834012,
+        0.10263702,  0.38253945,  1.41290001,  0.45768553, -1.32655365])
 </pre></div>
 </div>
 </div>
@@ -955,8 +958,8 @@ Evaluated function!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.72748655, -0.47968901,  0.62283093,  0.71141715,  2.40554998,
-        1.0692197 , -1.57896523,  0.36599739,  0.39030566,  1.05147741])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.32971297,  0.27411301, -0.14254757, -0.4208233 , -1.59439097,
+        0.10300358,  0.37424532,  1.41577836,  0.45934316, -1.33256372])
 </pre></div>
 </div>
 </div>

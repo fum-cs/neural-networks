@@ -182,11 +182,15 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lecture0_introduction.html">Introduction to the Course</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture1_floating-point.html">Floating Point Numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture2_1_regression.html">Regression</a></li>
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="lecture2_2_gradient-descent.html">Gradient Descent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture3_1_stochastic-gradient-descent.html">Stochastic Gradient Descent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture3_2_logistic-regression.html">Logistic Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture4_pytorch-neural-networks-pt1.html">Introduction to Pytorch &amp; Neural Networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture5_neural-networks-pt2.html">Training Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture2_3_stochastic-gradient-descent.html">Stochastic Gradient Descent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture3_neural-networks-basics.html">Introduction to Pytorch &amp; Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture4_neural-networks-for-classification.html">Neural Networks for Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture5_neural-networks-regularization.html">Regularization and Dropout in Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture6_cnns-pt1.html">Introduction to Convolutional Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture7_cnns-pt2.html">Advanced Convolutional Neural Networks</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Appendix A: Gradients Review</a></li>
@@ -195,7 +199,6 @@
 <li class="toctree-l1"><a class="reference internal" href="appendixD_tensor-basics.html">Appendix D: Basics of Numpy and Tensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixE_pytorch-autograd.html">Appendix E: Auto Differentiation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixF_pytorch-optimizers.html">Appendix F: Optimization</a></li>
-
 </ul>
 
     </div>
@@ -524,7 +527,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4cfecbf45840fff30c3bcafb977f6ce1c312d94f987ec52e1f98011a31921e28.png" src="_images/4cfecbf45840fff30c3bcafb977f6ce1c312d94f987ec52e1f98011a31921e28.png" />
+<img alt="_images/1823f4a6f125dab5a93c7e111906609778ec5a396e42d011993a36c6e34bfaed.png" src="_images/1823f4a6f125dab5a93c7e111906609778ec5a396e42d011993a36c6e34bfaed.png" />
 </div>
 </div>
 </section>
@@ -581,7 +584,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2897fd96039f6ad941a182299ba1243cd41757be5d1805a84c5c45010fb73057.png" src="_images/2897fd96039f6ad941a182299ba1243cd41757be5d1805a84c5c45010fb73057.png" />
+<img alt="_images/92aab646eb0cb47797bca8b58a7eda6817972ea4a6da139cdc370d733bc2bb8f.png" src="_images/92aab646eb0cb47797bca8b58a7eda6817972ea4a6da139cdc370d733bc2bb8f.png" />
 </div>
 </div>
 <p>Notes:</p>
@@ -702,7 +705,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4cfecbf45840fff30c3bcafb977f6ce1c312d94f987ec52e1f98011a31921e28.png" src="_images/4cfecbf45840fff30c3bcafb977f6ce1c312d94f987ec52e1f98011a31921e28.png" />
+<img alt="_images/1823f4a6f125dab5a93c7e111906609778ec5a396e42d011993a36c6e34bfaed.png" src="_images/1823f4a6f125dab5a93c7e111906609778ec5a396e42d011993a36c6e34bfaed.png" />
 </div>
 </div>
 <div class="math notranslate nohighlight">
@@ -730,7 +733,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e845be770462db036a4ad9958da4fed8d22b947ae6e4aaa0222cca94080cc9a6.png" src="_images/e845be770462db036a4ad9958da4fed8d22b947ae6e4aaa0222cca94080cc9a6.png" />
+<img alt="_images/b9111ab948b1730a76e876ff204db823ebe563ea5910af812a50d0755e0ee64b.png" src="_images/b9111ab948b1730a76e876ff204db823ebe563ea5910af812a50d0755e0ee64b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -746,7 +749,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/47fb7e167589bc45cd938c026fc8e5053011fcceb32b26246367156acc0332dc.png" src="_images/47fb7e167589bc45cd938c026fc8e5053011fcceb32b26246367156acc0332dc.png" />
+<img alt="_images/88bb3523ffd6954d2307aea6533dfa90f51dc2a73d6919ac860538babf722bd7.png" src="_images/88bb3523ffd6954d2307aea6533dfa90f51dc2a73d6919ac860538babf722bd7.png" />
 </div>
 </div>
 </section>

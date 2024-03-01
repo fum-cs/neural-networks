@@ -63,7 +63,7 @@
     <link rel="icon" href="_static/fum-logo.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Gradient Descent" href="lecture2_2_gradient-descent.html" />
+    <link rel="next" title="Regression" href="lecture2_1_regression.html" />
     <link rel="prev" title="Introduction to the Course" href="lecture0_introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -182,11 +182,15 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lecture0_introduction.html">Introduction to the Course</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Floating Point Numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture2_1_regression.html">Regression</a></li>
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="lecture2_2_gradient-descent.html">Gradient Descent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture3_1_stochastic-gradient-descent.html">Stochastic Gradient Descent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture3_2_logistic-regression.html">Logistic Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture4_pytorch-neural-networks-pt1.html">Introduction to Pytorch &amp; Neural Networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture5_neural-networks-pt2.html">Training Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture2_3_stochastic-gradient-descent.html">Stochastic Gradient Descent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture3_neural-networks-basics.html">Introduction to Pytorch &amp; Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture4_neural-networks-for-classification.html">Neural Networks for Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture5_neural-networks-regularization.html">Regularization and Dropout in Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture6_cnns-pt1.html">Introduction to Convolutional Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture7_cnns-pt2.html">Advanced Convolutional Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixA_gradients.html">Appendix A: Gradients Review</a></li>
@@ -195,7 +199,6 @@
 <li class="toctree-l1"><a class="reference internal" href="appendixD_tensor-basics.html">Appendix D: Basics of Numpy and Tensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixE_pytorch-autograd.html">Appendix E: Auto Differentiation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixF_pytorch-optimizers.html">Appendix F: Optimization</a></li>
-
 </ul>
 
     </div>
@@ -771,6 +774,21 @@ signed max: 127
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\mathp\AppData\Local\Temp\ipykernel_20776\443777753.py:1: DeprecationWarning:
+
+NumPy will stop allowing conversion of out-of-bound Python integers to integer arrays.  The conversion of -129 to int8 will fail in the future.
+For the old behavior, usually:
+    np.array(value).astype(dtype)
+will give the desired result (the cast overflows).
+
+C:\Users\mathp\AppData\Local\Temp\ipykernel_20776\443777753.py:1: DeprecationWarning:
+
+NumPy will stop allowing conversion of out-of-bound Python integers to integer arrays.  The conversion of 128 to int8 will fail in the future.
+For the old behavior, usually:
+    np.array(value).astype(dtype)
+will give the desired result (the cast overflows).
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 127, -128], dtype=int8)
 </pre></div>
 </div>
@@ -1580,7 +1598,7 @@ Exponent: 1010011 (83)
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">OverflowError</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">48</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">47</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">10</span> <span class="o">**</span> <span class="mf">309.0</span>
 
 <span class="ne">OverflowError</span>: (34, &#39;Result too large&#39;)
@@ -1598,7 +1616,7 @@ Exponent: 1010011 (83)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\mathp\AppData\Local\Temp\ipykernel_22492\705321107.py:1: RuntimeWarning:
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\mathp\AppData\Local\Temp\ipykernel_20776\705321107.py:1: RuntimeWarning:
 
 overflow encountered in power
 </pre></div>
@@ -1838,7 +1856,7 @@ overflow encountered in power
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\mathp\AppData\Local\Temp\ipykernel_22492\2578511584.py:2: RuntimeWarning:
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\mathp\AppData\Local\Temp\ipykernel_20776\2578511584.py:2: RuntimeWarning:
 
 overflow encountered in exp
 </pre></div>
@@ -2000,7 +2018,7 @@ mem. usage: 32.0 MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float32 array is 2.02x faster than float64 array here.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float32 array is 2.37x faster than float64 array here.
 </pre></div>
 </div>
 </div>
@@ -2062,11 +2080,11 @@ mem. usage: 32.0 MB
       </div>
     </a>
     <a class="right-next"
-       href="lecture2_2_gradient-descent.html"
+       href="lecture2_1_regression.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Gradient Descent</p>
+        <p class="prev-next-title">Regression</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
