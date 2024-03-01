@@ -12,7 +12,7 @@ An introduction to Neural Networks with Python and Pytorch which covers optmizat
 
 ---
 
-I should mention that the original material was from [Tomas Beuzen's course github](https://github.com/UBC-MDS/DSCI_572_sup-learn-2). I have  modified his contents to suit my own needs and preferences. I would like to thank him for his great work and generosity.
+I should mention that the original material was from [Tomas Beuzen's course github](https://github.com/UBC-MDS/DSCI_572_sup-learn-2). I have modified his contents to suit my own needs and preferences. I would like to thank him for his great work and generosity.
 
 
 ## Optional Reference/Learning Materials
