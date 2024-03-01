@@ -59,12 +59,10 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture2_1_Regression';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture2_1_regression';</script>
     <link rel="icon" href="_static/fum-logo.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Gradient Descent" href="lecture2_2_gradient-descent.html" />
-    <link rel="prev" title="Floating Point Numbers" href="lecture1_floating-point.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -126,6 +124,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -179,15 +179,12 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lecture0_introduction.html">Introduction to the Course</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture1_floating-point.html">Floating Point Numbers</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Regression</a></li>
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="lecture2_2_gradient-descent.html">Gradient Descent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture3_stochastic-gradient-descent.html">Stochastic Gradient Descent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture3_1_stochastic-gradient-descent.html">Stochastic Gradient Descent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture3_2_logistic-regression.html">Logistic Regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture4_pytorch-neural-networks-pt1.html">Introduction to Pytorch &amp; Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture5_neural-networks-pt2.html">Training Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture6_cnns-pt1.html">Introduction to Convolutional Neural Networks</a></li>
@@ -253,7 +250,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/fum-cs/neural-networks/blob/main/notebooks/lecture2_1_Regression.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/fum-cs/neural-networks/blob/main/notebooks/lecture2_1_regression.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -301,7 +298,7 @@
       
       
       
-      <li><a href="https://github.com/fum-cs/neural-networks/issues/new?title=Issue%20on%20page%20%2Flecture2_1_Regression.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/fum-cs/neural-networks/issues/new?title=Issue%20on%20page%20%2Flecture2_1_regression.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -331,7 +328,7 @@
       
       
       
-      <li><a href="_sources/lecture2_1_Regression.ipynb" target="_blank"
+      <li><a href="_sources/lecture2_1_regression.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -1304,7 +1301,7 @@ MSE &amp;= \frac{1}{n} \sum_{i=1}^n{error_i}^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1a31f4dce50&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1d1c6ee49d0&gt;]
 </pre></div>
 </div>
 <img alt="_images/0987efa2cf59e21b9e4f5a78312f38cea2df41046b56d576d2da56635c777cf2.png" src="_images/0987efa2cf59e21b9e4f5a78312f38cea2df41046b56d576d2da56635c777cf2.png" />
@@ -1423,11 +1420,11 @@ MSE &amp;= \frac{1}{n} \sum_{i=1}^n{error_i}^2
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linear(in_features=2, out_features=1, bias=False)
 None
 Parameter containing:
-tensor([[1.0368, 1.9074]], requires_grad=True)
-tensor([1.0368, 1.9074], grad_fn=&lt;SelectBackward0&gt;)
-tensor(1.0368, grad_fn=&lt;SelectBackward0&gt;)
-1.0367742776870728
-1.0367743
+tensor([[1.0519, 1.8777]], requires_grad=True)
+tensor([1.0519, 1.8777], grad_fn=&lt;SelectBackward0&gt;)
+tensor(1.0519, grad_fn=&lt;SelectBackward0&gt;)
+1.0518975257873535
+1.0518975
 </pre></div>
 </div>
 </div>
@@ -1444,7 +1441,7 @@ tensor(1.0368, grad_fn=&lt;SelectBackward0&gt;)
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 600x600 with 1 Axes&gt;, &lt;Axes: xlabel=&#39;x&#39;, ylabel=&#39;y&#39;&gt;)
 </pre></div>
 </div>
-<img alt="_images/87227ef1a3ccd6f1cd5da90ab887eca9f6cd0fca51d79b4d9a443bb1d85aff51.png" src="_images/87227ef1a3ccd6f1cd5da90ab887eca9f6cd0fca51d79b4d9a443bb1d85aff51.png" />
+<img alt="_images/5c9932adb703e9481db08aa1292e2688dbab31c60aa8f404c6754c4249ac9266.png" src="_images/5c9932adb703e9481db08aa1292e2688dbab31c60aa8f404c6754c4249ac9266.png" />
 </div>
 </div>
 <p>Other references:</p>
@@ -1497,24 +1494,6 @@ tensor(1.0368, grad_fn=&lt;SelectBackward0&gt;)
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="lecture1_floating-point.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Floating Point Numbers</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="lecture2_2_gradient-descent.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Gradient Descent</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               

@@ -182,12 +182,9 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lecture0_introduction.html">Introduction to the Course</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture1_floating-point.html">Floating Point Numbers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture2_1_Regression.html">Regression</a></li>
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="lecture2_2_gradient-descent.html">Gradient Descent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture3_stochastic-gradient-descent.html">Stochastic Gradient Descent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture3_1_stochastic-gradient-descent.html">Stochastic Gradient Descent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture3_2_logistic-regression.html">Logistic Regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture4_pytorch-neural-networks-pt1.html">Introduction to Pytorch &amp; Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture5_neural-networks-pt2.html">Training Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture6_cnns-pt1.html">Introduction to Convolutional Neural Networks</a></li>
@@ -472,7 +469,7 @@ This module is named <strong>Autograd</strong>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.12.1+cpu&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2.2.0+cpu&#39;
 </pre></div>
 </div>
 </div>
@@ -505,7 +502,7 @@ To tell PyTorch to record operations performed on a tensor, each tensor has a fu
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A :  tensor([[3., 1.]])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A :  tensor([[0., 4.]])
 A.requires_grad : False
 A.requires_grad : True
 A.requires_grad : False
@@ -812,7 +809,7 @@ D.is_leaf : True
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>B :  tensor(1.5000, grad_fn=&lt;MeanBackward0&gt;)
-B.grad_fn : &lt;MeanBackward0 object at 0x000002150CEA32C8&gt;
+B.grad_fn : &lt;MeanBackward0 object at 0x00000191663CBEE0&gt;
 B.is_leaf : False
 </pre></div>
 </div>
@@ -834,7 +831,10 @@ B.is_leaf : False
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -- B.detach_() -- 
 
-B :  tensor(1.5000)
+B :  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(1.5000)
 B.grad_fn : None
 B.is_leaf : True
 </pre></div>
@@ -938,8 +938,8 @@ A.grad : tensor([[1.2500, 1.2500],
 B.grad : None
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Programs\Anaconda3\envs\ptch\lib\site-packages\torch\_tensor.py:1013: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won&#39;t be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more informations. (Triggered internally at  aten\src\ATen/core/TensorBody.h:417.)
-  return self._grad
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\mathp\AppData\Local\Temp\ipykernel_17164\965889440.py:12: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won&#39;t be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more informations. (Triggered internally at aten\src\ATen/core/TensorBody.h:494.)
+  print(&quot;B.grad :&quot;, B.grad)
 </pre></div>
 </div>
 </div>
@@ -1047,8 +1047,8 @@ Here, we have a look at the computation graph that autograd builds on the fly.</
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
-&lt;MulBackward0 object at 0x000001565DBD7348&gt;
-&lt;MeanBackward0 object at 0x000001565DBD7388&gt;
+&lt;MulBackward0 object at 0x0000019166463310&gt;
+&lt;MeanBackward0 object at 0x0000019166460820&gt;
 </pre></div>
 </div>
 </div>
@@ -1071,10 +1071,12 @@ Here, we have a look at the computation graph that autograd builds on the fly.</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;MeanBackward0 object at 0x000001565DBC4788&gt;
-((&lt;MulBackward0 object at 0x000001565DBC4948&gt;, 0),)
-((&lt;AddBackward0 object at 0x000001565DBC4788&gt;, 0), (None, 0))
-((&lt;AccumulateGrad object at 0x000001565DBC4948&gt;, 0), (&lt;AccumulateGrad object at 0x000001565DBC4948&gt;, 0))
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;MeanBackward0 object at 0x0000019166460D90&gt;
+((&lt;MulBackward0 object at 0x0000019150DC6BF0&gt;, 0),)
+((&lt;AddBackward0 object at 0x0000019166460D90&gt;, 0), (None, 0))
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((&lt;AccumulateGrad object at 0x0000019150DC6BF0&gt;, 0), (&lt;AccumulateGrad object at 0x0000019150DC6BF0&gt;, 0))
 </pre></div>
 </div>
 </div>
