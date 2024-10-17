@@ -63,6 +63,8 @@ I should mention that the original material was from [Tomas Beuzen's course gith
 
 ## Build
 
+In notebooks folder:
 - jupyter-book build ./
+- copy ../require.js ./_build
 - ghp-import -n -p -f ./_build/html
 - jupyter-book build --builder pdflatex ./
