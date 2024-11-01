@@ -15,9 +15,9 @@ execute:
   # execute_notebooks: force
   execute_notebooks: off
   # timeout: -1
-  exclude_patterns:
-    - lecture8*
-    - appendixG_bitmoji*
+  # exclude_patterns:
+  #   - lecture8*
+  #   - appendixG_bitmoji*
   #   - 'S*'
   #   - '09*'
   #   - '10*'

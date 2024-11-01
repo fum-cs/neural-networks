@@ -11,10 +11,11 @@ chapters:
 - file: lecture5_neural-networks-regularization
 - file: lecture6_cnns-pt1
 - file: lecture7_cnns-pt2
+- file: lecture8_advanced-deep-learning
 - file: appendixA_gradients
 - file: appendixB_logistic-loss
 - file: appendixC_computing-derivatives
 - file: appendixD_tensor-basics
 - file: appendixE_pytorch-autograd
 - file: appendixF_pytorch-optimizers
-# - file: appendixF_bitmoji-CNN
+- file: appendixG_bitmoji-CNN
