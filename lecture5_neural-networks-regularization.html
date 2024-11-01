@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -16,47 +16,48 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture5_neural-networks-regularization';</script>
@@ -67,6 +68,7 @@
     <link rel="prev" title="Neural Networks for Classification" href="lecture4_neural-networks-for-classification.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -82,19 +84,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -102,7 +93,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -110,8 +100,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -127,7 +117,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -157,21 +148,17 @@
     
     
     <img src="_static/fum-cs-logo.png" class="logo__image only-light" alt="NN - Home"/>
-    <script>document.write(`<img src="_static/fum-cs-logo.png" class="logo__image only-dark" alt="NN - Home"/>`);</script>
+    <img src="_static/fum-cs-logo.png" class="logo__image only-dark pst-js-only" alt="NN - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -196,12 +183,14 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Regularization and Dropout in Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture6_cnns-pt1.html">Introduction to Convolutional Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture7_cnns-pt2.html">Advanced Convolutional Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture8_advanced-deep-learning.html">Advanced Deep Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixA_gradients.html">Appendix A: Gradients Review</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixB_logistic-loss.html">Appendix B: Logistic Loss</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixC_computing-derivatives.html">Appendix C: Computing Derivatives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixD_tensor-basics.html">Appendix D: Basics of Numpy and Tensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixE_pytorch-autograd.html">Appendix E: Auto Differentiation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixF_pytorch-optimizers.html">Appendix F: Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendixG_bitmoji-CNN.html">Appendix G: Creating a CNN to Predict Bitmojis</a></li>
 </ul>
 
     </div>
@@ -387,24 +376,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -460,16 +441,16 @@ document.write(`
                   
   <p><img alt="" src="_images/572_banner.png" /></p>
 <script src="require.js"></script><section class="tex2jax_ignore mathjax_ignore" id="regularization-and-dropout-in-neural-networks">
-<h1>Regularization and Dropout in Neural Networks<a class="headerlink" href="#regularization-and-dropout-in-neural-networks" title="Link to this heading">#</a></h1>
+<h1>Regularization and Dropout in Neural Networks<a class="headerlink" href="#regularization-and-dropout-in-neural-networks" title="Permalink to this heading">#</a></h1>
 <p><strong>Mahmood Amintoosi, Spring 2024</strong></p>
 <p>Computer Science Dept, Ferdowsi University of Mashhad</p>
 <p>I should mention that the original material was from <a class="reference external" href="https://ubc-mds.github.io/DSCI_572_sup-learn-2">Tomas Beuzen’s course</a>.</p>
 <p><img alt="" src="_images/robot.png" /></p>
 <section id="lecture-outline">
-<h2>Lecture Outline<a class="headerlink" href="#lecture-outline" title="Link to this heading">#</a></h2>
+<h2>Lecture Outline<a class="headerlink" href="#lecture-outline" title="Permalink to this heading">#</a></h2>
 <hr><div class="toc"><ul class="toc-item"><li><span><a href="#Lecture-Learning-Objectives" data-toc-modified-id="Lecture-Learning-Objectives-2">Lecture Learning Objectives</a></span></li><li><span><a href="#Imports" data-toc-modified-id="Imports-3">Imports</a></span></li><li><span><a href="#1.-Differentiation,-Backpropagation,-Autograd" data-toc-modified-id="1.-Differentiation,-Backpropagation,-Autograd-4">1. Differentiation, Backpropagation, Autograd</a></span></li><li><span><a href="#2.-Training-Neural-Networks" data-toc-modified-id="2.-Training-Neural-Networks-5">2. Training Neural Networks</a></span></li><li><span><a href="#3.-Regularization" data-toc-modified-id="3.-Regularization-6">3. Regularization</a></span></li><li><span><a href="#4.-Lecture-Exercise:-Putting-it-all-Together-with-Bitmojis" data-toc-modified-id="4.-Lecture-Exercise:-Putting-it-all-Together-with-Bitmojis-9">4. Lecture Exercise: Putting it all Together with Bitmojis</a></span></li><li><span><a href="#5.-The-Lecture-in-Three-Conjectures" data-toc-modified-id="5.-The-Lecture-in-Three-Conjectures-10">5. The Lecture in Three Conjectures</a></span></li></ul></div></section>
 <section id="lecture-learning-objectives">
-<h2>Lecture Learning Objectives<a class="headerlink" href="#lecture-learning-objectives" title="Link to this heading">#</a></h2>
+<h2>Lecture Learning Objectives<a class="headerlink" href="#lecture-learning-objectives" title="Permalink to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p>Explain how backpropagation works at a high level</p></li>
 <li><p>Describe the difference between training loss and validation loss when creating a neural network</p></li>
@@ -478,7 +459,7 @@ document.write(`
 </ul>
 </section>
 <section id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading">#</a></h2>
 <hr><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Auto-setup when running on Google Colab</span>
@@ -510,7 +491,7 @@ document.write(`
 </div>
 </section>
 <section id="differentiation-backpropagation-autograd">
-<h2>1. Differentiation, Backpropagation, Autograd<a class="headerlink" href="#differentiation-backpropagation-autograd" title="Link to this heading">#</a></h2>
+<h2>1. Differentiation, Backpropagation, Autograd<a class="headerlink" href="#differentiation-backpropagation-autograd" title="Permalink to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p>In previous lectures we’ve discussed optimization algorithms like gradient descent, stochastic gradient descent, ADAM, etc.</p></li>
 <li><p>These algorithms need the gradient of the loss function w.r.t the model parameters to optimize the parameters:</p></li>
@@ -548,7 +529,7 @@ document.write(`
 <li><p>If you’re interested in learning more about the other methods, see <a class="reference internal" href="appendixC_computing-derivatives.html"><span class="std std-doc">Appendix C</span></a></p></li>
 </ul>
 <section id="backpropagation">
-<h3>1.1. Backpropagation<a class="headerlink" href="#backpropagation" title="Link to this heading">#</a></h3>
+<h3>1.1. Backpropagation<a class="headerlink" href="#backpropagation" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Backpropagation is the algorithm we use to compute the gradients needed to train the parameters of a neural network</p></li>
 <li><p>In backpropagation, the main idea is to decompose our network into smaller operations with simple, codeable derivatives</p></li>
@@ -594,7 +575,7 @@ document.write(`
 </ul>
 </section>
 <section id="autograd">
-<h3>1.2. Autograd<a class="headerlink" href="#autograd" title="Link to this heading">#</a></h3>
+<h3>1.2. Autograd<a class="headerlink" href="#autograd" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">torch.autograd</span></code> is PyTorch’s automatic differentiation engine which helps us implement backpropagation</p></li>
 <li><p>In plain English: <code class="docutils literal notranslate"><span class="pre">torch.autograd</span></code> automatically calculates and stores derivatives for your network</p></li>
@@ -832,7 +813,7 @@ b3 gradient after call 5 of loss.backward(): tensor([-0.1991, -0.5976])
 </div></blockquote>
 </section>
 <section id="computational-graph-optional">
-<h3>1.3. Computational Graph (Optional)<a class="headerlink" href="#computational-graph-optional" title="Link to this heading">#</a></h3>
+<h3>1.3. Computational Graph (Optional)<a class="headerlink" href="#computational-graph-optional" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>PyTorch’s <code class="docutils literal notranslate"><span class="pre">autograd</span></code> basically keeps a record of our data and network operations in a computational graph</p></li>
 <li><p>That’s beyond the scope of this lecture, but if you’re interested in learning more, I recommend <a class="reference external" href="https://www.youtube.com/watch?v=MswxJw-8PvE">this excellent video</a></p></li>
@@ -846,13 +827,12 @@ b3 gradient after call 5 of loss.backward(): tensor([-0.1991, -0.5976])
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/77b4139aa2d028eddeac4c0e0bc7de1ef305391adb541b6175d60a6212a7d5ef.svg" src="_images/77b4139aa2d028eddeac4c0e0bc7de1ef305391adb541b6175d60a6212a7d5ef.svg" />
-</div>
+<img alt="_images/77b4139aa2d028eddeac4c0e0bc7de1ef305391adb541b6175d60a6212a7d5ef.svg" src="_images/77b4139aa2d028eddeac4c0e0bc7de1ef305391adb541b6175d60a6212a7d5ef.svg" /></div>
 </div>
 </section>
 </section>
 <section id="training-neural-networks">
-<h2>2. Training Neural Networks<a class="headerlink" href="#training-neural-networks" title="Link to this heading">#</a></h2>
+<h2>2. Training Neural Networks<a class="headerlink" href="#training-neural-networks" title="Permalink to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p>The big takeaway from the last section is that PyTorch’s <code class="docutils literal notranslate"><span class="pre">autograd</span></code> takes care of the gradients for us</p></li>
 <li><p>We just need to put all the pieces together properly</p></li>
@@ -1022,7 +1002,7 @@ if (outputEl) {{
                         })                };                });            </script>        </div></div></div>
 </div>
 <section id="validation-loss">
-<h3>2.1. Validation Loss<a class="headerlink" href="#validation-loss" title="Link to this heading">#</a></h3>
+<h3>2.1. Validation Loss<a class="headerlink" href="#validation-loss" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>We’ve been focussing on training loss so far, but as we know, we need to validate our model on new “unseen” data!</p></li>
 <li><p>For this, we’ll need some validation data, I’m going to split our dataset in half to create a <code class="docutils literal notranslate"><span class="pre">trainloader</span></code> and a <code class="docutils literal notranslate"><span class="pre">validloader</span></code>:</p></li>
@@ -1122,7 +1102,7 @@ if (outputEl) {{
 </ul>
 </section>
 <section id="early-stopping">
-<h3>2.2. Early stopping<a class="headerlink" href="#early-stopping" title="Link to this heading">#</a></h3>
+<h3>2.2. Early stopping<a class="headerlink" href="#early-stopping" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Early stopping is a way of avoiding overfitting</p></li>
 <li><p>As training progresses, if we notice the validation loss increasing (while the training loss decreases), that’s usually an indication of overfitting</p></li>
@@ -1219,7 +1199,7 @@ if (outputEl) {{
 </section>
 </section>
 <section id="regularization">
-<h2>3. Regularization<a class="headerlink" href="#regularization" title="Link to this heading">#</a></h2>
+<h2>3. Regularization<a class="headerlink" href="#regularization" title="Permalink to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p>Recall that regularization is a technique to help avoid overfitting</p></li>
 <li><p>There are many regularization techniques available in neural networks</p></li>
@@ -1232,7 +1212,7 @@ if (outputEl) {{
 </ul>
 </section>
 <section id="drop-out">
-<h2>3.1. Drop Out<a class="headerlink" href="#drop-out" title="Link to this heading">#</a></h2>
+<h2>3.1. Drop Out<a class="headerlink" href="#drop-out" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Drop out is a common regularization technique and is very simple</p></li>
 <li><p>Basically, each iteration, we randomly chose some nodes in a layer and don’t update their weights (to do this we set the output of the nodes to 0)</p></li>
@@ -1277,7 +1257,7 @@ if (outputEl) {{
 </ul>
 </section>
 <section id="l2-regularization">
-<h2>3.2. L2 Regularization<a class="headerlink" href="#l2-regularization" title="Link to this heading">#</a></h2>
+<h2>3.2. L2 Regularization<a class="headerlink" href="#l2-regularization" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Recall that in L2 we had this penalty to the loss: <span class="math notranslate nohighlight">\(\frac{\lambda}{2}||w||^2\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\lambda\)</span> is the regularization parameter</p></li>
@@ -1310,7 +1290,7 @@ Parameter Group 0
 </div>
 </section>
 <section id="lecture-exercise-putting-it-all-together-with-bitmojis">
-<h2>4. Lecture Exercise: Putting it all Together with Bitmojis<a class="headerlink" href="#lecture-exercise-putting-it-all-together-with-bitmojis" title="Link to this heading">#</a></h2>
+<h2>4. Lecture Exercise: Putting it all Together with Bitmojis<a class="headerlink" href="#lecture-exercise-putting-it-all-together-with-bitmojis" title="Permalink to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p>Here I thought we’d put everything we learned in this lecture together to predict some bitmojis</p></li>
 <li><p>I have a folder of images with the following structure:</p></li>
@@ -1555,7 +1535,7 @@ if (outputEl) {{
 </ul>
 </section>
 <section id="the-lecture-in-three-conjectures">
-<h2>5. The Lecture in Three Conjectures<a class="headerlink" href="#the-lecture-in-three-conjectures" title="Link to this heading">#</a></h2>
+<h2>5. The Lecture in Three Conjectures<a class="headerlink" href="#the-lecture-in-three-conjectures" title="Permalink to this heading">#</a></h2>
 <hr><ol class="arabic simple">
 <li><p>Neural network training in a nutshell: forward pass -&gt; calculate loss -&gt; backpropagate -&gt; optimizer step -&gt; repeat. In PyTorch we can customize this process with extras like calculating the loss or accuracy.</p></li>
 <li><p>PyTorch takes care of calculating gradients for us with <strong>autograd</strong>.</p></li>
@@ -1620,7 +1600,8 @@ if (outputEl) {{
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1696,8 +1677,8 @@ By Mahmood Amintoosi
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -16,47 +16,48 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'appendixA_gradients';</script>
@@ -64,9 +65,10 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Appendix B: Logistic Loss" href="appendixB_logistic-loss.html" />
-    <link rel="prev" title="Advanced Convolutional Neural Networks" href="lecture7_cnns-pt2.html" />
+    <link rel="prev" title="Advanced Deep Learning" href="lecture8_advanced-deep-learning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -82,19 +84,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -102,7 +93,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -110,8 +100,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -127,7 +117,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -157,21 +148,17 @@
     
     
     <img src="_static/fum-cs-logo.png" class="logo__image only-light" alt="NN - Home"/>
-    <script>document.write(`<img src="_static/fum-cs-logo.png" class="logo__image only-dark" alt="NN - Home"/>`);</script>
+    <img src="_static/fum-cs-logo.png" class="logo__image only-dark pst-js-only" alt="NN - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -196,12 +183,14 @@
 <li class="toctree-l1"><a class="reference internal" href="lecture5_neural-networks-regularization.html">Regularization and Dropout in Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture6_cnns-pt1.html">Introduction to Convolutional Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture7_cnns-pt2.html">Advanced Convolutional Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture8_advanced-deep-learning.html">Advanced Deep Learning</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Appendix A: Gradients Review</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixB_logistic-loss.html">Appendix B: Logistic Loss</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixC_computing-derivatives.html">Appendix C: Computing Derivatives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixD_tensor-basics.html">Appendix D: Basics of Numpy and Tensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixE_pytorch-autograd.html">Appendix E: Auto Differentiation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixF_pytorch-optimizers.html">Appendix F: Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendixG_bitmoji-CNN.html">Appendix G: Creating a CNN to Predict Bitmojis</a></li>
 </ul>
 
     </div>
@@ -387,24 +376,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -451,13 +432,13 @@ document.write(`
                   
   <p><img alt="" src="_images/572_banner.png" /></p>
 <script src="require.js"></script><section class="tex2jax_ignore mathjax_ignore" id="appendix-a-gradients-review">
-<h1>Appendix A: Gradients Review<a class="headerlink" href="#appendix-a-gradients-review" title="Link to this heading">#</a></h1>
+<h1>Appendix A: Gradients Review<a class="headerlink" href="#appendix-a-gradients-review" title="Permalink to this heading">#</a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <hr><p>This short appendix provides a refresher on gradients and calculus. Some of you may never have seen gradients before. Multivariate calculus is not a required prerequisite for the MDS program but it will be helpful to know for this course, so we’ll cover the basics in this appendix. This material has been modified after material originally created by <a class="reference external" href="https://www.mikegelbart.com/">Mike Gelbart</a>.</p>
 </section>
 <section id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading">#</a></h2>
 <hr><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Auto-setup when running on Google Colab</span>
@@ -488,7 +469,7 @@ document.write(`
 </div>
 </section>
 <section id="ingredient-1-functions-of-multiple-variables">
-<h2>1. Ingredient 1: Functions of Multiple Variables<a class="headerlink" href="#ingredient-1-functions-of-multiple-variables" title="Link to this heading">#</a></h2>
+<h2>1. Ingredient 1: Functions of Multiple Variables<a class="headerlink" href="#ingredient-1-functions-of-multiple-variables" title="Permalink to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p>We can write such a function as <span class="math notranslate nohighlight">\(f(x,y,z)\)</span> (for 3 inputs) or <span class="math notranslate nohighlight">\(f(x)\)</span> if <span class="math notranslate nohighlight">\(x\)</span> is a vector.</p></li>
 <li><p>Example: <span class="math notranslate nohighlight">\(f(x,y,z) = x^2 + y^2 + e^z + x^z + xyz\)</span>.</p></li>
@@ -535,7 +516,7 @@ document.write(`
 </div>
 </section>
 <section id="ingredient-2-vector-valued-functions">
-<h2>2. Ingredient 2: Vector-valued Functions<a class="headerlink" href="#ingredient-2-vector-valued-functions" title="Link to this heading">#</a></h2>
+<h2>2. Ingredient 2: Vector-valued Functions<a class="headerlink" href="#ingredient-2-vector-valued-functions" title="Permalink to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p>You may not have encountered these yet in MDS.</p></li>
 <li><p>These are functions with multiple <em>outputs</em> (and may or may not have multiple <em>inputs</em>).</p></li>
@@ -605,7 +586,7 @@ document.write(`
 </ul>
 </section>
 <section id="ingredient-3-partial-derivatives">
-<h2>3. Ingredient 3: Partial Derivatives<a class="headerlink" href="#ingredient-3-partial-derivatives" title="Link to this heading">#</a></h2>
+<h2>3. Ingredient 3: Partial Derivatives<a class="headerlink" href="#ingredient-3-partial-derivatives" title="Permalink to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p>A partial derivative is just a derivative of a multivariable function with respect to one of the input variables.</p></li>
 <li><p>When taking this derivative, we treat all the other variables as constants.</p>
@@ -623,7 +604,7 @@ document.write(`
 </ul>
 </section>
 <section id="ingredient-4-gradients">
-<h2>4. Ingredient 4: Gradients<a class="headerlink" href="#ingredient-4-gradients" title="Link to this heading">#</a></h2>
+<h2>4. Ingredient 4: Gradients<a class="headerlink" href="#ingredient-4-gradients" title="Permalink to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p>This is the easy part: a gradient is just a box holding all the <span class="math notranslate nohighlight">\(d\)</span> partial derivatives (assuming you have a function of <span class="math notranslate nohighlight">\(d\)</span> variables). For example, when <span class="math notranslate nohighlight">\(d=3\)</span>:</p></li>
 </ul>
@@ -684,7 +665,7 @@ document.write(`
 </table>
 </div>
 <section id="gradients-intuition">
-<h3>4.1 Gradients intuition<a class="headerlink" href="#gradients-intuition" title="Link to this heading">#</a></h3>
+<h3>4.1 Gradients intuition<a class="headerlink" href="#gradients-intuition" title="Permalink to this heading">#</a></h3>
 <p>Since a gradient is a vector, we can talk about its magnitude and direction.</p>
 <ul class="simple">
 <li><p>The magnitude is <span class="math notranslate nohighlight">\(\|\nabla f\|\)</span> and tells us <strong>how fast things are changing</strong>.</p></li>
@@ -758,7 +739,7 @@ document.write(`
 </div>
 </section>
 <section id="why-is-it-the-direction-of-fastest-increase">
-<h3>4.2 Why is it the direction of fastest increase?<a class="headerlink" href="#why-is-it-the-direction-of-fastest-increase" title="Link to this heading">#</a></h3>
+<h3>4.2 Why is it the direction of fastest increase?<a class="headerlink" href="#why-is-it-the-direction-of-fastest-increase" title="Permalink to this heading">#</a></h3>
 <p>For example if the gradient is:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{bmatrix} 5 \\ 2 \\ -1 \\ 0 \end{bmatrix}\, ,\end{split}\]</div>
@@ -800,12 +781,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="lecture7_cnns-pt2.html"
+       href="lecture8_advanced-deep-learning.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Advanced Convolutional Neural Networks</p>
+        <p class="prev-next-title">Advanced Deep Learning</p>
       </div>
     </a>
     <a class="right-next"
@@ -824,7 +805,8 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -891,8 +873,8 @@ By Mahmood Amintoosi
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>

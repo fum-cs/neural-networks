@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -16,47 +16,48 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'appendixE_pytorch-autograd';</script>
@@ -67,6 +68,7 @@
     <link rel="prev" title="Appendix D: Basics of Numpy and Tensors" href="appendixD_tensor-basics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -82,19 +84,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -102,7 +93,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -110,8 +100,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -127,7 +117,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -157,21 +148,17 @@
     
     
     <img src="_static/fum-cs-logo.png" class="logo__image only-light" alt="NN - Home"/>
-    <script>document.write(`<img src="_static/fum-cs-logo.png" class="logo__image only-dark" alt="NN - Home"/>`);</script>
+    <img src="_static/fum-cs-logo.png" class="logo__image only-dark pst-js-only" alt="NN - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -196,12 +183,14 @@
 <li class="toctree-l1"><a class="reference internal" href="lecture5_neural-networks-regularization.html">Regularization and Dropout in Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture6_cnns-pt1.html">Introduction to Convolutional Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture7_cnns-pt2.html">Advanced Convolutional Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture8_advanced-deep-learning.html">Advanced Deep Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixA_gradients.html">Appendix A: Gradients Review</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixB_logistic-loss.html">Appendix B: Logistic Loss</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixC_computing-derivatives.html">Appendix C: Computing Derivatives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixD_tensor-basics.html">Appendix D: Basics of Numpy and Tensors</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Appendix E: Auto Differentiation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixF_pytorch-optimizers.html">Appendix F: Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendixG_bitmoji-CNN.html">Appendix G: Creating a CNN to Predict Bitmojis</a></li>
 </ul>
 
     </div>
@@ -387,24 +376,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -459,7 +440,7 @@ document.write(`
                   
   <p><img alt="" src="_images/572_banner.png" /></p>
 <script src="require.js"></script><section class="tex2jax_ignore mathjax_ignore" id="appendix-e-auto-differentiation">
-<h1>Appendix E: Auto Differentiation<a class="headerlink" href="#appendix-e-auto-differentiation" title="Link to this heading">#</a></h1>
+<h1>Appendix E: Auto Differentiation<a class="headerlink" href="#appendix-e-auto-differentiation" title="Permalink to this heading">#</a></h1>
 <p><strong>Mahmood Amintoosi, Spring 2024</strong></p>
 <p>Computer Science Dept, Ferdowsi University of Mashhad</p>
 <p>In this notebook, we will explain how the auto-differentiation module of PyTorch works.
@@ -481,7 +462,7 @@ This module is named <strong>Autograd</strong>.</p>
 </div>
 </div>
 <section id="how-does-autograd-works">
-<h2>How does Autograd works ?<a class="headerlink" href="#how-does-autograd-works" title="Link to this heading">#</a></h2>
+<h2>How does Autograd works ?<a class="headerlink" href="#how-does-autograd-works" title="Permalink to this heading">#</a></h2>
 <p>When you do operations on Tensors, PyTorch can keep track of the computation graph in order to be able to backpropagate.
 To tell PyTorch to record operations performed on a tensor, each tensor has a function called <strong><code class="docutils literal notranslate"><span class="pre">requires_grad_</span></code></strong>.</p>
 <p>If there’s at least one input to an operation that requires gradient, its output will also require gradient. Conversely, only if all inputs don’t require gradient, the output also won’t require it. Backward computation is never performed in the subgraphs, where all Tensors didn’t require gradients.</p>
@@ -489,7 +470,7 @@ To tell PyTorch to record operations performed on a tensor, each tensor has a fu
 <p>For a tensor x, the underlying data is stored in a tensor that is accessible via <strong>x.data</strong>. If you do an operation on x.data PyTorch does not add the operation to the computation graph.</p>
 </section>
 <section id="function-requires-grad">
-<h2>Function requires_grad<a class="headerlink" href="#function-requires-grad" title="Link to this heading">#</a></h2>
+<h2>Function requires_grad<a class="headerlink" href="#function-requires-grad" title="Permalink to this heading">#</a></h2>
 <p>Each tensor has a property <strong><code class="docutils literal notranslate"><span class="pre">requires_grad</span></code></strong> specifying whether the gradient should be computed during backward pass.</p>
 <p>The function <strong><code class="docutils literal notranslate"><span class="pre">requires_grad_(bool)</span></code></strong> (notice the trailing <strong>_</strong> ) is used to change this property.</p>
 <div class="cell docutils container">
@@ -518,7 +499,7 @@ A.requires_grad : False
 </div>
 </section>
 <section id="backward-function">
-<h2>Backward function<a class="headerlink" href="#backward-function" title="Link to this heading">#</a></h2>
+<h2>Backward function<a class="headerlink" href="#backward-function" title="Permalink to this heading">#</a></h2>
 <p>Here we will see a simple example of how to compute the gradient of a function automatically with pytorch.
 We will check that it correspond to what we can compute manually.</p>
 <p>Let’s look at the function <span class="math notranslate nohighlight">\(f(x) = 5x^2+3\)</span></p>
@@ -565,7 +546,7 @@ We will check that it correspond to what we can compute manually.</p>
 </div>
 </section>
 <section id="using-autograd-grad">
-<h2>Using autograd.grad<a class="headerlink" href="#using-autograd-grad" title="Link to this heading">#</a></h2>
+<h2>Using autograd.grad<a class="headerlink" href="#using-autograd-grad" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">autograd</span>
@@ -616,7 +597,7 @@ tensor([40.])
 </div>
 </section>
 <section id="second-derivative">
-<h2>Second Derivative<a class="headerlink" href="#second-derivative" title="Link to this heading">#</a></h2>
+<h2>Second Derivative<a class="headerlink" href="#second-derivative" title="Permalink to this heading">#</a></h2>
 <p>use create_graph=True</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -714,7 +695,7 @@ Y.grad : tensor([0.9551, 1.9101, 2.8652])
 </div>
 </div>
 <section id="now-let-s-compute-it-manually">
-<h3>Now let’s compute it manually !<a class="headerlink" href="#now-let-s-compute-it-manually" title="Link to this heading">#</a></h3>
+<h3>Now let’s compute it manually !<a class="headerlink" href="#now-let-s-compute-it-manually" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p><span class="math notranslate nohighlight">\(f\)</span> can be written as a composite function <span class="math notranslate nohighlight">\(f = h \circ g\)</span></p>
 <p><span class="math notranslate nohighlight">\(h(z) = \sin(z)\)</span> with derivative <span class="math notranslate nohighlight">\(\dfrac{d h}{d z}(z) = \cos(z)\)</span></p>
@@ -771,7 +752,7 @@ tensor([4.7754, 5.7304, 6.6855], grad_fn=&lt;MulBackward0&gt;)
 <p>Success !</p>
 </section>
 <section id="leaf-variable">
-<h3>Leaf Variable<a class="headerlink" href="#leaf-variable" title="Link to this heading">#</a></h3>
+<h3>Leaf Variable<a class="headerlink" href="#leaf-variable" title="Permalink to this heading">#</a></h3>
 <p>A variable that <strong>was created by the user</strong> and was therefore not the result of <em>any</em> operation is called a <strong>leaf variable</strong>.<br />
 All variables that have the <strong><code class="docutils literal notranslate"><span class="pre">requires_grad</span></code> property to False</strong> are also considered as <strong>leaf variable</strong>.</p>
 <div class="cell docutils container">
@@ -798,7 +779,7 @@ D.is_leaf : True
 </div>
 </section>
 <section id="detach-function">
-<h3>Detach function<a class="headerlink" href="#detach-function" title="Link to this heading">#</a></h3>
+<h3>Detach function<a class="headerlink" href="#detach-function" title="Permalink to this heading">#</a></h3>
 <p>A variable can have a long computation history, but you may want to consider it as a <strong>new leaf variable</strong> without history.</p>
 <p>For that, you can use the <code class="docutils literal notranslate"><span class="pre">detach</span></code> function, which detaches the tensor from its history.</p>
 <div class="cell docutils container">
@@ -846,7 +827,7 @@ B.is_leaf : True
 </div>
 </section>
 <section id="no-grad-function">
-<h3>No_grad function<a class="headerlink" href="#no-grad-function" title="Link to this heading">#</a></h3>
+<h3>No_grad function<a class="headerlink" href="#no-grad-function" title="Permalink to this heading">#</a></h3>
 <p>At inference time, you don’t want Pytorch to build a computation graph.
 This can be achieved by wrapping your inference code into the <strong><code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">torch.no_grad()</span></code></strong> context manager.</p>
 <div class="cell docutils container">
@@ -874,7 +855,7 @@ y.requires_grad :  False
 </section>
 </section>
 <section id="note-autograd-in-previous-pytorch-versions">
-<h2>Note: Autograd in previous PyTorch versions<a class="headerlink" href="#note-autograd-in-previous-pytorch-versions" title="Link to this heading">#</a></h2>
+<h2>Note: Autograd in previous PyTorch versions<a class="headerlink" href="#note-autograd-in-previous-pytorch-versions" title="Permalink to this heading">#</a></h2>
 <p>In older versions of PyTorch, one had to wrap a <code class="docutils literal notranslate"><span class="pre">Tensor</span></code> into a Autograd object called <code class="docutils literal notranslate"><span class="pre">Variable</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Variable</span></code> was a thin wrapper around a <code class="docutils literal notranslate"><span class="pre">Tensor</span></code> object, that also held the gradient w.r.t. to it, and a reference to a function that created it. This reference allowed retracing the whole chain of operations that created the data.</p>
 <p><strong>Now, <code class="docutils literal notranslate"><span class="pre">Tensors</span></code> are by default <code class="docutils literal notranslate"><span class="pre">Variable</span></code> and we don’t need to worry about this anymore</strong>, but you may still encounter it in some “old” code.</p>
@@ -890,12 +871,12 @@ y.requires_grad :  False
 </div>
 </section>
 <section id="advanced-concepts-of-autograd">
-<h2>Advanced concepts of Autograd<a class="headerlink" href="#advanced-concepts-of-autograd" title="Link to this heading">#</a></h2>
+<h2>Advanced concepts of Autograd<a class="headerlink" href="#advanced-concepts-of-autograd" title="Permalink to this heading">#</a></h2>
 <p>The following concepts are more advanced and may want to skip it for now.<br />
 We won’t go through them, but there are here for you to come back to later when you feel more comfortable with pytorch.<br />
 You can also check the <a class="reference external" href="https://pytorch.org/docs/stable/autograd.html">Pytorch Doc</a>.</p>
 <section id="retain-grad">
-<h3>Retain Grad<a class="headerlink" href="#retain-grad" title="Link to this heading">#</a></h3>
+<h3>Retain Grad<a class="headerlink" href="#retain-grad" title="Permalink to this heading">#</a></h3>
 <p>When doing the backward pass, Autograd computes the gradient of the output with respect to every intermediate variables. However, by default, only gradients of variables that were <strong>created by the user</strong> (leaf) and have the <strong><code class="docutils literal notranslate"><span class="pre">requires_grad</span></code> property to True</strong> are saved.</p>
 <p>Indeed, most of the time when training a model you only need the gradient of a loss w.r.t. to your model parameters.</p>
 <div class="cell docutils container">
@@ -982,7 +963,7 @@ B.grad : tensor([[0.2500, 0.2500],
 </div>
 </section>
 <section id="gradient-accumulation">
-<h3>Gradient accumulation<a class="headerlink" href="#gradient-accumulation" title="Link to this heading">#</a></h3>
+<h3>Gradient accumulation<a class="headerlink" href="#gradient-accumulation" title="Permalink to this heading">#</a></h3>
 <p>You can backward a first time and get a gradient for A, then do some other computation using A and then backward again.<br />
 Gradients will get accumulated in A.</p>
 <div class="cell docutils container">
@@ -1025,7 +1006,7 @@ A.grad : tensor([[2.5000, 2.5000],
 </div>
 </section>
 <section id="under-the-hood">
-<h3>Under the hood…<a class="headerlink" href="#under-the-hood" title="Link to this heading">#</a></h3>
+<h3>Under the hood…<a class="headerlink" href="#under-the-hood" title="Permalink to this heading">#</a></h3>
 <p>This part is to give a glimpse of how it works under the hood. We don’t need to do such inspection in practice.<br />
 Here, we have a look at the computation graph that autograd builds on the fly.</p>
 <div class="cell docutils container">
@@ -1142,7 +1123,8 @@ Here, we have a look at the computation graph that autograd builds on the fly.</
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1217,8 +1199,8 @@ By Mahmood Amintoosi
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>
