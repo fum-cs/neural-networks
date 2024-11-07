@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
@@ -30,13 +30,13 @@
   <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 <link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
   <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
@@ -44,20 +44,22 @@
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'appendixF_pytorch-optimizers';</script>
@@ -439,18 +441,18 @@
                   
   <p><img alt="" src="_images/572_banner.png" /></p>
 <script src="require.js"></script><section class="tex2jax_ignore mathjax_ignore" id="appendix-f-optimization">
-<h1>Appendix F: Optimization<a class="headerlink" href="#appendix-f-optimization" title="Permalink to this heading">#</a></h1>
+<h1>Appendix F: Optimization<a class="headerlink" href="#appendix-f-optimization" title="Link to this heading">#</a></h1>
 <p><strong>Mahmood Amintoosi, Spring 2024</strong></p>
 <p>Computer Science Dept, Ferdowsi University of Mashhad</p>
 <section id="notebook-introduction">
-<h2>Notebook Introduction<a class="headerlink" href="#notebook-introduction" title="Permalink to this heading">#</a></h2>
+<h2>Notebook Introduction<a class="headerlink" href="#notebook-introduction" title="Link to this heading">#</a></h2>
 <p>In this short notebook, we will see how to use the gradient obtained with Autograd to perform optimization of an objective function.<br />
 Then we will also present some off-the-shelf Pytorch optimizers and learning rate schedulers.<br />
 As an eye candy, we will finish with some live optimization vizualisations.</p>
 </section>
 <hr class="docutils" />
 <section id="google-colab-only">
-<h2>Google Colab only!<a class="headerlink" href="#google-colab-only" title="Permalink to this heading">#</a></h2>
+<h2>Google Colab only!<a class="headerlink" href="#google-colab-only" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Auto-setup when running on Google Colab</span>
@@ -493,7 +495,7 @@ As an eye candy, we will finish with some live optimization vizualisations.</p>
 </div>
 </section>
 <section id="optimizing-by-hand">
-<h2>Optimizing “by hand”<a class="headerlink" href="#optimizing-by-hand" title="Permalink to this heading">#</a></h2>
+<h2>Optimizing “by hand”<a class="headerlink" href="#optimizing-by-hand" title="Link to this heading">#</a></h2>
 <p>We will start with a simple example : minimizing the square function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -558,7 +560,7 @@ tensor([0.013])
 </div>
 </div>
 <section id="why-do-we-have-x-data">
-<h3>Why do we have x.data?<a class="headerlink" href="#why-do-we-have-x-data" title="Permalink to this heading">#</a></h3>
+<h3>Why do we have x.data?<a class="headerlink" href="#why-do-we-have-x-data" title="Link to this heading">#</a></h3>
 <p>If you do <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">...</span></code>, then x is not a leaf variable anymore and will have a computation history. Since it is not a leaf anymore after the first iteration, its gradient will not be available at the second iteration.</p>
 <p>Workarounds:</p>
 <ul class="simple">
@@ -568,9 +570,9 @@ tensor([0.013])
 </section>
 </section>
 <section id="optimizing-with-an-optimizer">
-<h2>Optimizing with an optimizer<a class="headerlink" href="#optimizing-with-an-optimizer" title="Permalink to this heading">#</a></h2>
+<h2>Optimizing with an optimizer<a class="headerlink" href="#optimizing-with-an-optimizer" title="Link to this heading">#</a></h2>
 <section id="different-optimizers">
-<h3>Different optimizers<a class="headerlink" href="#different-optimizers" title="Permalink to this heading">#</a></h3>
+<h3>Different optimizers<a class="headerlink" href="#different-optimizers" title="Link to this heading">#</a></h3>
 <p>Pytorch provides most common optimization algorithms encapsulated into “optimizer classes”.<br />
 An optimizer is a useful object that automatically loops through all the numerous parameters of your model and performs the (potentially complex) update step for you.</p>
 <p>You first need to execute <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">optim</span></code>.</p>
@@ -600,7 +602,7 @@ An optimizer is a useful object that automatically loops through all the numerou
 </div>
 </section>
 <section id="using-an-optimizer">
-<h3>Using an optimizer<a class="headerlink" href="#using-an-optimizer" title="Permalink to this heading">#</a></h3>
+<h3>Using an optimizer<a class="headerlink" href="#using-an-optimizer" title="Link to this heading">#</a></h3>
 <p>Now, let’s use an optimizer to do the optimization !</p>
 <p>You will need 2 new functions:</p>
 <ul class="simple">
@@ -649,7 +651,7 @@ tensor([10.096])
 </div>
 </section>
 <section id="learning-rate-scheduler">
-<h3>Learning rate scheduler<a class="headerlink" href="#learning-rate-scheduler" title="Permalink to this heading">#</a></h3>
+<h3>Learning rate scheduler<a class="headerlink" href="#learning-rate-scheduler" title="Link to this heading">#</a></h3>
 <p>Learning rate scheduler seek to adjust the learning rate during training by reducing the learning rate according to a pre-defined schedule.<br />
 Below are some of the scheduler available in pytorch.</p>
 <div class="cell docutils container">
@@ -721,11 +723,11 @@ tensor([0.561])  | lr :  0.017592186044416015
 </section>
 </section>
 <section id="live-plots">
-<h2>Live Plots<a class="headerlink" href="#live-plots" title="Permalink to this heading">#</a></h2>
+<h2>Live Plots<a class="headerlink" href="#live-plots" title="Link to this heading">#</a></h2>
 <p>Below are some live plots to see what actually happens when you optimize a function.<br />
 You can play with learning rates, optimizers and also define new functions to optimize !</p>
 <section id="d-plot-optimization-process">
-<h3>2D Plot - Optimization process<a class="headerlink" href="#d-plot-optimization-process" title="Permalink to this heading">#</a></h3>
+<h3>2D Plot - Optimization process<a class="headerlink" href="#d-plot-optimization-process" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">live_plot</span> <span class="kn">import</span> <span class="n">init_2dplot</span><span class="p">,</span> <span class="n">add_point_2d</span>
@@ -1721,7 +1723,7 @@ if (IPython.notebook.kernel !== null) {
 </div>
 </section>
 <section id="id1">
-<h3>3D Plot - Optimization process<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>3D Plot - Optimization process<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">live_plot</span> <span class="kn">import</span> <span class="n">init_3dplot</span><span class="p">,</span> <span class="n">add_point_3d</span>

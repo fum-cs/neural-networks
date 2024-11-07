@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
@@ -30,13 +30,13 @@
   <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 <link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
   <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
@@ -44,20 +44,22 @@
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture1_floating-point';</script>
@@ -447,16 +449,16 @@
                   
   <p><img alt="" src="_images/572_banner.png" /></p>
 <script src="require.js"></script><section class="tex2jax_ignore mathjax_ignore" id="floating-point-numbers">
-<h1>Floating Point Numbers<a class="headerlink" href="#floating-point-numbers" title="Permalink to this heading">#</a></h1>
+<h1>Floating Point Numbers<a class="headerlink" href="#floating-point-numbers" title="Link to this heading">#</a></h1>
 <p><strong>Mahmood Amintoosi, Spring 2024</strong></p>
 <p>Computer Science Dept, Ferdowsi University of Mashhad</p>
 <p>I should mention that the original material was from <a class="reference external" href="https://ubc-mds.github.io/DSCI_572_sup-learn-2">Tomas Beuzen’s course</a>.</p>
 <p><img alt="" src="_images/floating.png" /></p>
 <section id="lecture-outline">
-<h2>Lecture Outline<a class="headerlink" href="#lecture-outline" title="Permalink to this heading">#</a></h2>
+<h2>Lecture Outline<a class="headerlink" href="#lecture-outline" title="Link to this heading">#</a></h2>
 <hr><div class="toc"><ul class="toc-item"><li><span><a href="#Lecture-Learning-Objectives" data-toc-modified-id="Lecture-Learning-Objectives-2">Lecture Learning Objectives</a></span></li><li><span><a href="#Imports" data-toc-modified-id="Imports-3">Imports</a></span></li><li><span><a href="#1.-Floating-Point-Errors" data-toc-modified-id="1.-Floating-Point-Errors-4">1. Floating Point Errors</a></span></li><li><span><a href="#2.-Binary-Numbers-and-Integers" data-toc-modified-id="2.-Binary-Numbers-and-Integers-5">2. Binary Numbers and Integers</a></span></li><li><span><a href="#3.-Fractional-Numbers-in-Binary" data-toc-modified-id="3.-Fractional-Numbers-in-Binary-6">3. Fractional Numbers in Binary</a></span></li><li><span><a href="#4.-Fixed-Point-Numbers" data-toc-modified-id="4.-Fixed-Point-Numbers-7">4. Fixed Point Numbers</a></span></li><li><span><a href="#5.-Floating-Point-Numbers" data-toc-modified-id="5.-Floating-Point-Numbers-8">5. Floating Point Numbers</a></span></li><li><span><a href="#6.-Spacing-and-Rounding-Errors" data-toc-modified-id="6.-Spacing-and-Rounding-Errors-9">6. Spacing and Rounding Errors</a></span></li><li><span><a href="#7.-Lecture-Exercise:-Fun-with-Floating-Points" data-toc-modified-id="7.-Lecture-Exercise:-Fun-with-Floating-Points-10">7. Lecture Exercise: Fun with Floating Points</a></span></li><li><span><a href="#8.-The-Lecture-in-Three-Conjectures" data-toc-modified-id="8.-The-Lecture-in-Three-Conjectures-11">8. The Lecture in Three Conjectures</a></span></li></ul></div></section>
 <section id="lecture-learning-objectives">
-<h2>Lecture Learning Objectives<a class="headerlink" href="#lecture-learning-objectives" title="Permalink to this heading">#</a></h2>
+<h2>Lecture Learning Objectives<a class="headerlink" href="#lecture-learning-objectives" title="Link to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p>Compare and contrast the representations of integers and floating point numbers</p></li>
 <li><p>Explain how double-precision floating point numbers are represented by 64 bits</p></li>
@@ -467,7 +469,7 @@
 </ul>
 </section>
 <section id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading">#</a></h2>
+<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
 <hr><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Auto-setup when running on Google Colab</span>
@@ -492,7 +494,7 @@
 </div>
 </section>
 <section id="floating-point-errors">
-<h2>1. Floating Point Errors<a class="headerlink" href="#floating-point-errors" title="Permalink to this heading">#</a></h2>
+<h2>1. Floating Point Errors<a class="headerlink" href="#floating-point-errors" title="Link to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p>Unfortunately, computers can not always represent numbers as accurately as some of us might think</p></li>
 <li><p>The problem boils down to this: we have a finite amount of bits in our computer to store an infinite amount of numbers</p></li>
@@ -528,7 +530,7 @@
 </ul>
 </section>
 <section id="binary-numbers-and-integers">
-<h2>2. Binary Numbers and Integers<a class="headerlink" href="#binary-numbers-and-integers" title="Permalink to this heading">#</a></h2>
+<h2>2. Binary Numbers and Integers<a class="headerlink" href="#binary-numbers-and-integers" title="Link to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p>We are used to using a base-10 number system (i.e., “decimal” or “denary”)</p></li>
 <li><p>For example, we can read the number 104 as:</p>
@@ -831,7 +833,7 @@ will give the desired result (the cast overflows).
 <p>🤔</p>
 </section>
 <section id="fractional-numbers-in-binary">
-<h2>3. Fractional Numbers in Binary<a class="headerlink" href="#fractional-numbers-in-binary" title="Permalink to this heading">#</a></h2>
+<h2>3. Fractional Numbers in Binary<a class="headerlink" href="#fractional-numbers-in-binary" title="Link to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p>At this point you might be thinking, “Well that’s all well and good for integers, but what about fractional numbers like 14.75 Tom?” - Good question!</p></li>
 <li><p>Let’s interpret the number 14.75 in our familiar decimal format</p></li>
@@ -914,7 +916,7 @@ will give the desired result (the cast overflows).
 </div>
 </section>
 <section id="fixed-point-numbers">
-<h2>4. Fixed Point Numbers<a class="headerlink" href="#fixed-point-numbers" title="Permalink to this heading">#</a></h2>
+<h2>4. Fixed Point Numbers<a class="headerlink" href="#fixed-point-numbers" title="Link to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p>As we learned earlier, we typically have a fixed number of bits to work with when storing a number, e.g., 8, 16, 32, 64 bits etc.</p></li>
 <li><p>How do we decide where to put the binary point to allow for fractional numbers?</p></li>
@@ -1008,7 +1010,7 @@ will give the desired result (the cast overflows).
 </ul>
 </section>
 <section id="id1">
-<h2>5. Floating Point Numbers<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>5. Floating Point Numbers<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p>At this point, you may have read “floating point” and had a little “ah-ha!” moment because you see where we’re going</p></li>
 <li><p>Rather than having a fixed location for our binary point, we could let it “float” around depending on what number we want to store</p></li>
@@ -1155,7 +1157,7 @@ Exponent: -1101111 (-111)
 <li><p>You get the point, we can represent a wide range of numbers with this format! (we’ll work out the exact range later on)</p></li>
 </ul>
 <section id="floating-point-standard">
-<h3>5.1. Floating Point Standard<a class="headerlink" href="#floating-point-standard" title="Permalink to this heading">#</a></h3>
+<h3>5.1. Floating Point Standard<a class="headerlink" href="#floating-point-standard" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>One question you might have about the above: how many bits should I use for the mantissa and how many for the exponent?</p></li>
 <li><p>Well that’s already been decided for you in: IEEE Standard for Floating-Point Arithmetic (<a class="reference external" href="https://en.wikipedia.org/wiki/IEEE_754">IEEE 754</a>) which is what most computers/software use</p></li>
@@ -1176,9 +1178,9 @@ Exponent: -1101111 (-111)
 </section>
 </section>
 <section id="spacing-and-rounding-errors">
-<h2>6. Spacing and Rounding Errors<a class="headerlink" href="#spacing-and-rounding-errors" title="Permalink to this heading">#</a></h2>
+<h2>6. Spacing and Rounding Errors<a class="headerlink" href="#spacing-and-rounding-errors" title="Link to this heading">#</a></h2>
 <hr><section id="ingredient-1-rounding-errors">
-<h3>6.1. Ingredient 1: Rounding Errors<a class="headerlink" href="#ingredient-1-rounding-errors" title="Permalink to this heading">#</a></h3>
+<h3>6.1. Ingredient 1: Rounding Errors<a class="headerlink" href="#ingredient-1-rounding-errors" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Many fractional numbers can’t be represented exactly using binary</p></li>
 <li><p><strong>Instead, your computer will round numbers to the closest representable number and we get rounding errors</strong></p></li>
@@ -1232,7 +1234,7 @@ Which is exactly stored as: 0.25
 </ul>
 </section>
 <section id="ingredient-2-spacing">
-<h3>6.2. Ingredient 2: Spacing<a class="headerlink" href="#ingredient-2-spacing" title="Permalink to this heading">#</a></h3>
+<h3>6.2. Ingredient 2: Spacing<a class="headerlink" href="#ingredient-2-spacing" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>So how bad are these rounding errors? Let’s find out…</p></li>
 <li><p>We can quantify the “spacing” between representable numbers</p></li>
@@ -1507,9 +1509,9 @@ Exponent: 1010011 (83)
 </section>
 </section>
 <section id="lecture-exercise-fun-with-floating-points">
-<h2>7. Lecture Exercise: Fun with Floating Points<a class="headerlink" href="#lecture-exercise-fun-with-floating-points" title="Permalink to this heading">#</a></h2>
+<h2>7. Lecture Exercise: Fun with Floating Points<a class="headerlink" href="#lecture-exercise-fun-with-floating-points" title="Link to this heading">#</a></h2>
 <hr><section id="floating-point-range">
-<h3>7.1. Floating Point Range<a class="headerlink" href="#floating-point-range" title="Permalink to this heading">#</a></h3>
+<h3>7.1. Floating Point Range<a class="headerlink" href="#floating-point-range" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Recall that most compute environments you’ll encounter will be using IEEE double precision (<code class="docutils literal notranslate"><span class="pre">float64</span></code>), so 53 bits for the mantissa, 11 for the exponent.</p></li>
 <li><p>So let’s calculate the biggest possible floating point number based on this scheme.</p></li>
@@ -1664,7 +1666,7 @@ overflow encountered in power
 </div>
 </section>
 <section id="optional-7-1-1-subnormal-numbers">
-<h3>(Optional) 7.1.1 Subnormal Numbers<a class="headerlink" href="#optional-7-1-1-subnormal-numbers" title="Permalink to this heading">#</a></h3>
+<h3>(Optional) 7.1.1 Subnormal Numbers<a class="headerlink" href="#optional-7-1-1-subnormal-numbers" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>What happens if we try to store a number smaller than the above?</p></li>
 </ul>
@@ -1720,7 +1722,7 @@ overflow encountered in power
 </ul>
 </section>
 <section id="order-of-operations">
-<h3>7.2. Order of Operations<a class="headerlink" href="#order-of-operations" title="Permalink to this heading">#</a></h3>
+<h3>7.2. Order of Operations<a class="headerlink" href="#order-of-operations" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Consider the following:</p></li>
 </ul>
@@ -1819,7 +1821,7 @@ overflow encountered in power
 </ul>
 </section>
 <section id="writing-functions">
-<h3>7.3. Writing Functions<a class="headerlink" href="#writing-functions" title="Permalink to this heading">#</a></h3>
+<h3>7.3. Writing Functions<a class="headerlink" href="#writing-functions" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Later in this course we’ll create a Logistic Regression model from scratch and you’ll have to calculate something that looks like:</p></li>
 </ul>
@@ -1933,7 +1935,7 @@ Avoiding overflow error with approximation of 500!
 </ul>
 </section>
 <section id="precision-vs-memory-vs-speed">
-<h3>7.4. Precision vs Memory vs Speed<a class="headerlink" href="#precision-vs-memory-vs-speed" title="Permalink to this heading">#</a></h3>
+<h3>7.4. Precision vs Memory vs Speed<a class="headerlink" href="#precision-vs-memory-vs-speed" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>So double precision floats are pretty standard and require 64 bits to store:</p></li>
 </ul>
@@ -2020,7 +2022,7 @@ mem. usage: 32.0 MB
 </section>
 </section>
 <section id="the-lecture-in-three-conjectures">
-<h2>8. The Lecture in Three Conjectures<a class="headerlink" href="#the-lecture-in-three-conjectures" title="Permalink to this heading">#</a></h2>
+<h2>8. The Lecture in Three Conjectures<a class="headerlink" href="#the-lecture-in-three-conjectures" title="Link to this heading">#</a></h2>
 <hr><ol class="arabic simple">
 <li><p>Most fractional numbers are not represented exactly by floating point numbers in computers which can lead to rounding errors.</p></li>
 <li><p>Most compute environments you’ll encounter will use IEEE double precision… but others do exist (especially single precision). Some software will require you to use a particular data type due to computational limitations (for example, PyTorch sometimes forces you to use float32 instead of float64).</p></li>

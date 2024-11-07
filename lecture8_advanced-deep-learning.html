@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
@@ -30,13 +30,13 @@
   <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 <link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
   <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
@@ -44,20 +44,22 @@
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture8_advanced-deep-learning';</script>
     <link rel="icon" href="_static/fum-logo.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
@@ -437,15 +439,15 @@
                   
   <p><img alt="" src="_images/572_banner.png" /></p>
 <script src="require.js"></script><section class="tex2jax_ignore mathjax_ignore" id="advanced-deep-learning">
-<h1>Advanced Deep Learning<a class="headerlink" href="#advanced-deep-learning" title="Permalink to this heading">#</a></h1>
+<h1>Advanced Deep Learning<a class="headerlink" href="#advanced-deep-learning" title="Link to this heading">#</a></h1>
 <p><strong>Mahmood Amintoosi, Spring 2024</strong></p>
 <p>I should mention that the original material was from <a class="reference external" href="https://ubc-mds.github.io/DSCI_572_sup-learn-2">Tomas Beuzen’s course</a>.</p>
 <p><img alt="" src="_images/force.png" /></p>
 <section id="lecture-outline">
-<h2>Lecture Outline<a class="headerlink" href="#lecture-outline" title="Permalink to this heading">#</a></h2>
+<h2>Lecture Outline<a class="headerlink" href="#lecture-outline" title="Link to this heading">#</a></h2>
 <hr><div class="toc"><ul class="toc-item"><li><span><a href="#Lecture-Learning-Objectives" data-toc-modified-id="Lecture-Learning-Objectives-2">Lecture Learning Objectives</a></span></li><li><span><a href="#Imports" data-toc-modified-id="Imports-3">Imports</a></span></li><li><span><a href="#1.-Autoencoders" data-toc-modified-id="1.-Autoencoders-4">1. Autoencoders</a></span></li><li><span><a href="#2.-Generative-Adversarial-Networks-(GANs)" data-toc-modified-id="2.-Generative-Adversarial-Networks-(GANs)-5">2. Generative Adversarial Networks (GANs)</a></span></li><li><span><a href="#3.-Multi-input-Networks" data-toc-modified-id="3.-Multi-input-Networks-6">3. Multi-input Networks</a></span></li><li><span><a href="#4.-Things-I-Haven't-Talked-About" data-toc-modified-id="4.-Things-I-Haven't-Talked-About-7">4. Things I Haven't Talked About</a></span></li><li><span><a href="#5.-Tom's-Cheat-Sheet" data-toc-modified-id="5.-Tom's-Cheat-Sheet-8">5. Tom's Cheat Sheet</a></span></li><li><span><a href="#6.-The-Lecture-in-Three-Conjectures" data-toc-modified-id="6.-The-Lecture-in-Three-Conjectures-9">6. The Lecture in Three Conjectures</a></span></li></ul></div></section>
 <section id="lecture-learning-objectives">
-<h2>Lecture Learning Objectives<a class="headerlink" href="#lecture-learning-objectives" title="Permalink to this heading">#</a></h2>
+<h2>Lecture Learning Objectives<a class="headerlink" href="#lecture-learning-objectives" title="Link to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p>Describe what an autoencoder is at a high level and what they can be useful for</p></li>
 <li><p>Describe what a generative adversarial network is at a high level and what they can be useful for</p></li>
@@ -453,7 +455,7 @@
 </ul>
 </section>
 <section id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading">#</a></h2>
+<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
 <hr><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
@@ -483,7 +485,7 @@
 </div>
 </section>
 <section id="autoencoders">
-<h2>1. Autoencoders<a class="headerlink" href="#autoencoders" title="Permalink to this heading">#</a></h2>
+<h2>1. Autoencoders<a class="headerlink" href="#autoencoders" title="Link to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p>Autoencoders (AE) are networks that are designed to reproduce their input at the output layer</p></li>
 <li><p>They are composed of an “encoder” and “decoder”</p></li>
@@ -495,7 +497,7 @@
 <li><p>That can be useful for a range of tasks but we’ll look at some specific examples below</p></li>
 </ul>
 <section id="example-1-dimensionality-reduction">
-<h3>1.1. Example 1: Dimensionality Reduction<a class="headerlink" href="#example-1-dimensionality-reduction" title="Permalink to this heading">#</a></h3>
+<h3>1.1. Example 1: Dimensionality Reduction<a class="headerlink" href="#example-1-dimensionality-reduction" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Here’s some synthetic data of 3 features and two classes</p></li>
 <li><p>Can we reduce the dimensionality of this data to two features while preserving the class separation?</p></li>
@@ -671,7 +673,7 @@ if (outputEl) {{
 </ul>
 </section>
 <section id="example-2-image-denoising">
-<h3>1.2. Example 2: Image Denoising<a class="headerlink" href="#example-2-image-denoising" title="Permalink to this heading">#</a></h3>
+<h3>1.2. Example 2: Image Denoising<a class="headerlink" href="#example-2-image-denoising" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Okay, let’s do something more interesting</p></li>
 <li><p>We saw above that AEs can be useful feature reducers (i.e., they can remove unimportant features from our data)</p></li>
@@ -911,9 +913,9 @@ Wall time: 2min 33s
 </section>
 </section>
 <section id="generative-adversarial-networks-gans">
-<h2>2. Generative Adversarial Networks (GANs)<a class="headerlink" href="#generative-adversarial-networks-gans" title="Permalink to this heading">#</a></h2>
+<h2>2. Generative Adversarial Networks (GANs)<a class="headerlink" href="#generative-adversarial-networks-gans" title="Link to this heading">#</a></h2>
 <hr><section id="what-are-gans">
-<h3>2.1. What are GANs?<a class="headerlink" href="#what-are-gans" title="Permalink to this heading">#</a></h3>
+<h3>2.1. What are GANs?<a class="headerlink" href="#what-are-gans" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://arxiv.org/abs/1406.2661">GANs</a> were invented in 2014 by Ian Goodfellow and colleagues</p></li>
 <li><p>GANs are pretty complex but they are just so cool so I wanted to talk about them briefly</p></li>
@@ -973,7 +975,7 @@ Wall time: 2min 33s
 </ul>
 </section>
 <section id="an-example-generating-bitmojis">
-<h3>2.2. An Example: Generating Bitmojis<a class="headerlink" href="#an-example-generating-bitmojis" title="Permalink to this heading">#</a></h3>
+<h3>2.2. An Example: Generating Bitmojis<a class="headerlink" href="#an-example-generating-bitmojis" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>I’m going to use our favourite bitmoji dataset to try and develop a GAN (this may or may not go well):</p></li>
 </ul>
@@ -1363,7 +1365,7 @@ Wall time: 10min 34s
 </section>
 </section>
 <section id="multi-input-networks">
-<h2>3. Multi-input Networks<a class="headerlink" href="#multi-input-networks" title="Permalink to this heading">#</a></h2>
+<h2>3. Multi-input Networks<a class="headerlink" href="#multi-input-networks" title="Link to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p>Sometimes you’ll want to combine different types of data in a single network</p></li>
 <li><p>The most common case is combining tabular data with image data, for example, using both real estate data and images of a house to predict its sale price:</p></li>
@@ -1436,7 +1438,7 @@ Wall time: 10min 34s
 </ul>
 </section>
 <section id="things-i-haven-t-talked-about">
-<h2>4. Things I Haven’t Talked About<a class="headerlink" href="#things-i-haven-t-talked-about" title="Permalink to this heading">#</a></h2>
+<h2>4. Things I Haven’t Talked About<a class="headerlink" href="#things-i-haven-t-talked-about" title="Link to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p>Recurrent neural networks (coming in DSCI 575 and DSCI 574, good for sequential data like text and time series)</p></li>
 <li><p>Bayesian neural networks (in one sentence: capture uncertainty by learning a distribution over the network parameters rather than learning point estimates)</p></li>
@@ -1540,7 +1542,7 @@ Initializing weights of a Linear layer!
 </div>
 </section>
 <section id="tom-s-cheat-sheet">
-<h2>5. Tom’s Cheat Sheet<a class="headerlink" href="#tom-s-cheat-sheet" title="Permalink to this heading">#</a></h2>
+<h2>5. Tom’s Cheat Sheet<a class="headerlink" href="#tom-s-cheat-sheet" title="Link to this heading">#</a></h2>
 <hr><p><strong>TABULAR DATA</strong></p>
 <ul class="simple">
 <li><p>Classification:</p>
@@ -1585,7 +1587,7 @@ Initializing weights of a Linear layer!
 </ul>
 </section>
 <section id="the-lecture-in-three-conjectures">
-<h2>6. The Lecture in Three Conjectures<a class="headerlink" href="#the-lecture-in-three-conjectures" title="Permalink to this heading">#</a></h2>
+<h2>6. The Lecture in Three Conjectures<a class="headerlink" href="#the-lecture-in-three-conjectures" title="Link to this heading">#</a></h2>
 <hr><ol class="arabic simple">
 <li><p>There is a world of deep learning out there. You now have the foundational skills to explore that world!</p></li>
 <li><p>I personally feel that PyTorch is an amazing tool for deep learning and I hope that you’ll continue to use it in your future data science careers.</p></li>

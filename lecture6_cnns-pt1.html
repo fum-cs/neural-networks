@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
@@ -30,13 +30,13 @@
   <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 <link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
   <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
@@ -44,20 +44,22 @@
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture6_cnns-pt1';</script>
@@ -440,16 +442,16 @@
                   
   <p><img alt="" src="_images/572_banner.png" /></p>
 <script src="require.js"></script><section class="tex2jax_ignore mathjax_ignore" id="introduction-to-convolutional-neural-networks">
-<h1>Introduction to Convolutional Neural Networks<a class="headerlink" href="#introduction-to-convolutional-neural-networks" title="Permalink to this heading">#</a></h1>
+<h1>Introduction to Convolutional Neural Networks<a class="headerlink" href="#introduction-to-convolutional-neural-networks" title="Link to this heading">#</a></h1>
 <p><strong>Mahmood Amintoosi, Spring 2024</strong></p>
 <p>Computer Science Dept, Ferdowsi University of Mashhad</p>
 <p>I should mention that the original material was from <a class="reference external" href="https://ubc-mds.github.io/DSCI_572_sup-learn-2">Tomas Beuzen’s course</a>.</p>
 <p><img alt="" src="_images/block.png" /></p>
 <section id="lecture-outline">
-<h2>Lecture Outline<a class="headerlink" href="#lecture-outline" title="Permalink to this heading">#</a></h2>
+<h2>Lecture Outline<a class="headerlink" href="#lecture-outline" title="Link to this heading">#</a></h2>
 <hr><div class="toc"><ul class="toc-item"><li><span><a href="#Lecture-Learning-Objectives" data-toc-modified-id="Lecture-Learning-Objectives-2">Lecture Learning Objectives</a></span></li><li><span><a href="#Imports" data-toc-modified-id="Imports-3">Imports</a></span></li><li><span><a href="#1.-Convolutional-Neural-Networks-(CNNs)" data-toc-modified-id="1.-Convolutional-Neural-Networks-(CNNs)-4">1. Convolutional Neural Networks (CNNs)</a></span></li><li><span><a href="#2.-Cooking-up-a-CNN" data-toc-modified-id="2.-Cooking-up-a-CNN-5">2. Cooking up a CNN</a></span></li><li><span><a href="#3.-The-CNN-Recipe-Book" data-toc-modified-id="3.-The-CNN-Recipe-Book-6">3. The CNN Recipe Book</a></span></li><li><span><a href="#4.-CNN-vs-Fully-Connected-NN" data-toc-modified-id="4.-CNN-vs-Fully-Connected-NN-7">4. CNN vs Fully Connected NN</a></span></li><li><span><a href="#5.-Lecture-Exercise:-True/False-Questions" data-toc-modified-id="5.-Lecture-Exercise:-True/False-Questions-8">5. Lecture Exercise: True/False Questions</a></span></li><li><span><a href="#6.-The-Lecture-in-Three-Conjectures" data-toc-modified-id="6.-The-Lecture-in-Three-Conjectures-9">6. The Lecture in Three Conjectures</a></span></li></ul></div></section>
 <section id="lecture-learning-objectives">
-<h2>Lecture Learning Objectives<a class="headerlink" href="#lecture-learning-objectives" title="Permalink to this heading">#</a></h2>
+<h2>Lecture Learning Objectives<a class="headerlink" href="#lecture-learning-objectives" title="Link to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p>Describe the terms convolution, kernel/filter, pooling, and flattening</p></li>
 <li><p>Explain how convolutional neural networks (CNNs) work</p></li>
@@ -459,7 +461,7 @@
 </ul>
 </section>
 <section id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading">#</a></h2>
+<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
 <hr><div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -504,9 +506,9 @@
 </div>
 </section>
 <section id="convolutional-neural-networks-cnns">
-<h2>1. Convolutional Neural Networks (CNNs)<a class="headerlink" href="#convolutional-neural-networks-cnns" title="Permalink to this heading">#</a></h2>
+<h2>1. Convolutional Neural Networks (CNNs)<a class="headerlink" href="#convolutional-neural-networks-cnns" title="Link to this heading">#</a></h2>
 <hr><section id="motivation">
-<h3>1.1. Motivation<a class="headerlink" href="#motivation" title="Permalink to this heading">#</a></h3>
+<h3>1.1. Motivation<a class="headerlink" href="#motivation" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Up until now we’ve been dealing with “fully connected neural networks” meaning that every neuron in a given layer is connected to every neuron in the next layer. This has two key implications:</p>
 <ol class="arabic simple">
@@ -566,7 +568,7 @@
 </ul>
 </section>
 <section id="convolutions-and-filters">
-<h3>1.2. Convolutions and Filters<a class="headerlink" href="#convolutions-and-filters" title="Permalink to this heading">#</a></h3>
+<h3>1.2. Convolutions and Filters<a class="headerlink" href="#convolutions-and-filters" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Convolution really just means “to pass over the data”</p></li>
 <li><p>What are we “passing”? Our filters - which are also called <strong>kernels</strong></p></li>
@@ -680,9 +682,9 @@
 </section>
 </section>
 <section id="cooking-up-a-cnn">
-<h2>2. Cooking up a CNN<a class="headerlink" href="#cooking-up-a-cnn" title="Permalink to this heading">#</a></h2>
+<h2>2. Cooking up a CNN<a class="headerlink" href="#cooking-up-a-cnn" title="Link to this heading">#</a></h2>
 <hr><section id="ingredient-1-convolutional-layers">
-<h3>2.1. Ingredient 1: Convolutional Layers<a class="headerlink" href="#ingredient-1-convolutional-layers" title="Permalink to this heading">#</a></h3>
+<h3>2.1. Ingredient 1: Convolutional Layers<a class="headerlink" href="#ingredient-1-convolutional-layers" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>I showed some example kernels above</p></li>
 <li><p>In CNNs the actual values in <strong>the kernels are the weights your network will learn during training</strong>: your network will learn what structures are important for prediction</p></li>
@@ -910,7 +912,7 @@ tensor([[[[0.0030, 0.0133, 0.0219, 0.0133, 0.0030],
 <p><img alt="" src="_images/cnn-8.png" /></p>
 </section>
 <section id="ingredient-2-flattening">
-<h3>2.2. Ingredient 2: Flattening<a class="headerlink" href="#ingredient-2-flattening" title="Permalink to this heading">#</a></h3>
+<h3>2.2. Ingredient 2: Flattening<a class="headerlink" href="#ingredient-2-flattening" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>With our brand new, shiny convolutional layers, we’re basically just passing images through the network - cool!</p></li>
 <li><p>But we’re going to eventually want to do some regression or classification</p></li>
@@ -978,7 +980,7 @@ Estimated Total Size (MB): 1.03
 </ul>
 </section>
 <section id="ingredient-3-pooling">
-<h3>2.3. Ingredient 3: Pooling<a class="headerlink" href="#ingredient-3-pooling" title="Permalink to this heading">#</a></h3>
+<h3>2.3. Ingredient 3: Pooling<a class="headerlink" href="#ingredient-3-pooling" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Pooling is how we can reduce the number of parameters we get out of a <code class="docutils literal notranslate"><span class="pre">torch.nn.Flatten()</span></code></p></li>
 <li><p>It’s pretty simple, we just aggregate the data, usually using the maximum or minimum of a window of pixels</p></li>
@@ -1056,7 +1058,7 @@ Estimated Total Size (MB): 0.65
 </section>
 </section>
 <section id="the-cnn-recipe-book">
-<h2>3. The CNN Recipe Book<a class="headerlink" href="#the-cnn-recipe-book" title="Permalink to this heading">#</a></h2>
+<h2>3. The CNN Recipe Book<a class="headerlink" href="#the-cnn-recipe-book" title="Link to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p>Here’s a CNN diagram of a famous architecture called <a class="reference external" href="https://en.wikipedia.org/wiki/AlexNet">AlexNet</a> (we’ll talk more about “famous architectures” next lecture):</p></li>
 </ul>
@@ -1079,7 +1081,7 @@ Estimated Total Size (MB): 0.65
 </ul>
 </section>
 <section id="cnn-vs-fully-connected-nn">
-<h2>4. CNN vs Fully Connected NN<a class="headerlink" href="#cnn-vs-fully-connected-nn" title="Permalink to this heading">#</a></h2>
+<h2>4. CNN vs Fully Connected NN<a class="headerlink" href="#cnn-vs-fully-connected-nn" title="Link to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p>As an example of the parameter savings introduced when using CNNs with structured data, let’s compare the Bitmoji classifier from last lecture, with an equivalent CNN version</p></li>
 <li><p>We’ll replace all linear layers with convolutional layers with 3 kernels of size (3, 3) and will assume an image size of 128 x 128:</p></li>
@@ -1211,7 +1213,7 @@ Estimated Total Size (MB): 4.38
 </ul>
 </section>
 <section id="lecture-exercise-true-false-questions">
-<h2>5. Lecture Exercise: True/False Questions<a class="headerlink" href="#lecture-exercise-true-false-questions" title="Permalink to this heading">#</a></h2>
+<h2>5. Lecture Exercise: True/False Questions<a class="headerlink" href="#lecture-exercise-true-false-questions" title="Link to this heading">#</a></h2>
 <hr><p>Answer True/False for the following:</p>
 <ol class="arabic simple">
 <li><p>The <em>input</em> to a <code class="docutils literal notranslate"><span class="pre">torch.nn.Conv2D</span></code> layer is a 2D image. (<strong>False</strong> - it’s a 3D image, don’t forget the channels!)</p></li>
@@ -1222,7 +1224,7 @@ Estimated Total Size (MB): 4.38
 </ol>
 </section>
 <section id="the-lecture-in-three-conjectures">
-<h2>6. The Lecture in Three Conjectures<a class="headerlink" href="#the-lecture-in-three-conjectures" title="Permalink to this heading">#</a></h2>
+<h2>6. The Lecture in Three Conjectures<a class="headerlink" href="#the-lecture-in-three-conjectures" title="Link to this heading">#</a></h2>
 <hr><ol class="arabic simple">
 <li><p>CNNs help us utilize the structure in our data to make predictions. They also typically have less parameters than fully connected networks.</p></li>
 <li><p>CNNs use filters/kernels which “convolve” over localized areas of the data.</p></li>

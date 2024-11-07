@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
@@ -30,13 +30,13 @@
   <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 <link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
   <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
@@ -44,20 +44,22 @@
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture2_1_regression';</script>
@@ -460,7 +462,7 @@
                   
   <p><img alt="" src="_images/572_banner.png" /></p>
 <script src="require.js"></script><section class="tex2jax_ignore mathjax_ignore" id="regression">
-<h1>Regression<a class="headerlink" href="#regression" title="Permalink to this heading">#</a></h1>
+<h1>Regression<a class="headerlink" href="#regression" title="Link to this heading">#</a></h1>
 <p><strong>Mahmood Amintoosi, Spring 2024</strong></p>
 <p>Computer Science Dept, Ferdowsi University of Mashhad</p>
 <div class="cell docutils container">
@@ -488,7 +490,7 @@
 </div>
 </div>
 <section id="linear-model">
-<h2>Linear Model<a class="headerlink" href="#linear-model" title="Permalink to this heading">#</a></h2>
+<h2>Linear Model<a class="headerlink" href="#linear-model" title="Link to this heading">#</a></h2>
 <p>Suppose that the true model is denoted by <span class="math notranslate nohighlight">\(y = b + m x + \epsilon\)</span> and the estimated model denoted by <span class="math notranslate nohighlight">\(\hat{y}\)</span> (Eq. 23.2 of Zaki book):</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -560,9 +562,9 @@ X = \begin{bmatrix}
 \end{split}\]</div>
 </section>
 <section id="data-generation">
-<h2>Data Generation<a class="headerlink" href="#data-generation" title="Permalink to this heading">#</a></h2>
+<h2>Data Generation<a class="headerlink" href="#data-generation" title="Link to this heading">#</a></h2>
 <section id="synthetic-data-generation">
-<h3>Synthetic Data Generation<a class="headerlink" href="#synthetic-data-generation" title="Permalink to this heading">#</a></h3>
+<h3>Synthetic Data Generation<a class="headerlink" href="#synthetic-data-generation" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">true_w0</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># b in mx+b</span>
@@ -612,7 +614,7 @@ X = \begin{bmatrix}
 </section>
 </section>
 <section id="normal-equations">
-<h2>Normal Equations<a class="headerlink" href="#normal-equations" title="Permalink to this heading">#</a></h2>
+<h2>Normal Equations<a class="headerlink" href="#normal-equations" title="Link to this heading">#</a></h2>
 <p>The Normal Equations provide a closed-form solution for finding the optimal parameters (coefficients) that minimize the cost function (usually the mean squared error) in linear regression.</p>
 <ul class="simple">
 <li><p>The Normal Equations are derived by setting the partial derivatives of the cost function with respect to each coefficient to zero.</p></li>
@@ -675,7 +677,7 @@ SSE&amp;=||X\beta-y||_2^2 = (X\beta-y)^T(X\beta-y)\\
 </div>
 </section>
 <section id="using-scikit-learn">
-<h2>Using Scikit-learn<a class="headerlink" href="#using-scikit-learn" title="Permalink to this heading">#</a></h2>
+<h2>Using Scikit-learn<a class="headerlink" href="#using-scikit-learn" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
@@ -708,7 +710,7 @@ SSE&amp;=||X\beta-y||_2^2 = (X\beta-y)^T(X\beta-y)\\
 </div>
 </section>
 <section id="bivariate-regression">
-<h2>Bivariate Regression<a class="headerlink" href="#bivariate-regression" title="Permalink to this heading">#</a></h2>
+<h2>Bivariate Regression<a class="headerlink" href="#bivariate-regression" title="Link to this heading">#</a></h2>
 <p>In <strong>bivariate regression</strong>, we have <strong>two variables</strong>: one is the <strong>predictor variable</strong> (also known as the <strong>feature</strong>), and the other is the <strong>response variable</strong> (also known as the <strong>target</strong>).</p>
 <ol class="arabic simple">
 <li><p><strong>Predictor Variable (Feature)</strong>:</p>
@@ -776,10 +778,10 @@ w = \frac{cov(x,y)}{var(x)}\)</span></p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="gradient-descent">
-<h1>Gradient Descent<a class="headerlink" href="#gradient-descent" title="Permalink to this heading">#</a></h1>
+<h1>Gradient Descent<a class="headerlink" href="#gradient-descent" title="Link to this heading">#</a></h1>
 <hr><p>In this section we are going to introduce the basic concepts underlying <em>gradient descent</em>. Some materials is borrowed from <a class="reference external" href="https://d2l.ai/chapter_optimization/gd.html">D2L</a>.</p>
 <section id="one-dimensional-gradient-descent">
-<h2>One-Dimensional Gradient Descent<a class="headerlink" href="#one-dimensional-gradient-descent" title="Permalink to this heading">#</a></h2>
+<h2>One-Dimensional Gradient Descent<a class="headerlink" href="#one-dimensional-gradient-descent" title="Link to this heading">#</a></h2>
 <p>Gradient descent in one dimension is an excellent example to explain why the gradient descent algorithm may reduce the value of the objective function. Consider some continuously differentiable real-valued function <span class="math notranslate nohighlight">\(f: \mathbb{R} \rightarrow \mathbb{R}\)</span>. Using a Taylor expansion we obtain</p>
 <div class="math notranslate nohighlight">
 \[f(x + h) = f(x) + h f'(x) + \mathcal{O}(h^2).\]</div>
@@ -795,7 +797,7 @@ w = \frac{cov(x,y)}{var(x)}\)</span></p>
 <p>to iterate <span class="math notranslate nohighlight">\(x\)</span>, the value of function <span class="math notranslate nohighlight">\(f(x)\)</span> might decline. Therefore, in gradient descent we first choose an initial value <span class="math notranslate nohighlight">\(x\)</span> and a constant <span class="math notranslate nohighlight">\(\eta &gt; 0\)</span> and then use them to continuously iterate <span class="math notranslate nohighlight">\(x\)</span> until the stop condition is reached, for example, when the magnitude of the gradient <span class="math notranslate nohighlight">\(|f'(x)|\)</span> is small enough or the number of iterations has reached a certain value.</p>
 </section>
 <section id="gradient-descent-on-f-x-x-2">
-<h2>Gradient Descent on <span class="math notranslate nohighlight">\(f(x)=x^2\)</span><a class="headerlink" href="#gradient-descent-on-f-x-x-2" title="Permalink to this heading">#</a></h2>
+<h2>Gradient Descent on <span class="math notranslate nohighlight">\(f(x)=x^2\)</span><a class="headerlink" href="#gradient-descent-on-f-x-x-2" title="Link to this heading">#</a></h2>
 <p>For simplicity we choose the objective function <span class="math notranslate nohighlight">\(f(x)=x^2\)</span> to illustrate how to implement gradient descent. Although we know that <span class="math notranslate nohighlight">\(x=0\)</span> is the solution to minimize <span class="math notranslate nohighlight">\(f(x)\)</span>, we still use this simple function to observe how <span class="math notranslate nohighlight">\(x\)</span> changes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -905,7 +907,7 @@ x = 0.40, f&#39;(x) =  0.79, -lr*f&#39;(x)=-0.08
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="using-gradient-descent-for-regression-in-machine-learning">
-<h1>Using Gradient Descent for Regression in Machine Learning<a class="headerlink" href="#using-gradient-descent-for-regression-in-machine-learning" title="Permalink to this heading">#</a></h1>
+<h1>Using Gradient Descent for Regression in Machine Learning<a class="headerlink" href="#using-gradient-descent-for-regression-in-machine-learning" title="Link to this heading">#</a></h1>
 <p>Here we use training data for estimation of the model parameters and report the error on test data</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -926,7 +928,7 @@ x = 0.40, f&#39;(x) =  0.79, -lr*f&#39;(x)=-0.08
 </div>
 </div>
 <section id="train-test-split">
-<h2>Train-Test Split<a class="headerlink" href="#train-test-split" title="Permalink to this heading">#</a></h2>
+<h2>Train-Test Split<a class="headerlink" href="#train-test-split" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
@@ -964,7 +966,7 @@ x = 0.40, f&#39;(x) =  0.79, -lr*f&#39;(x)=-0.08
 </div>
 </section>
 <section id="step-0-random-initialization">
-<h2>Step 0: Random Initialization<a class="headerlink" href="#step-0-random-initialization" title="Permalink to this heading">#</a></h2>
+<h2>Step 0: Random Initialization<a class="headerlink" href="#step-0-random-initialization" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 0 - Initializes parameters &quot;b&quot; and &quot;w&quot; randomly</span>
@@ -983,7 +985,7 @@ x = 0.40, f&#39;(x) =  0.79, -lr*f&#39;(x)=-0.08
 </div>
 </section>
 <section id="step-1-compute-model-s-predictions">
-<h2>Step 1: Compute Model’s Predictions<a class="headerlink" href="#step-1-compute-model-s-predictions" title="Permalink to this heading">#</a></h2>
+<h2>Step 1: Compute Model’s Predictions<a class="headerlink" href="#step-1-compute-model-s-predictions" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 1 - Computes our model&#39;s predicted output - forward pass</span>
@@ -1029,7 +1031,7 @@ x = 0.40, f&#39;(x) =  0.79, -lr*f&#39;(x)=-0.08
 </div>
 </section>
 <section id="step-2-compute-the-loss">
-<h2>Step 2: Compute the Loss<a class="headerlink" href="#step-2-compute-the-loss" title="Permalink to this heading">#</a></h2>
+<h2>Step 2: Compute the Loss<a class="headerlink" href="#step-2-compute-the-loss" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
  error_i &amp;= \hat{y_i} - y_i\\
@@ -1085,7 +1087,7 @@ MSE &amp;= \frac{1}{n} \sum_{i=1}^n{error_i}^2
 </div>
 </div>
 <section id="loss-surface">
-<h3>Loss Surface<a class="headerlink" href="#loss-surface" title="Permalink to this heading">#</a></h3>
+<h3>Loss Surface<a class="headerlink" href="#loss-surface" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w0s</span><span class="p">,</span> <span class="n">w1s</span><span class="p">,</span> <span class="n">all_losses</span> <span class="o">=</span> <span class="n">mesh_losses</span><span class="p">(</span><span class="n">true_w0</span><span class="p">,</span> <span class="n">true_w1</span><span class="p">,</span> <span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
@@ -1111,7 +1113,7 @@ MSE &amp;= \frac{1}{n} \sum_{i=1}^n{error_i}^2
 </section>
 </section>
 <section id="step-3-compute-the-gradients">
-<h2>Step 3: Compute the Gradients<a class="headerlink" href="#step-3-compute-the-gradients" title="Permalink to this heading">#</a></h2>
+<h2>Step 3: Compute the Gradients<a class="headerlink" href="#step-3-compute-the-gradients" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -1175,11 +1177,11 @@ MSE &amp;= \frac{1}{n} \sum_{i=1}^n{error_i}^2
 </div>
 </div>
 <section id="backpropagation">
-<h3>Backpropagation<a class="headerlink" href="#backpropagation" title="Permalink to this heading">#</a></h3>
+<h3>Backpropagation<a class="headerlink" href="#backpropagation" title="Link to this heading">#</a></h3>
 </section>
 </section>
 <section id="step-4-update-the-parameters">
-<h2>Step 4: Update the Parameters<a class="headerlink" href="#step-4-update-the-parameters" title="Permalink to this heading">#</a></h2>
+<h2>Step 4: Update the Parameters<a class="headerlink" href="#step-4-update-the-parameters" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
 &amp; b = b - \eta \frac{\partial{MSE}}{\partial{b}}
@@ -1240,7 +1242,7 @@ MSE &amp;= \frac{1}{n} \sum_{i=1}^n{error_i}^2
 </div>
 </section>
 <section id="step-5-repeat-the-above-updating">
-<h2>Step 5: Repeat the above updating!<a class="headerlink" href="#step-5-repeat-the-above-updating" title="Permalink to this heading">#</a></h2>
+<h2>Step 5: Repeat the above updating!<a class="headerlink" href="#step-5-repeat-the-above-updating" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initializes parameters &quot;b&quot; and &quot;w&quot; randomly</span>
@@ -1298,7 +1300,7 @@ MSE &amp;= \frac{1}{n} \sum_{i=1}^n{error_i}^2
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="using-pytorch-auto-grad">
-<h1>Using PyTorch auto grad<a class="headerlink" href="#using-pytorch-auto-grad" title="Permalink to this heading">#</a></h1>
+<h1>Using PyTorch auto grad<a class="headerlink" href="#using-pytorch-auto-grad" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p>PyTorch is a Python-based tool for scientific computing that provides several main features:</p>
 <ul>
@@ -1327,7 +1329,7 @@ MSE &amp;= \frac{1}{n} \sum_{i=1}^n{error_i}^2
 </div>
 </div>
 <section id="backward">
-<h2>Backward<a class="headerlink" href="#backward" title="Permalink to this heading">#</a></h2>
+<h2>Backward<a class="headerlink" href="#backward" title="Link to this heading">#</a></h2>
 <p>Differntiationg using backward function</p>
 <p><a class="reference external" href="https://pytorch.org/tutorials/beginner/pytorch_with_examples.html">https://pytorch.org/tutorials/beginner/pytorch_with_examples.html</a></p>
 <div class="cell docutils container">
@@ -1372,7 +1374,7 @@ MSE &amp;= \frac{1}{n} \sum_{i=1}^n{error_i}^2
 </ul>
 </section>
 <section id="using-pytorch-library">
-<h2>Using PyTorch library<a class="headerlink" href="#using-pytorch-library" title="Permalink to this heading">#</a></h2>
+<h2>Using PyTorch library<a class="headerlink" href="#using-pytorch-library" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
@@ -30,13 +30,13 @@
   <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 <link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
   <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
@@ -44,20 +44,22 @@
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'appendixC_computing-derivatives';</script>
@@ -436,7 +438,7 @@
                   
   <p><img alt="" src="_images/572_banner.png" /></p>
 <script src="require.js"></script><section class="tex2jax_ignore mathjax_ignore" id="appendix-c-computing-derivatives">
-<h1>Appendix C: Computing Derivatives<a class="headerlink" href="#appendix-c-computing-derivatives" title="Permalink to this heading">#</a></h1>
+<h1>Appendix C: Computing Derivatives<a class="headerlink" href="#appendix-c-computing-derivatives" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Auto-setup when running on Google Colab</span>
@@ -469,7 +471,7 @@
 </div>
 </div>
 <section id="gradients-introduction">
-<h2>1. Gradients Introduction<a class="headerlink" href="#gradients-introduction" title="Permalink to this heading">#</a></h2>
+<h2>1. Gradients Introduction<a class="headerlink" href="#gradients-introduction" title="Link to this heading">#</a></h2>
 <hr><p>What if we are optimizing a function and we don’t know its derivative/gradient. This could happen because:</p>
 <ul class="simple">
 <li><p>You’re optimizing the parameters of a computer simulation</p>
@@ -493,12 +495,12 @@
 <p>As a running example, consider <span class="math notranslate nohighlight">\(f(x)=\sin(x)\)</span>. We know that <span class="math notranslate nohighlight">\(f'(x)\equiv\frac{df(x)}{dx}=\cos(x)\)</span> and thus <span class="math notranslate nohighlight">\(f'(1)=\cos(1)\)</span></p>
 </section>
 <section id="symbolic-differentiation">
-<h2>2. Symbolic Differentiation<a class="headerlink" href="#symbolic-differentiation" title="Permalink to this heading">#</a></h2>
+<h2>2. Symbolic Differentiation<a class="headerlink" href="#symbolic-differentiation" title="Link to this heading">#</a></h2>
 <hr><p>Symbolic differentiation is basically what you learned in calculus. We interpret the symbols in an equation and apply the rules of differentiation. Wolfram Alpha is a good tool for this, e.g., <a class="reference external" href="https://www.wolframalpha.com/input/?i=derivative+of+sin(x)">https://www.wolframalpha.com/input/?i=derivative+of+sin(x)</a>.</p>
 <p>Symbolic differentiation is useful but less so when dealing with data. We will not say more about this now. You should be aware of its existence.</p>
 </section>
 <section id="numerical-differentiation-finite-differences">
-<h2>3. Numerical Differentiation (Finite Differences)<a class="headerlink" href="#numerical-differentiation-finite-differences" title="Permalink to this heading">#</a></h2>
+<h2>3. Numerical Differentiation (Finite Differences)<a class="headerlink" href="#numerical-differentiation-finite-differences" title="Link to this heading">#</a></h2>
 <hr><p>A derivative is defined as:</p>
 <div class="math notranslate nohighlight">
 \[\frac{df(x)}{dx} \equiv \lim_{h\rightarrow 0} \frac{f(x+h)-f(x)}{h} \]</div>
@@ -535,7 +537,7 @@
 </div>
 <p>Not bad!</p>
 <section id="error-of-derivative-estimates">
-<h3>3.1. Error of Derivative Estimates<a class="headerlink" href="#error-of-derivative-estimates" title="Permalink to this heading">#</a></h3>
+<h3>3.1. Error of Derivative Estimates<a class="headerlink" href="#error-of-derivative-estimates" title="Link to this heading">#</a></h3>
 <p>In <a class="reference internal" href="lecture1_floating-point.html"><span class="std std-doc">Lecture 1</span></a> we discussed numerical issues due to the <strong>floating point</strong> representation. There’s another entirely different type of numerical error that arises from the <em>discretization</em> inherent finite difference approximations. Let’s explore this a bit. What do you think will happen to the absolute error of the estimate of the derivative if I change <span class="math notranslate nohighlight">\(h\)</span>?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -604,7 +606,7 @@
 <p>What you really need to know: picking <span class="math notranslate nohighlight">\(h\)</span> is tricky: it can’t be too big or too small.</p>
 </section>
 <section id="gradients">
-<h3>3.2. Gradients<a class="headerlink" href="#gradients" title="Permalink to this heading">#</a></h3>
+<h3>3.2. Gradients<a class="headerlink" href="#gradients" title="Link to this heading">#</a></h3>
 <p>So, what about gradients?</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\nabla f(x) = \begin{bmatrix} \frac{\partial f}{\partial x_1} \\ \frac{\partial f}{\partial x_2} \\ \vdots \\ \frac{\partial f}{\partial x_d} \end{bmatrix}\end{split}\]</div>
@@ -622,11 +624,11 @@
 <p>And so on and so forth.</p>
 </section>
 <section id="cost-of-estimating-a-gradient">
-<h3>3.3. Cost of Estimating a Gradient<a class="headerlink" href="#cost-of-estimating-a-gradient" title="Permalink to this heading">#</a></h3>
+<h3>3.3. Cost of Estimating a Gradient<a class="headerlink" href="#cost-of-estimating-a-gradient" title="Link to this heading">#</a></h3>
 <p>As you can see above, estimating a gradient requires <span class="math notranslate nohighlight">\(d+1\)</span> function evaluations. That can be expensive - perhaps <span class="math notranslate nohighlight">\(d\)</span> is <span class="math notranslate nohighlight">\(1000\)</span> or <span class="math notranslate nohighlight">\(10000\)</span>. If you can compute the gradient symbolically, that is much better.</p>
 </section>
 <section id="optional-other-finite-difference-formulas">
-<h3>3.4. (Optional) Other Finite Difference Formulas<a class="headerlink" href="#optional-other-finite-difference-formulas" title="Permalink to this heading">#</a></h3>
+<h3>3.4. (Optional) Other Finite Difference Formulas<a class="headerlink" href="#optional-other-finite-difference-formulas" title="Link to this heading">#</a></h3>
 <p>There are better finite differences formulas than the one we are using, such as the centered difference formula:</p>
 <div class="math notranslate nohighlight">
 \[\frac{df(x)}{dx} \approx \frac{f(x+h)-f(x-h)}{2h}\]</div>
@@ -634,12 +636,12 @@
 <p>If you’re really bored, you can also check out the <a class="reference external" href="https://timvieira.github.io/blog/post/2014/08/07/complex-step-derivative/">complex step method</a>.</p>
 </section>
 <section id="summary">
-<h3>3.5. Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h3>
+<h3>3.5. Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h3>
 <p>If we can’t figure out the derivative of a function, but have code that computes the function, we can <em>approximate</em> the derivative using finite differences. This works pretty well but there are some pitfalls. In particular you need to choose <span class="math notranslate nohighlight">\(h\)</span> carefully and it costs <span class="math notranslate nohighlight">\(O(d)\)</span> function evaluations to estimate a gradient. It seems better to actually know the derivative if possible, because the computations will be faster and more accurate.</p>
 </section>
 </section>
 <section id="automatic-differentiation">
-<h2>4. Automatic Differentiation<a class="headerlink" href="#automatic-differentiation" title="Permalink to this heading">#</a></h2>
+<h2>4. Automatic Differentiation<a class="headerlink" href="#automatic-differentiation" title="Link to this heading">#</a></h2>
 <hr><p>Automatic differentiation (AD) is another way to take the derivative given some code that computes <span class="math notranslate nohighlight">\(f\)</span>. It is advertised as the “best of both worlds” between symbolic and numerical differentiation:</p>
 <ul class="simple">
 <li><p>Pro: takes the code as input, not math.</p></li>
@@ -950,7 +952,7 @@ Evaluated function!
 </div>
 <p>Nice! (They are not exactly the same because of <code class="docutils literal notranslate"><span class="pre">epsilon</span></code> hyperparameter in <code class="docutils literal notranslate"><span class="pre">HuberRegressor</span></code>.)</p>
 <section id="do-i-never-need-to-take-a-derivative-again">
-<h3>4.1. Do I Never Need to Take a Derivative Again?<a class="headerlink" href="#do-i-never-need-to-take-a-derivative-again" title="Permalink to this heading">#</a></h3>
+<h3>4.1. Do I Never Need to Take a Derivative Again?<a class="headerlink" href="#do-i-never-need-to-take-a-derivative-again" title="Link to this heading">#</a></h3>
 <p>Hopefully not? There are production-grade automatic differentiation systems, like those used in TensorFlow or PyTorch so you may never have to worry about taking a derivative ever again.</p>
 </section>
 </section>
