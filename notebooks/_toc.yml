@@ -19,3 +19,4 @@ chapters:
 - file: appendixE_pytorch-autograd
 - file: appendixF_pytorch-optimizers
 - file: appendixG_bitmoji-CNN
+- file: appendixH_transposed_conv
