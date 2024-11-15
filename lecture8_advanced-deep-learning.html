@@ -16,19 +16,17 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
@@ -38,11 +36,10 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -68,7 +65,6 @@
     <link rel="prev" title="Advanced Convolutional Neural Networks" href="lecture7_cnns-pt2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -84,8 +80,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -93,6 +100,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -100,8 +108,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -117,8 +125,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -148,17 +155,21 @@
     
     
     <img src="_static/fum-cs-logo.png" class="logo__image only-light" alt="NN - Home"/>
-    <img src="_static/fum-cs-logo.png" class="logo__image only-dark pst-js-only" alt="NN - Home"/>
+    <script>document.write(`<img src="_static/fum-cs-logo.png" class="logo__image only-dark" alt="NN - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -191,6 +202,7 @@
 <li class="toctree-l1"><a class="reference internal" href="appendixE_pytorch-autograd.html">Appendix E: Auto Differentiation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixF_pytorch-optimizers.html">Appendix F: Optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixG_bitmoji-CNN.html">Appendix G: Creating a CNN to Predict Bitmojis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendixH_transposed_conv.html">Transposed Convolution</a></li>
 </ul>
 
     </div>
@@ -376,16 +388,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -419,6 +439,7 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-adversarial-networks-gans">2. Generative Adversarial Networks (GANs)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-gans">2.1. What are GANs?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional Resources:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-generating-bitmojis">2.2. An Example: Generating Bitmojis</a></li>
 </ul>
 </li>
@@ -766,6 +787,7 @@ Downloading https://ossci-datasets.s3.amazonaws.com/mnist/t10k-labels-idx1-ubyte
 <p><img alt="" src="_images/conv_trans_1.gif" /></p>
 <p><img alt="" src="_images/conv_trans_2.gif" /></p>
 <p>Source: modified from <a class="reference external" href="https://arxiv.org/abs/1603.07285">A guide to convolution arithmetic for deep learning, Vincent Dumoulin (2018)</a></p>
+<p>See <a class="reference internal" href="appendixH_transposed_conv.html"><span class="std std-doc">Transposed Convolution</span></a> in appendices.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">conv_block</span><span class="p">(</span><span class="n">input_channels</span><span class="p">,</span> <span class="n">output_channels</span><span class="p">):</span>
@@ -971,8 +993,19 @@ Wall time: 2min 33s
 <li><p><strong>Repeat!</strong></p></li>
 </ol>
 </li>
-<li><p>Enough talk, let’s code it up!</p></li>
 </ul>
+</section>
+<section id="additional-resources">
+<h3>Additional Resources:<a class="headerlink" href="#additional-resources" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://howsam.org/generative-adversarial-network/">Generative Adversarial Networks (Persian)</a></p></li>
+<li><p><a class="reference external" href="https://machinelearningmastery.com/how-to-develop-a-generative-adversarial-network-for-a-1-dimensional-function-from-scratch-in-keras/">How to Develop a 1D Generative Adversarial Network From Scratch in Keras</a></p>
+<ul>
+<li><p><strong>Colab</strong> <a class="reference external" href="https://colab.research.google.com/github/fum-cs/dl-fall-2023/blob/main/code/GAN/GAN-01.ipynb">GAN-01</a>, Exercise: Convert TF2PyTorch</p></li>
+</ul>
+</li>
+</ul>
+<p>Enough talk, let’s code it up!</p>
 </section>
 <section id="an-example-generating-bitmojis">
 <h3>2.2. An Example: Generating Bitmojis<a class="headerlink" href="#an-example-generating-bitmojis" title="Link to this heading">#</a></h3>
@@ -1362,6 +1395,35 @@ Wall time: 10min 34s
 </div>
 </div>
 <p><img alt="" src="_images/bitmoji-gan.gif" /></p>
+<p><strong>Further Reading</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://fumdrive.um.ac.ir/index.php/s/tbdbtwzCkqbMoGD">Section 12.4 of Deep Learning with Python: Variational Autoencoders</a></p>
+<ul>
+<li><p><strong>Colab</strong> <a class="reference external" href="https://colab.research.google.com/github/fchollet/deep-learning-with-python-notebooks/blob/master/chapter12_part04_variational-autoencoders.ipynb">Variational autoencoders</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://fumdrive.um.ac.ir/index.php/s/tbdbtwzCkqbMoGD">Section 12.4 of Deep Learning with Python: Generative adversarial networks</a></p>
+<ul>
+<li><p><strong>Colab</strong> <a class="reference external" href="https://colab.research.google.com/github/fchollet/deep-learning-with-python-notebooks/blob/master/chapter12_part05_gans.ipynb">Generative adversarial networks</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://github.com/TencentARC/GFPGAN">GFPGAN aims at developing a Practical Algorithm for Real-world Face Restoration</a></p>
+<ul>
+<li><p><strong>Colab</strong> <a class="reference external" href="https://colab.research.google.com/github/fum-cs/dl-fall-2023/blob/main/code/GAN/GFPGAN_inference.ipynb">GFPGAN_inference</a></p></li>
+</ul>
+</li>
+<li><p>StyleGAN: A Style-Based Generator Architecture for Generative Adversarial Networks <a class="reference external" href="https://en.wikipedia.org/wiki/StyleGAN">Wiki</a></p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/NVlabs/stylegan">StyleGAN - Official TensorFlow Implementation</a></p></li>
+<li><p><a class="reference external" href="https://machinelearningmastery.com/introduction-to-style-generative-adversarial-network-stylegan/">A Gentle Introduction to StyleGAN the Style Generative Adversarial Network</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://github.com/hindupuravinash/the-gan-zoo">GAN Zoo: A list of all named GANs</a></p></li>
+<li><p><a class="reference external" href="https://github.com/nashory/gans-awesome-applications">GAN applications</a></p></li>
+<li><p><a class="reference external" href="https://github.com/mpstewart1/GAN-Tutorial">GAN tutorial on Medium</a></p></li>
+<li><p><a class="reference external" href="https://d2l.ai/chapter_generative-adversarial-networks/dcgan.html">Deep Convolutional Generative Adversarial Networks</a></p></li>
+<li><p><a class="reference external" href="https://d2l.ai/chapter_generative-adversarial-networks/index.html">Generative Adversarial Networks (d2l)</a></p></li>
+</ul>
 </section>
 </section>
 <section id="multi-input-networks">
@@ -1652,8 +1714,7 @@ Initializing weights of a Linear layer!
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1672,6 +1733,7 @@ Initializing weights of a Linear layer!
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-adversarial-networks-gans">2. Generative Adversarial Networks (GANs)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-gans">2.1. What are GANs?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional Resources:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-generating-bitmojis">2.2. An Example: Generating Bitmojis</a></li>
 </ul>
 </li>
@@ -1727,8 +1789,8 @@ By Mahmood Amintoosi
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
