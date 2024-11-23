@@ -1,6 +1,47 @@
 ---
 ---
 
+
+@article {FC2FC_2022,
+author = {Amintoosi, Mahmood},
+title = {Fully Connected to Fully Convolutional: Road to Yesterday},
+journal = {Journal of Soft Computing and Information Technology},
+volume = {11},
+number = {1},
+pages = {60-72},
+year  = {2022},
+publisher = {Babol Noshirvani University of Technology},
+issn = {2383-1006}, 
+eissn = {2588-4913}, 
+doi = {},
+abstract = {In the last decade, several convolutional networks have been developed for the semantic segmentation, which have shown excellent performance in recognizing and labeling objects in images. Most of these networks involve large-scale architectures that can detect tens or hundreds of predefined classes. With the exception of fully convolutional networks, most applications use architectures that, after convolutional layers, use a common classifier to classify the extracted features. In this paper, the method of converting a network, which as classifier, has two flatten and dense layers (fully connected), to a fully convolutional network is described. The main advantage of this method is the ability to work on inputs of variable size and produce an output map instead of a number, which is the advantage of fully convolutional networks. Newer models of the Deep Learning area generally use training images in which areas of interest are determined by masks; but in the proposed method only labeled images are given to the network. The details of the proposed method are expressed in the form of a new problem of classification of boards with calligraphy of Shekasteh-Nastaliq and Suls, and classification of apple leaf diseases (as two-class problems) and the problem of identifying hand written Persian digits. For this purpose, first a convolutional network with the last fully connected layer is designed and trained for square images. Then a new fully convolutional model is defined based on the previous model and the weights of the previous model are fed to the new model. The only difference between the two models is in the last layer, but the new model will be able to work on input images of any size. Experimental results show the efficiency of the proposed approach.},
+keywords = {Deep Learning,Convolutional Neural Networks,Image classification,object detection,Multi-layer Perceptron},
+title_fa = {تمام متصل به تمام پیچشی: پلی به گذشته},
+abstract_fa = {در یک دهه‌ی گذشته شبکه‌های پیچشی متعددی برای قطعه‌بندی معنایی تصاویر ابداع شده‌اند که عملکرد بسیار خوبی در تشخیص و برچسب‌زنی اشیاء از خود نشان داده‌اند. عمده‌ی این شبکه‌ها متضمن معماری‌های با اندازه‌ی بزرگ هستند که توانایی آشکارسازی ده‌ها یا صدها دسته‌ی از قبل مشخص را داشته باشند. در بیشتر کاربردها از معماری‌هایی استفاده می‌شود که پس از چند لایه‌ی پیچشی از یک طبقه‌بند معمول برای طبقه‌بندی ویژگی‌های استخراج شده‌ی شبکه استفاده می‌شود.  در این نوشتار روش تبدیل یک شبکه که به عنوان طبقه‌بند، دو لایه‌ی مسطح و چگال (تمام متصل) دارد، به ‌یک شبکه تمام پیچشی بیان شده است. مزیت اصلی این شیوه، قابلیت کارکرد بر روی ورودی‌های با اندازه متغیر و تولید یک نقشه خروجی به جای یک عدد می‌باشد که همان مزیت شبکه‌های تمام پیچشی است. در مدل‌های جدید حوزه‌‌ی یادگیری عمیق عموماً از تصاویر آموزشی که در آنها نواحی موردنظر با ماسک مشخص شده‌اند استفاده می‌شود، اما در شیوه‌ی پیشنهادی در این نوشتار فقط تصاویر برچسب‌دار (مشخص‌کننده طبقه‌ی کل تصویر) به شبکه داده می‌شود. جزییات روش کار در قالب مسئله‌ی جدید طبقه‌بندی  و شناسایی تابلوهای با رسم‌الخطهای شکسته نستعلیق و ثلث، شناسایی برگ سالم از مریض سیب (به عنوان مسائل دو کلاسه) و مسئله‌ی شناسایی ارقام فارسی بیان شده است. به این منظور ابتدا یک شبکه پیچشی با لایه آخر تمام متصل طراحی و بر روی تصاویر مربعی آموزش داده می‌شود. سپس مدل تمام پیچشی جدیدی بر اساس مدل قبلی تعریف شده و وزنهای مدل قبلی به مدل جدید کپی می‌شود. تنها تفاوت دو مدل در لایه آخر است، اما مدل جدید قابلیت کار بر روی تصاویر ورودی با هر اندازه را خواهد داشت. نتایج آزمایشات کارایی این شیوه را نشان داده است  (کد برنامه در https://github.com/mamintoosi/FC2FC ).},
+keywords_fa = {یادگیری عمیق,شبکه‌های عصبی پیچشی,طبقه‌بندی تصویر,شناسایی اشیاء,پرسپترون چند لایه},	
+url = {https://jscit.nit.ac.ir/article_149453.html}
+}
+		
+@article {ST_for_DA_2022,
+author = {Amintoosi, Mahmod},
+title = {Style Transfer for Data Augmentation in Convolutional Neural Networks Applied to Fire Detection},
+journal = {Computational Intelligence in Electrical Engineering},
+volume = {13},
+number = {4},
+pages = {97-114},
+year  = {2022},
+publisher = {University of Isfahan},
+issn = {2821-0689}, 
+eissn = {2821-0689}, 
+doi = {10.22108/isee.2021.124044.1490},
+abstract = {Adequate training data is essential in all supervised learning methods, including deep learning and machine vision. One of the approaches used to increase the number of training examples in deep learning is the "data augmentation" method. This method involves rotation transformation, transitions, and cropping on training images, which leads to an increase in the number of samples, which are different from training data. In this paper, the "style transfer" algorithm is used to increase the number of training samples. The goal in style transfer is to apply the appearance or visual style of one image to another image. In this paper, this method is used to produce new training examples and as an application, the proposed method is applied to the problem of fire detection. Assuming that the training images recorded during the night are less than the samples taken during the day, by applying a style transfer method, the images of the day are converted into night images and added to the data set as training data. The test results show the efficiency of the proposed data augmentation method. On average, the correct detection rate has increased by 7%.},
+keywords = {Style Transfer,Data Augmentation,Deep Learning,Fire Detection,Generative Adversarial Networks},
+title_fa = {انتقال سبک برای افزایش داده‌های آموزشی شبکه‌های کانولوشنی در شناسایی شعلۀ آتش},
+abstract_fa = {وجود داده‌های آموزشی کافی، امری اساسی در همۀ سیستم‌های یادگیری با نظارت و منجمله در حوزۀ یادگیری عمیق و بینایی ماشین است. یکی از روش‌های استفاده‌شده برای افزایش تعداد نمونه‌های آموزشی در یادگیری عمیق، شیوۀ «داده‌افزایی» است. این شیوه، متضمن تبدیل‌های دوران، انتقال و برش روی تصاویر آموزشی است که به افزایش تعداد نمونه‌های آموزشیِ نسبتاً متفاوت از داده‌های اولیه منجر می‌شود. در این نوشتار از الگوریتم «انتقال سَبْک» مبتنی بر شبکه‌های مولد رقابتی برای افزایش تعداد نمونه‌های آموزشی استفاده شده است. هدف در انتقال سبک، اِعمال ظاهر یا سبک بصری یک تصویر روی تصویری دیگر است که جنبۀ هنری آن بیشتر دیده شده است. در این نوشتار از این شیوه‌ برای تولید نمونه‌های جدید آموزشی استفاده شده و به‌منزلۀ یک کاربرد، روش پیشنهادی بر روی مسئلۀ شناسایی شعلۀ آتش اعمال شده است. با این فرض که تصاویر آموزشی ثبت‌شده در طی شب، کمتر از نمونه‌های اخذشده در روزند، با اعمال یک روش انتقال سبک، تصاویر روز به تصاویر شب، تبدیل و به‌عنوان دادۀ آموزشی به مجموعه دادگان اضافه می‌شوند. نتایج آزمایشات انجام‌شده، کارایی شیوۀ پیشنهادی را نشان داده است. شیوۀ پیشنهادی به‌صورت میانگین، ۷ درصد نرخ تشخیص درست را نسبت به استفاده‌نکردن از آن افزایش داده است.},
+keywords_fa = {انتقال سبک,شبکه‌های مولد رقابتی,یادگیری عمیق,شناسایی آتش},	
+url = {https://isee.ui.ac.ir/article_26042.html}
+}
+		
 @inproceedings{holdgraf_evidence_2014,
 	address = {Brisbane, Australia, Australia},
 	title = {Evidence for {Predictive} {Coding} in {Human} {Auditory} {Cortex}},
