@@ -485,7 +485,12 @@ document.write(`
 <h1>Regression<a class="headerlink" href="#regression" title="Link to this heading">#</a></h1>
 <p><strong>Mahmood Amintoosi, Spring 2024</strong></p>
 <p>Computer Science Dept, Ferdowsi University of Mashhad</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Auto-setup when running on Google Colab</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -496,8 +501,14 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
@@ -508,18 +519,19 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <section id="linear-model">
 <h2>Linear Model<a class="headerlink" href="#linear-model" title="Link to this heading">#</a></h2>
-<p>Suppose that the true model is denoted by <span class="math notranslate nohighlight">\(y = b + m x + \epsilon\)</span> and the estimated model denoted by <span class="math notranslate nohighlight">\(\hat{y}\)</span> (Eq. 23.2 of Zaki book):</p>
+<p>Suppose that the true model is denoted by <span class="math notranslate nohighlight">\(y = b + m x + \epsilon\)</span> and the estimated model denoted by <span class="math notranslate nohighlight">\(\hat{y}\)</span> (Eq. 23.2 of Zaki book <span id="id1">[<a class="reference internal" href="lecture8_advanced-deep-learning.html#id3" title="M.J. Zaki, W. Meira, and W. Meira. Data Mining and Machine Learning: Fundamental Concepts and Algorithms. Cambridge University Press, 2020. ISBN 9781108473989. URL: https://dataminingbook.info/.">ZMM20</a>]</span>):</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
 \\
-\hat{y} &amp;= \beta_0 + \beta_1 x + \epsilon\\
-&amp;= \beta_0 x_0+ \beta_1 x_1 + \epsilon \\
-&amp;= \theta_0 x_0+ \theta_1 x_1 + \epsilon\\
-&amp;= w_0 x_0+ w_1 x_1 + \epsilon
+\hat{y} &amp;= \beta_0 + \beta_1 x + \epsilon \\
+&amp;= \beta_0 x_0+ \beta_1 x_1 + \epsilon \quad \ \textrm{(ESL Notation)}\\
+&amp;= \theta_0 x_0+ \theta_1 x_1 + \epsilon\quad \ \ \textrm{(Ng Notation)}\\
+&amp;= w_0 x_0+ w_1 x_1 + \epsilon\quad\textrm{(Zaki Notation)}\\
 \\
 &amp;\textrm{where:}\\
 &amp;x_0 = 1
