@@ -462,7 +462,8 @@ document.write(`
                 <article class="bd-article">
                   
   <p><img alt="" src="_images/572_banner.png" /></p>
-<script src="require.js"></script><section class="tex2jax_ignore mathjax_ignore" id="regularization-and-dropout-in-neural-networks">
+<script src="require.js"></script>
+<section class="tex2jax_ignore mathjax_ignore" id="regularization-and-dropout-in-neural-networks">
 <h1>Regularization and Dropout in Neural Networks<a class="headerlink" href="#regularization-and-dropout-in-neural-networks" title="Link to this heading">#</a></h1>
 <p><strong>Mahmood Amintoosi, Spring 2024</strong></p>
 <p>Computer Science Dept, Ferdowsi University of Mashhad</p>
@@ -470,10 +471,13 @@ document.write(`
 <p><img alt="" src="_images/robot.png" /></p>
 <section id="lecture-outline">
 <h2>Lecture Outline<a class="headerlink" href="#lecture-outline" title="Link to this heading">#</a></h2>
-<hr><div class="toc"><ul class="toc-item"><li><span><a href="#Lecture-Learning-Objectives" data-toc-modified-id="Lecture-Learning-Objectives-2">Lecture Learning Objectives</a></span></li><li><span><a href="#Imports" data-toc-modified-id="Imports-3">Imports</a></span></li><li><span><a href="#1.-Differentiation,-Backpropagation,-Autograd" data-toc-modified-id="1.-Differentiation,-Backpropagation,-Autograd-4">1. Differentiation, Backpropagation, Autograd</a></span></li><li><span><a href="#2.-Training-Neural-Networks" data-toc-modified-id="2.-Training-Neural-Networks-5">2. Training Neural Networks</a></span></li><li><span><a href="#3.-Regularization" data-toc-modified-id="3.-Regularization-6">3. Regularization</a></span></li><li><span><a href="#4.-Lecture-Exercise:-Putting-it-all-Together-with-Bitmojis" data-toc-modified-id="4.-Lecture-Exercise:-Putting-it-all-Together-with-Bitmojis-9">4. Lecture Exercise: Putting it all Together with Bitmojis</a></span></li><li><span><a href="#5.-The-Lecture-in-Three-Conjectures" data-toc-modified-id="5.-The-Lecture-in-Three-Conjectures-10">5. The Lecture in Three Conjectures</a></span></li></ul></div></section>
+<hr>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Lecture-Learning-Objectives" data-toc-modified-id="Lecture-Learning-Objectives-2">Lecture Learning Objectives</a></span></li><li><span><a href="#Imports" data-toc-modified-id="Imports-3">Imports</a></span></li><li><span><a href="#1.-Differentiation,-Backpropagation,-Autograd" data-toc-modified-id="1.-Differentiation,-Backpropagation,-Autograd-4">1. Differentiation, Backpropagation, Autograd</a></span></li><li><span><a href="#2.-Training-Neural-Networks" data-toc-modified-id="2.-Training-Neural-Networks-5">2. Training Neural Networks</a></span></li><li><span><a href="#3.-Regularization" data-toc-modified-id="3.-Regularization-6">3. Regularization</a></span></li><li><span><a href="#4.-Lecture-Exercise:-Putting-it-all-Together-with-Bitmojis" data-toc-modified-id="4.-Lecture-Exercise:-Putting-it-all-Together-with-Bitmojis-9">4. Lecture Exercise: Putting it all Together with Bitmojis</a></span></li><li><span><a href="#5.-The-Lecture-in-Three-Conjectures" data-toc-modified-id="5.-The-Lecture-in-Three-Conjectures-10">5. The Lecture in Three Conjectures</a></span></li></ul></div>
+</section>
 <section id="lecture-learning-objectives">
 <h2>Lecture Learning Objectives<a class="headerlink" href="#lecture-learning-objectives" title="Link to this heading">#</a></h2>
-<hr><ul class="simple">
+<hr>
+<ul class="simple">
 <li><p>Explain how backpropagation works at a high level</p></li>
 <li><p>Describe the difference between training loss and validation loss when creating a neural network</p></li>
 <li><p>Identify and describe common techniques to avoid overfitting/apply regularization to neural networks, e.g., early stopping, drop out, L2 regularization</p></li>
@@ -482,7 +486,13 @@ document.write(`
 </section>
 <section id="imports">
 <h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
-<hr><div class="cell docutils container">
+<hr>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Auto-setup when running on Google Colab</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -493,8 +503,14 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
@@ -510,11 +526,13 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </section>
 <section id="differentiation-backpropagation-autograd">
 <h2>1. Differentiation, Backpropagation, Autograd<a class="headerlink" href="#differentiation-backpropagation-autograd" title="Link to this heading">#</a></h2>
-<hr><ul class="simple">
+<hr>
+<ul class="simple">
 <li><p>In previous lectures we’ve discussed optimization algorithms like gradient descent, stochastic gradient descent, ADAM, etc.</p></li>
 <li><p>These algorithms need the gradient of the loss function w.r.t the model parameters to optimize the parameters:</p></li>
 </ul>
@@ -856,7 +874,8 @@ b3 gradient after call 5 of loss.backward(): tensor([-0.1991, -0.5976])
 </section>
 <section id="training-neural-networks">
 <h2>2. Training Neural Networks<a class="headerlink" href="#training-neural-networks" title="Link to this heading">#</a></h2>
-<hr><ul class="simple">
+<hr>
+<ul class="simple">
 <li><p>The big takeaway from the last section is that PyTorch’s <code class="docutils literal notranslate"><span class="pre">autograd</span></code> takes care of the gradients for us</p></li>
 <li><p>We just need to put all the pieces together properly</p></li>
 <li><p>Remember the below <code class="docutils literal notranslate"><span class="pre">trainer()</span></code> function I used last lecture to train my network</p></li>
@@ -883,14 +902,13 @@ b3 gradient after call 5 of loss.backward(): tensor([-0.1991, -0.5976])
 </div>
 </div>
 </div>
-<ul class="simple">
+<ul>
 <li><p>Notice how I calculate the loss for each epoch by summing up the loss for each batch in that epoch?</p></li>
-<li><p>I then divide the loss per epoch by total number of batches to get the average loss per batch in an epoch (I store that loss in <code class="docutils literal notranslate"><span class="pre">running_losses</span></code>)</p></li>
-</ul>
+<li><p>I then divide the loss per epoch by total number of batches to get the average loss per batch in an epoch (I store that loss in <code class="docutils literal notranslate"><span class="pre">running_losses</span></code>)</p>
 <blockquote>
 <div><p>Dividing by the number of batches “decouples” our loss from the batch size. So if I run another experiment with a different batch size, I’ll still be able to compare losses for that experiment with this one. We’ll explore this concept more later.</p>
 </div></blockquote>
-<ul class="simple">
+</li>
 <li><p>If our model is being trained correctly, our loss should go down over time. Let’s try it out with some sample data:</p></li>
 </ul>
 <div class="cell docutils container">
@@ -1223,7 +1241,8 @@ if (outputEl) {{
 </section>
 <section id="regularization">
 <h2>3. Regularization<a class="headerlink" href="#regularization" title="Link to this heading">#</a></h2>
-<hr><ul class="simple">
+<hr>
+<ul class="simple">
 <li><p>Recall that regularization is a technique to help avoid overfitting</p></li>
 <li><p>There are many regularization techniques available in neural networks</p></li>
 <li><p>I’ll discuss the two main ones here:</p>
@@ -1314,7 +1333,8 @@ Parameter Group 0
 </section>
 <section id="lecture-exercise-putting-it-all-together-with-bitmojis">
 <h2>4. Lecture Exercise: Putting it all Together with Bitmojis<a class="headerlink" href="#lecture-exercise-putting-it-all-together-with-bitmojis" title="Link to this heading">#</a></h2>
-<hr><ul class="simple">
+<hr>
+<ul class="simple">
 <li><p>Here I thought we’d put everything we learned in this lecture together to predict some bitmojis</p></li>
 <li><p>I have a folder of images with the following structure:</p></li>
 </ul>
@@ -1559,7 +1579,8 @@ if (outputEl) {{
 </section>
 <section id="the-lecture-in-three-conjectures">
 <h2>5. The Lecture in Three Conjectures<a class="headerlink" href="#the-lecture-in-three-conjectures" title="Link to this heading">#</a></h2>
-<hr><ol class="arabic simple">
+<hr>
+<ol class="arabic simple">
 <li><p>Neural network training in a nutshell: forward pass -&gt; calculate loss -&gt; backpropagate -&gt; optimizer step -&gt; repeat. In PyTorch we can customize this process with extras like calculating the loss or accuracy.</p></li>
 <li><p>PyTorch takes care of calculating gradients for us with <strong>autograd</strong>.</p></li>
 <li><p>Common ways to avoid overfitting: early stopping, drop out, L2 penalty.</p></li>
