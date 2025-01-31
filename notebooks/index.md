@@ -17,18 +17,18 @@ Book documentation.
 
 In this exciting journey, we'll delve into the fascinating world of **Neural Networks** and **Deep Learning** with Python and Pytorch, where machines learn, adapt, and make decisions based on data. Topics that are covered are optmization, neural networks basics, perceptron model, mulit-layer perceptrons, convolutional neural networks, and advanced topics such as autoencoders and generative adversarial networks.
 
-
 ## Prerequisites
 
-- **Basic Knowledge**: You should have a solid understanding of artificial intelligence concepts.
-- **Mathematics**: Advanced topics may require strong mathematical foundations.
-- Current students of **MDS** at **FUM University** are acquainted with the concepts covered in the [**FDS Course**](https://fum-cs.github.io/fds/)
-
+- **Programming Skills**: Familiarity with Python programming. A great starting point is [Think Python](https://allendowney.github.io/ThinkPython/), which offers a deep dive into the language's essentials.
+- **Mathematics**: Basic understanding of calculus and statistics at the undergraduate level.
+- Current students of **MDS** at **FUM University** are already familiar with the concepts covered in the [**FDS**](https://fum-cs.github.io/fds/) and [**MFDS**](https://fum-cs.github.io/mfds/) courses.
 
 ## Questions?
-I will be having office hours for this course on Monday (10:00 AM--11:30 AM). If this is not convenient, email me at m.amintoosi@um.ac.ir, talk to me after class or [schedule an appointment via Calendly](https://calendly.com/m-amintoosi/30min).
+
+I will be having office hours for this course on Monday (10:00 AM--11:30 AM). If this is not convenient, email me at m dot amintoosi AT um.ac.ir, talk to me after class or [schedule an appointment via Calendly](https://calendly.com/m-amintoosi/30min).
 
 ## Our Slack workspace
+
 Come and [join our Slack](https://join.slack.com/t/fum-cs/shared_invite/zt-1zntzuw2t-JOWbsyQdGASNz~40AhWy_Q) group of Computer Science Dept, Ferdowsi University of Mashhad, to engage in course discussions.
 
 ---
