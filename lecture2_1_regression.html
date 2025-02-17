@@ -532,10 +532,10 @@ document.write(`
 \[\begin{split}
 \begin{aligned}
 \\
-\hat{y} &amp;= \beta_0 + \beta_1 x + \epsilon \\
-&amp;= \beta_0 x_0+ \beta_1 x_1 + \epsilon \quad \ \textrm{(ESL Notation)}\\
-&amp;= \theta_0 x_0+ \theta_1 x_1 + \epsilon\quad \ \ \textrm{(Ng Notation)}\\
-&amp;= w_0 x_0+ w_1 x_1 + \epsilon\quad\textrm{(Zaki Notation)}\\
+\hat{y} &amp;= \beta_0 + \beta_1 x  \\
+&amp;= \beta_0 x_0+ \beta_1 x_1  \quad \ \textrm{(ESL Notation)}\\
+&amp;= \theta_0 x_0+ \theta_1 x_1 \quad \ \ \textrm{(Ng Notation)}\\
+&amp;= w_0 x_0+ w_1 x_1 \quad\textrm{(Zaki Notation)}\\
 \\
 &amp;\textrm{where:}\\
 &amp;x_0 = 1
@@ -669,7 +669,7 @@ SSE&amp;=||X\beta-y||_2^2 = (X\beta-y)^T(X\beta-y)\\
 &amp;=\beta^T M\beta - 2z^T\beta + y^Ty \qquad\qquad{(z^T=y^TX, z=X^Ty)}
 \end{aligned}
 \end{split}\]</div>
-<p>We Know that (See <a href="https://en.wikipedia.org/wiki/Matrix_calculus">Wikipedia: Matrix Calculus</a>):</p>
+<p>We Know that (See Matrix Calculus in <a class="reference internal" href="appendixA_gradients.html"><span class="std std-doc">Appendix A</span></a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Matrix_calculus">Wikipedia</a>):</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial y^Tx}{\partial x}=\frac{\partial x^Ty}{\partial x}=y\]</div>
 <div class="math notranslate nohighlight">
@@ -766,6 +766,7 @@ SSE&amp;=||X\beta-y||_2^2 = (X\beta-y)^T(X\beta-y)\\
 </li>
 </ol>
 <p>So, in summary, bivariate regression involves analyzing the relationship between two variables: one (the feature) is used to predict or explain the behavior of the other (the target). These terms are commonly used in both statistics and machine learning.</p>
+<p>For further information about Multivariate Multiple Regression, see <a class="reference external" href="https://blog.faradars.org/multiple-linear-regression/">this blog post of Faradars</a>.</p>
 <p>According to <a class="reference external" href="https://www.cs.rpi.edu/~zaki/DMML/slides/pdf/ychap23.pdf">Sections 23.2 of Zaki book</a>, <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(w\)</span> in <span class="math notranslate nohighlight">\(\hat{y}=b+wx\)</span>, can be calculated as follows:</p>
 <p><span class="math notranslate nohighlight">\(b = \mu_y - w\mu_x, \quad
 w = \frac{cov(x,y)}{var(x)}\)</span></p>

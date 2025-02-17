@@ -473,7 +473,7 @@ document.write(`
 <h1>Appendix A: Gradients Review<a class="headerlink" href="#appendix-a-gradients-review" title="Link to this heading">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<hr><p>This short appendix provides a refresher on gradients and calculus. Some of you may never have seen gradients before. Multivariate calculus is not a required prerequisite for the MDS program but it will be helpful to know for this course, so we’ll cover the basics in this appendix. This material has been modified after material originally created by <a class="reference external" href="https://www.mikegelbart.com/">Mike Gelbart</a>.</p>
+<hr><p>This short appendix provides a refresher on gradients and calculus. Here we’ll cover the basics of the subject in this appendix. This material has been modified after material originally created by <a class="reference external" href="https://www.mikegelbart.com/">Mike Gelbart</a>.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -542,23 +542,49 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
+<span class="c1"># Define the function</span>
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Create the grid</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">zz</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">)</span>
 
+<span class="c1"># Create the 3D plot</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot the surface with the &#39;plasma&#39; colormap</span>
+<span class="n">surf</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">zz</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+
+<span class="c1"># Set labels and title</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s2">&quot;z&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;$f(x,y) = \sin(xy)$&quot;</span><span class="p">)</span>
+
+<span class="c1"># Add a colorbar for the 3D plot</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">surf</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Create the 2D plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">zz</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">y</span><span class="p">)),</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;lower&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;$\sin(xy)$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">();</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1823f4a6f125dab5a93c7e111906609778ec5a396e42d011993a36c6e34bfaed.png" src="_images/1823f4a6f125dab5a93c7e111906609778ec5a396e42d011993a36c6e34bfaed.png" />
+<img alt="_images/7e1378a5344b7c20a3ca48c8ca0606dc3c716c806145e26a0e184764073c2093.png" src="_images/7e1378a5344b7c20a3ca48c8ca0606dc3c716c806145e26a0e184764073c2093.png" />
+<img alt="_images/0acf9888e095f4300de271ac81a8fc2727c3a16aa3506fafd149a6cd8dff9923.png" src="_images/0acf9888e095f4300de271ac81a8fc2727c3a16aa3506fafd149a6cd8dff9923.png" />
 </div>
 </div>
 </section>
@@ -581,7 +607,12 @@ document.write(`
 </ul>
 <div class="math notranslate nohighlight">
 \[\begin{split}f(x,y)=\begin{bmatrix} x \\ \sin(y) \end{bmatrix}\end{split}\]</div>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">y</span><span class="p">)])</span>
@@ -596,16 +627,52 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>We can visualize functions with two outputs (and two inputs), but it gets much harder after that.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell tag_hide-output docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">zz</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">zz</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">zz</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="c1"># Create the 3D plot</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot the surface</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">zz</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>  <span class="c1"># Plot x component</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">zz</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;plasma&#39;</span><span class="p">)</span>  <span class="c1"># Plot sin(y) component</span>
+
+<span class="c1"># Set labels and title</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s2">&quot;z&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;$f(x,y) = [x; \; \sin(y)]$&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/df5aa069811284225a5c50a77e1810ff72b0d48677fa138dc927f8cce4076d00.png" src="_images/df5aa069811284225a5c50a77e1810ff72b0d48677fa138dc927f8cce4076d00.png" />
+</div>
+</details>
+</div>
+<div class="cell tag_hide-cell tag_hide-output docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">zz</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">zz</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="c1"># plt.axis(&#39;square&#39;);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
@@ -615,8 +682,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/92aab646eb0cb47797bca8b58a7eda6817972ea4a6da139cdc370d733bc2bb8f.png" src="_images/92aab646eb0cb47797bca8b58a7eda6817972ea4a6da139cdc370d733bc2bb8f.png" />
+<img alt="_images/80525b50d8245a7d9ef17f8e83dc9e5c27c8e1b4b8c3aa3e2958755d43169666.png" src="_images/80525b50d8245a7d9ef17f8e83dc9e5c27c8e1b4b8c3aa3e2958755d43169666.png" />
 </div>
+</details>
 </div>
 <p>Notes:</p>
 <ul class="simple">
@@ -636,11 +704,7 @@ document.write(`
 <h2>Partial Derivatives<a class="headerlink" href="#partial-derivatives" title="Link to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p>A partial derivative is just a derivative of a multivariable function with respect to one of the input variables.</p></li>
-<li><p>When taking this derivative, we treat all the other variables as constants.</p>
-<ul>
-<li><p>See <a class="reference external" href="https://atmos.washington.edu/~dennis/MatrixCalculus.pdf">matrix calculus</a>.</p></li>
-</ul>
-</li>
+<li><p>When taking this derivative, we treat all the other variables as constants.</p></li>
 <li><p>Example: let <span class="math notranslate nohighlight">\(f(x,y,z) = x^2 + y^2 + e^x + x^z + xyz\)</span>, let’s compute <span class="math notranslate nohighlight">\(\frac{\partial}{\partial x} f(x,y,z)\)</span></p></li>
 </ul>
 <div class="math notranslate nohighlight">
@@ -732,7 +796,7 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;$\sin(xy)$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">();</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -798,7 +862,7 @@ document.write(`
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="matrix-differentiation">
 <h1>Matrix Differentiation<a class="headerlink" href="#matrix-differentiation" title="Link to this heading">#</a></h1>
-<p>( and some other stuff)</p>
+<p><a class="reference external" href="https://atmos.washington.edu/~dennis/MatrixCalculus.pdf">matrix calculus</a></p>
 <p>Randal J. Barnes,
 Department of Civil Engineering, University of Minnesota.
 Minneapolis, Minnesota, USA</p>
