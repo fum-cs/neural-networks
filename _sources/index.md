@@ -33,4 +33,4 @@ Come and [join our Slack](https://join.slack.com/t/fum-cs/shared_invite/zt-1zntz
 
 ---
 
-I should mention that the original material was from [Tomas Beuzen's course](https://ubc-mds.github.io/DSCI_572_sup-learn-2). I have forked his repository and modified it to suit my own needs andpreferences. I would like to thank him for his great work and generosity.
+I should mention that the original material was from [Tomas Beuzen's course](https://ubc-mds.github.io/DSCI_572_sup-learn-2). I have forked his repository and modified it to suit my own needs and preferences. I would like to thank him for his great work and generosity.
