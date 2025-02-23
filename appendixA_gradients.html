@@ -440,20 +440,21 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradients">Gradients</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradients-intuition">Gradients intuition</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-it-the-direction-of-fastest-increase">Why is it the direction of fastest increase?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#images-as-3d-surfaces">Images as 3D surfaces</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-differentiation">Matrix Differentiation</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1 Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notation-and-nomenclature">2 Notation and Nomenclature</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notation-and-nomenclature">Notation and Nomenclature</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convention-1">Convention 1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convention-2">Convention 2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-multiplication">3 Matrix Multiplication</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partioned-matrices">4 Partioned Matrices</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">5 Matrix Differentiation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-multiplication">Matrix Multiplication</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partioned-matrices">Partioned Matrices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Matrix Differentiation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convention-3">Convention 3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">6 References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
 </li>
 </ul>
@@ -502,6 +503,11 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">minimize</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="kn">from</span> <span class="nn">skimage.color</span> <span class="kn">import</span> <span class="n">rgb2gray</span>
+<span class="kn">from</span> <span class="nn">skimage.filters</span> <span class="kn">import</span> <span class="n">gaussian</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
                      <span class="s1">&#39;axes.labelweight&#39;</span><span class="p">:</span> <span class="s1">&#39;bold&#39;</span><span class="p">,</span>
@@ -725,7 +731,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\begin{split}\nabla f(x)=\begin{bmatrix}\frac{\partial f}{\partial x_1}(x)\\ \frac{\partial f}{\partial x_2}(x) \\ \vdots \\ \frac{\partial f}{\partial x_d}(x)\end{bmatrix}\end{split}\]</div>
 <ul class="simple">
-<li><p>(optional) Thus, a partial derivative is a function that has the same mapping as the original, e.g. <span class="math notranslate nohighlight">\(\mathbb{R}^3\rightarrow \mathbb{R}\)</span> (“R three to R”).</p></li>
+<li><p>(optional) Thus, a partial derivative is a function that maps from the original space to the real numbers, e.g. <span class="math notranslate nohighlight">\(\mathbb{R}^3\rightarrow \mathbb{R}\)</span> (“R three to R”).</p></li>
 <li><p>(optional) a gradient is a function that maps from the original input space to the same space, e.g. <span class="math notranslate nohighlight">\(\mathbb{R}^3\rightarrow \mathbb{R}^3\)</span> (“R three to R three”).</p></li>
 </ul>
 <p><strong>Notation warning</strong>: we use the term “derivative” or “gradient” to mean three different things:</p>
@@ -820,27 +826,13 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">xxsmall</span><span class="p">,</span> <span class="n">yysmall</span><span class="p">,</span> <span class="n">gradx</span><span class="p">,</span> <span class="n">grady</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;square&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;∇$ \sin(xy)$&quot;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/b9111ab948b1730a76e876ff204db823ebe563ea5910af812a50d0755e0ee64b.png" src="_images/b9111ab948b1730a76e876ff204db823ebe563ea5910af812a50d0755e0ee64b.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">zz</span><span class="p">,</span><span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">y</span><span class="p">)),</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">();</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">xxsmall</span><span class="p">,</span><span class="n">yysmall</span><span class="p">,</span><span class="n">gradx</span><span class="p">,</span><span class="n">grady</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">xxsmall</span><span class="p">,</span><span class="n">yysmall</span><span class="p">,</span><span class="n">gradx</span><span class="p">,</span><span class="n">grady</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;$\sin(xy)$ and its gradient&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;$\sin(xy)$ and its gradient&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -858,6 +850,56 @@ document.write(`
 <p>First, a proof that the gradient is the best direction. Let’s say we are at position <span class="math notranslate nohighlight">\(x\)</span> and we move by an infinitesimal (i.e. extremely tiny) <span class="math notranslate nohighlight">\(v\)</span>, which is a vector having components <span class="math notranslate nohighlight">\(v_1, v_2, \ldots v_d\)</span>. The change in <span class="math notranslate nohighlight">\(f\)</span> from moving from <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(x+v\)</span> is <span class="math notranslate nohighlight">\(\frac{\partial f}{dx_1} v_1 + \frac{\partial f}{dx_2} v_2 + \ldots \frac{\partial f}{dx_d} v_d\)</span>, where all the partial derivatives are evaluated at <span class="math notranslate nohighlight">\(x\)</span> (I believe this is related to the “total derivative”). In other words, the change in <span class="math notranslate nohighlight">\(f\)</span> is the dot product <span class="math notranslate nohighlight">\(\nabla f \cdot v\)</span>. So now the question is, what vector <span class="math notranslate nohighlight">\(v\)</span> of fixed length maximizes <span class="math notranslate nohighlight">\(\nabla f \cdot v\)</span>. The answer is a vector that points in the same direction as <span class="math notranslate nohighlight">\(\nabla f\)</span>. (That’s a property of the dot product, and is evident by the definition: <span class="math notranslate nohighlight">\(a \cdot b = \| a \| \|b \| \cos(\theta)\)</span>. Since <span class="math notranslate nohighlight">\(\| \nabla f \|\)</span> and <span class="math notranslate nohighlight">\(\|v\|\)</span> are fixed in our case, to maximize this we want to maximize <span class="math notranslate nohighlight">\(\cos(\theta)\)</span>, which means we want <span class="math notranslate nohighlight">\(\cos(\theta)=1\)</span> meaning <span class="math notranslate nohighlight">\(\theta=0\)</span>, or the angle between the vectors is <span class="math notranslate nohighlight">\(0\)</span>).</p>
 <p>Second, the intuition. I think the “paradox” comes from over-privileging the coordinate axes. They are not special in any way! For example if you rotate the coordinate system by 45 degrees, the direction of steepest ascent should also rotate by 45 degrees. Under the suggested system, this would not happen. Why? Well, there is always going to be one element of the gradient that is largest. Does that mean the direction of steepest ascent is always one of the coordinate axis directions? No. That doesn’t make sense and also fails the “rotate by 45 degrees test” because the direction will have rotated by 0, 90, 180 or 270 degrees.</p>
 </section>
+<section id="images-as-3d-surfaces">
+<h3>Images as 3D surfaces<a class="headerlink" href="#images-as-3d-surfaces" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load an example image from skimage</span>
+<span class="n">coffee</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">coffee</span><span class="p">()</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">rgb2gray</span><span class="p">(</span><span class="n">coffee</span><span class="p">)</span>
+
+<span class="c1"># Apply a Gaussian filter to smooth the image</span>
+<span class="n">smoothed_image</span> <span class="o">=</span> <span class="n">gaussian</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Create a meshgrid for the image coordinates</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Plot the original and smoothed images side by side with the 3D surface</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Plot the original 2D image</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">141</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Original 2D Image&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot the smoothed 3D surface</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">142</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">smoothed_image</span><span class="p">[:,::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">view_init</span><span class="p">(</span><span class="n">elev</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">azim</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+
+<span class="n">ax3</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">143</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">smoothed_image</span><span class="p">[:,::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">view_init</span><span class="p">(</span><span class="n">elev</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">azim</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+
+<span class="n">ax4</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">144</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax4</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">smoothed_image</span><span class="p">[:,::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">ax4</span><span class="o">.</span><span class="n">view_init</span><span class="p">(</span><span class="n">elev</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">azim</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">ax4</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/dfd30aec01246522eeafb84e9e9ec488f3cac0ea2a82d779f016b24ff0ac7788.png" src="_images/dfd30aec01246522eeafb84e9e9ec488f3cac0ea2a82d779f016b24ff0ac7788.png" />
+</div>
+</div>
+</section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="matrix-differentiation">
@@ -867,12 +909,12 @@ document.write(`
 Department of Civil Engineering, University of Minnesota.
 Minneapolis, Minnesota, USA</p>
 <section id="id1">
-<h2>1 Introduction<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>Throughout this presentation I have chosen to use a symbolic matrix notation. This choice was not made lightly. I am a strong advocate of index notation, when appropriate. For example, index notation greatly simplifies the presentation and manipulation of differential geometry. As a rule-of-thumb, if your work is going to primarily involve differentiation with respect to the spatial coordinates, then index notation is almost surely the appropriate choice.</p>
 <p>In the present case, however, I will be manipulating large systems of equations in which the matrix calculus is relatively simply while the matrix algebra and matrix arithmetic is messy and more involved. Thus, I have chosen to use symbolic notation.</p>
 </section>
 <section id="notation-and-nomenclature">
-<h2>2 Notation and Nomenclature<a class="headerlink" href="#notation-and-nomenclature" title="Link to this heading">#</a></h2>
+<h2>Notation and Nomenclature<a class="headerlink" href="#notation-and-nomenclature" title="Link to this heading">#</a></h2>
 <p>Definition 1 Let <span class="math notranslate nohighlight">\(\mathfrak{a}_{\mathfrak{i j}} \in \mathfrak{R}, \mathfrak{i}=1,2, \ldots, \mathfrak{m}, \mathfrak{j}=1,2, \ldots, \mathfrak{n}\)</span>. Then the ordered rectangular array</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -904,7 +946,7 @@ When writing a matrix I will occasionally write down its typical element as well
 <p>A superscript <span class="math notranslate nohighlight">\({ }^{\top}\)</span> denotes the matrix transpose operation; for example, <span class="math notranslate nohighlight">\(\mathbf{A}^{\top}\)</span> denotes the transpose of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>. Similarly, if <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> has an inverse it will be denoted by <span class="math notranslate nohighlight">\(\mathbf{A}^{-1}\)</span>. The determinant of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> will be denoted by either <span class="math notranslate nohighlight">\(|\mathbf{A}|\)</span> or <span class="math notranslate nohighlight">\(\operatorname{det}(\mathbf{A})\)</span>. Similarly, the <span class="math notranslate nohighlight">\(\operatorname{rank}\)</span> of a matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is denoted by <span class="math notranslate nohighlight">\(\operatorname{rank}(\mathbf{A})\)</span>. An identity matrix will be denoted by <span class="math notranslate nohighlight">\(\mathbf{I}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{0}\)</span> will denote a null matrix.</p>
 </section>
 <section id="matrix-multiplication">
-<h2>3 Matrix Multiplication<a class="headerlink" href="#matrix-multiplication" title="Link to this heading">#</a></h2>
+<h2>Matrix Multiplication<a class="headerlink" href="#matrix-multiplication" title="Link to this heading">#</a></h2>
 <p>Definition 3 Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> be <span class="math notranslate nohighlight">\(\mathfrak{m} \times \mathfrak{n}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> be <span class="math notranslate nohighlight">\(\mathfrak{n} \times p\)</span>, and let the product <span class="math notranslate nohighlight">\(\mathbf{A B}\)</span> be</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1023,7 +1065,7 @@ c_{i j}=\sum_{k=1}^{n} a_{i k} b_{k j}
 <p>q.e.d.</p>
 </section>
 <section id="partioned-matrices">
-<h2>4 Partioned Matrices<a class="headerlink" href="#partioned-matrices" title="Link to this heading">#</a></h2>
+<h2>Partioned Matrices<a class="headerlink" href="#partioned-matrices" title="Link to this heading">#</a></h2>
 <p>Frequently, I will find it convenient to deal with partitioned matrices <span class="math notranslate nohighlight">\({ }^{1}\)</span>. Such a representation, and the manipulation of this representation, are two of the relative advantages of the symbolic matrix notation.</p>
 <p>Definition 4 Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> be <span class="math notranslate nohighlight">\(m \times n\)</span> and write</p>
 <div class="math notranslate nohighlight">
@@ -1034,7 +1076,7 @@ D &amp; E
 \end{array}\right]
 \end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> is <span class="math notranslate nohighlight">\(\mathfrak{m}_{1} \times \mathfrak{n}_{1}, \mathbf{E}\)</span> is <span class="math notranslate nohighlight">\(\mathfrak{m}_{2} \times \mathfrak{n}_{2}, \mathbf{C}\)</span> is <span class="math notranslate nohighlight">\(\mathfrak{m}_{1} \times \mathfrak{n}_{2}, \mathbf{D}\)</span> is <span class="math notranslate nohighlight">\(\mathfrak{m}_{2} \times \mathfrak{n}_{1}, \mathfrak{m}_{1}+\mathfrak{m}_{2}=\mathfrak{m}\)</span>, and <span class="math notranslate nohighlight">\(\mathfrak{n}_{1}+\mathfrak{n}_{2}=\mathfrak{n}\)</span>. The above is said to be a partition of the matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>.</p>
-<p><a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>0<span class="fn-bracket">]</span></a>Proposition 4 Let A be a square, nonsingular matrix of order m. Partition A as</p>
+<p>[^0]Proposition 4 Let A be a square, nonsingular matrix of order m. Partition A as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \mathbf{A}=\left[\begin{array}{ll}
@@ -1059,8 +1101,8 @@ D &amp; E
 \]</div>
 <p>q.e.d.</p>
 </section>
-<section id="id3">
-<h2>5 Matrix Differentiation<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h2>Matrix Differentiation<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>In the following discussion I will differentiate matrix quantities with respect to the elements of the referenced matrices. Although no new concept is required to carry out such operations, the element-by-element calculations involve cumbersome manipulations and, thus, it is useful to derive the necessary results and have them readily available <span class="math notranslate nohighlight">\({ }^{2}\)</span>.</p>
 </section>
 <section id="convention-3">
@@ -1429,19 +1471,14 @@ Definition 5 Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span
 <p>q.e.d.</p>
 </section>
 <section id="references">
-<h2>6 References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Dhrymes, Phoebus J., 1978, Mathematics for Econometrics, Springer-Verlag, New York, 136 pp.</p></li>
 <li><p>Golub, Gene H., and Charles F. Van Loan, 1983, Matrix Computations, Johns Hopkins University Press, Baltimore, Maryland, 476 pp.</p></li>
 <li><p>Graybill, Franklin A., 1983, Matrices with Applications in Statistics, 2nd Edition, Wadsworth International Group, Belmont, California, 461 pp .</p></li>
 </ul>
-<hr class="footnotes docutils" />
-<aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id4" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">0</a><span class="fn-bracket">]</span></span>
-<p><span class="math notranslate nohighlight">\({ }^{1}\)</span> Much of the material in this section is extracted directly from Dhrymes (1978, Section 2.7).</p>
-</aside>
-</aside>
+<p>[1]: Much of the material in this section is extracted directly from Dhrymes (1978, Section 2.7).</p>
+<p>[2]: Much of the material in this section is extracted directly from Dhrymes (1978, Section 4.3). The interested reader is directed to this worthy reference to find additional results.</p>
 </section>
 </section>
 
@@ -1517,20 +1554,21 @@ Definition 5 Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradients">Gradients</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradients-intuition">Gradients intuition</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-it-the-direction-of-fastest-increase">Why is it the direction of fastest increase?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#images-as-3d-surfaces">Images as 3D surfaces</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-differentiation">Matrix Differentiation</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1 Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notation-and-nomenclature">2 Notation and Nomenclature</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notation-and-nomenclature">Notation and Nomenclature</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convention-1">Convention 1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convention-2">Convention 2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-multiplication">3 Matrix Multiplication</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partioned-matrices">4 Partioned Matrices</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">5 Matrix Differentiation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-multiplication">Matrix Multiplication</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partioned-matrices">Partioned Matrices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Matrix Differentiation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convention-3">Convention 3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">6 References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
 </li>
 </ul>
