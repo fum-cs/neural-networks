@@ -852,14 +852,19 @@ document.write(`
 </section>
 <section id="images-as-3d-surfaces">
 <h3>Images as 3D surfaces<a class="headerlink" href="#images-as-3d-surfaces" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load an example image from skimage</span>
 <span class="n">coffee</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">coffee</span><span class="p">()</span>
 <span class="n">image</span> <span class="o">=</span> <span class="n">rgb2gray</span><span class="p">(</span><span class="n">coffee</span><span class="p">)</span>
 
 <span class="c1"># Apply a Gaussian filter to smooth the image</span>
-<span class="n">smoothed_image</span> <span class="o">=</span> <span class="n">gaussian</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">smoothed_image</span> <span class="o">=</span> <span class="n">gaussian</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
 
 <span class="c1"># Create a meshgrid for the image coordinates</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
@@ -895,8 +900,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="_images/dfd30aec01246522eeafb84e9e9ec488f3cac0ea2a82d779f016b24ff0ac7788.png" src="_images/dfd30aec01246522eeafb84e9e9ec488f3cac0ea2a82d779f016b24ff0ac7788.png" />
+<img alt="_images/c6b583a12e48e2f48e53469efa7ca8366cf6f16db2781e89c76c32671772fee5.png" src="_images/c6b583a12e48e2f48e53469efa7ca8366cf6f16db2781e89c76c32671772fee5.png" />
 </div>
 </div>
 </section>
