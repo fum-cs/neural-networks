@@ -448,12 +448,12 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-differentiation">Matrix Differentiation</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notation-and-nomenclature">Notation and Nomenclature</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convention-1">Convention 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convention-2">Convention 2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-multiplication">Matrix Multiplication</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partioned-matrices">Partioned Matrices</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Matrix Differentiation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convention-3">Convention 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partioned-matrices-further-reading">Partioned Matrices (Further Reading)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Matrix Differentiation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further Reading</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
 </li>
@@ -921,54 +921,50 @@ Minneapolis, Minnesota, USA</p>
 </section>
 <section id="notation-and-nomenclature">
 <h2>Notation and Nomenclature<a class="headerlink" href="#notation-and-nomenclature" title="Link to this heading">#</a></h2>
-<p>Definition 1 Let <span class="math notranslate nohighlight">\(\mathfrak{a}_{\mathfrak{i j}} \in \mathfrak{R}, \mathfrak{i}=1,2, \ldots, \mathfrak{m}, \mathfrak{j}=1,2, \ldots, \mathfrak{n}\)</span>. Then the ordered rectangular array</p>
+<p><strong>Definition 1.</strong> Let <span class="math notranslate nohighlight">\({a}_{{i j}} \in \mathbb{R}, {i}=1,2, \ldots, {m}, {j}=1,2, \ldots, {n}\)</span>. Then the ordered rectangular array</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \mathbf{A}=\left[\begin{array}{cccc}
 a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1 n}  \\
 a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2 n} \\
 \vdots &amp; \vdots &amp; &amp; \vdots \\
-a_{\mathfrak{m} 1} &amp; a_{\mathfrak{m} 2} &amp; \cdots &amp; a_{\mathfrak{m} n}
+a_{{m} 1} &amp; a_{{m} 2} &amp; \cdots &amp; a_{{m} n}
 \end{array}\right]
 \end{split}\]</div>
-<p>is said to be a real matrix of dimension <span class="math notranslate nohighlight">\(\mathfrak{m} \times \mathfrak{n}\)</span>.
+<p>is said to be a real matrix of dimension <span class="math notranslate nohighlight">\({m} \times {n}\)</span>.
 When writing a matrix I will occasionally write down its typical element as well as its dimension. Thus,</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
-\mathbf{A}=\left[\mathfrak{a}_{\mathfrak{i j}}\right], \quad \mathfrak{i}=1,2, \ldots, \mathfrak{m} ; \mathfrak{j}=1,2, \ldots, \mathbf{n}, 
+\mathbf{A}=\left[{a}_{{i j}}\right], \quad {i}=1,2, \ldots, {m} ; {j}=1,2, \ldots, \mathbf{n}, 
 \end{equation*}
 \]</div>
-<p>denotes a matrix with <span class="math notranslate nohighlight">\(m\)</span> rows and <span class="math notranslate nohighlight">\(n\)</span> columns, whose typical element is <span class="math notranslate nohighlight">\(a_{i j}\)</span>. Note, the first subscript locates the row in which the typical element lies while the second subscript locates the column. For example, <span class="math notranslate nohighlight">\(\mathfrak{a}_{\mathfrak{j k}}\)</span> denotes the element lying in the <span class="math notranslate nohighlight">\(\mathfrak{j}\)</span> th row and kth column of the matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>.</p>
-<p>Definition 2 A vector is a matrix with only one column. Thus, all vectors are inherently column vectors.</p>
-</section>
-<section id="convention-1">
-<h2>Convention 1<a class="headerlink" href="#convention-1" title="Link to this heading">#</a></h2>
+<p>denotes a matrix with <span class="math notranslate nohighlight">\(m\)</span> rows and <span class="math notranslate nohighlight">\(n\)</span> columns, whose typical element is <span class="math notranslate nohighlight">\(a_{i j}\)</span>. Note, the first subscript locates the row in which the typical element lies while the second subscript locates the column. For example, <span class="math notranslate nohighlight">\({a}_{{j k}}\)</span> denotes the element lying in the <span class="math notranslate nohighlight">\({j}^{th}\)</span> row and <span class="math notranslate nohighlight">\(k^{th}\)</span> column of the matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>.</p>
+<p><strong>Definition 2.</strong> A vector is a matrix with only one column. Thus, all vectors are inherently column vectors.</p>
+<p><strong>Convention 1</strong></p>
 <p>Multi-column matrices are denoted by boldface uppercase letters: for example, <span class="math notranslate nohighlight">\(\mathbf{A}, \mathbf{B}, \mathbf{X}\)</span>. Vectors (single-column matrices) are denoted by boldfaced lowercase letters: for example, <span class="math notranslate nohighlight">\(\mathbf{a}, \mathbf{b}, \mathbf{x}\)</span>. I will attempt to use letters from the beginning of the alphabet to designate known matrices, and letters from the end of the alphabet for unknown or variable matrices.</p>
-</section>
-<section id="convention-2">
-<h2>Convention 2<a class="headerlink" href="#convention-2" title="Link to this heading">#</a></h2>
+<p><strong>Convention 2</strong></p>
 <p>When it is useful to explicitly attach the matrix dimensions to the symbolic notation, I will use an underscript. For example, <span class="math notranslate nohighlight">\(\underset{m \times n}{\mathbf{A}}\)</span>, indicates a known, multi-column matrix with <span class="math notranslate nohighlight">\(m\)</span> rows and <span class="math notranslate nohighlight">\(n\)</span> columns.</p>
-<p>A superscript <span class="math notranslate nohighlight">\({ }^{\top}\)</span> denotes the matrix transpose operation; for example, <span class="math notranslate nohighlight">\(\mathbf{A}^{\top}\)</span> denotes the transpose of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>. Similarly, if <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> has an inverse it will be denoted by <span class="math notranslate nohighlight">\(\mathbf{A}^{-1}\)</span>. The determinant of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> will be denoted by either <span class="math notranslate nohighlight">\(|\mathbf{A}|\)</span> or <span class="math notranslate nohighlight">\(\operatorname{det}(\mathbf{A})\)</span>. Similarly, the <span class="math notranslate nohighlight">\(\operatorname{rank}\)</span> of a matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is denoted by <span class="math notranslate nohighlight">\(\operatorname{rank}(\mathbf{A})\)</span>. An identity matrix will be denoted by <span class="math notranslate nohighlight">\(\mathbf{I}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{0}\)</span> will denote a null matrix.</p>
+<p>A superscript <span class="math notranslate nohighlight">\({ }^{\top}\)</span> denotes the matrix transpose operation; for example, <span class="math notranslate nohighlight">\(\mathbf{A}^{\top}\)</span> denotes the transpose of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>. Similarly, if <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> has an inverse it will be denoted by <span class="math notranslate nohighlight">\(\mathbf{A}^{-1}\)</span>. The determinant of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> will be denoted by either <span class="math notranslate nohighlight">\(|\mathbf{A}|\)</span> or <span class="math notranslate nohighlight">\(\operatorname{det}(\mathbf{A})\)</span>. Similarly, the <span class="math notranslate nohighlight">\(\operatorname{rank}\)</span> of a matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is denoted by <span class="math notranslate nohighlight">\(\operatorname{rank}(\mathbf{A})\)</span>. An identity matrix will be denoted by <span class="math notranslate nohighlight">\(I\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{0}\)</span> will denote a null matrix.</p>
 </section>
 <section id="matrix-multiplication">
 <h2>Matrix Multiplication<a class="headerlink" href="#matrix-multiplication" title="Link to this heading">#</a></h2>
-<p>Definition 3 Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> be <span class="math notranslate nohighlight">\(\mathfrak{m} \times \mathfrak{n}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> be <span class="math notranslate nohighlight">\(\mathfrak{n} \times p\)</span>, and let the product <span class="math notranslate nohighlight">\(\mathbf{A B}\)</span> be</p>
+<p><strong>Definition 3.</strong> Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> be <span class="math notranslate nohighlight">\({m} \times {n}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> be <span class="math notranslate nohighlight">\({n} \times p\)</span>, and let the product <span class="math notranslate nohighlight">\(\mathbf{A B}\)</span> be</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
 \mathbf{C}=\mathbf{A B} 
 \end{equation*}
 \]</div>
-<p>then <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> is a <span class="math notranslate nohighlight">\(\mathfrak{m} \times p\)</span> matrix, with element <span class="math notranslate nohighlight">\((\mathfrak{i}, \mathfrak{j})\)</span> given by</p>
+<p>then <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> is a <span class="math notranslate nohighlight">\({m} \times p\)</span> matrix, with element <span class="math notranslate nohighlight">\(({i}, {j})\)</span> given by</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
 c_{i j}=\sum_{k=1}^{n} a_{i k} b_{k j} 
 \end{equation*}
 \]</div>
-<p>for all <span class="math notranslate nohighlight">\(i=1,2, \ldots, m, \quad j=1,2, \ldots, p\)</span>.
-Proposition 1 Let A be <span class="math notranslate nohighlight">\(\mathrm{m} \times \mathrm{n}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> be <span class="math notranslate nohighlight">\(\mathrm{n} \times 1\)</span>, then the typical element of the product</p>
+<p>for all <span class="math notranslate nohighlight">\(i=1,2, \ldots, m, \quad j=1,2, \ldots, p\)</span>.</p>
+<p><strong>Proposition 1.</strong> Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> be <span class="math notranslate nohighlight">\({m} \times {n}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> be <span class="math notranslate nohighlight">\({n} \times 1\)</span>, then the typical element of the product</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
@@ -982,7 +978,7 @@ Proposition 1 Let A be <span class="math notranslate nohighlight">\(\mathrm{m} \
 z_{i}=\sum_{k=1}^{n} a_{i k} x_{k} 
 \end{equation*}
 \]</div>
-<p>for all <span class="math notranslate nohighlight">\(\mathfrak{i}=1,2, \ldots, \boldsymbol{m}\)</span>. Similarly, let <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> be <span class="math notranslate nohighlight">\(\mathbf{m} \times 1\)</span>, then the typical element of the product</p>
+<p>for all <span class="math notranslate nohighlight">\({i}=1,2, \ldots, {m}\)</span>. Similarly, let <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> be <span class="math notranslate nohighlight">\(\mathbf{m} \times 1\)</span>, then the typical element of the product</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
@@ -996,7 +992,7 @@ z_{i}=\sum_{k=1}^{n} a_{i k} x_{k}
 z_{i}=\sum_{k=1}^{n} a_{k i} y_{k} 
 \end{equation*}
 \]</div>
-<p>for all <span class="math notranslate nohighlight">\(\mathbf{i}=1,2, \ldots, n\)</span>. Finally, the scalar resulting from the product</p>
+<p>for all <span class="math notranslate nohighlight">\(i=1,2, \ldots, n\)</span>. Finally, the scalar resulting from the product</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
@@ -1011,7 +1007,7 @@ z_{i}=\sum_{k=1}^{n} a_{k i} y_{k}
 \end{equation*}
 \]</div>
 <p>Proof: These are merely direct applications of Definition 3. q.e.d.</p>
-<p>Proposition 2 Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> be <span class="math notranslate nohighlight">\(\mathfrak{m} \times \mathfrak{n}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> be <span class="math notranslate nohighlight">\(\mathfrak{n} \times \mathrm{p}\)</span>, and let the product <span class="math notranslate nohighlight">\(\mathbf{A B}\)</span> be</p>
+<p><strong>Proposition 2.</strong> Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> be <span class="math notranslate nohighlight">\({m} \times {n}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> be <span class="math notranslate nohighlight">\({n} \times {p}\)</span>, and let the product <span class="math notranslate nohighlight">\(\mathbf{A B}\)</span> be</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
@@ -1032,11 +1028,11 @@ z_{i}=\sum_{k=1}^{n} a_{k i} y_{k}
 c_{i j}=\sum_{k=1}^{n} a_{i k} b_{k j} 
 \end{equation*}
 \]</div>
-<p>By definition, the typical element of <span class="math notranslate nohighlight">\(\mathbf{C}^{\top}\)</span>, say <span class="math notranslate nohighlight">\(\mathrm{d}_{\mathfrak{i j}}\)</span>, is given by</p>
+<p>By definition, the typical element of <span class="math notranslate nohighlight">\(\mathbf{C}^{\top}\)</span>, say <span class="math notranslate nohighlight">\({d}_{{i j}}\)</span>, is given by</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
-\mathrm{d}_{\mathfrak{i j}}=\mathrm{c}_{\mathfrak{j i}}=\sum_{\mathrm{k}=1}^{n} \mathrm{a}_{\mathfrak{j k}} \mathrm{b}_{\mathrm{ki}} 
+{d}_{{i j}}={c}_{{j i}}=\sum_{{k}=1}^{n} {a}_{{jk}} {b}_{{ki}} 
 \end{equation*}
 \]</div>
 <p>Hence,</p>
@@ -1047,7 +1043,7 @@ c_{i j}=\sum_{k=1}^{n} a_{i k} b_{k j}
 \end{equation*}
 \]</div>
 <p>q.e.d.</p>
-<p>Proposition 3 Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> be <span class="math notranslate nohighlight">\(\mathrm{n} \times \mathrm{n}\)</span> and invertible matrices. Let the product <span class="math notranslate nohighlight">\(\mathbf{A B}\)</span> be given by</p>
+<p><strong>Proposition 3.</strong> Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> be <span class="math notranslate nohighlight">\({n} \times {n}\)</span> and invertible matrices. Let the product <span class="math notranslate nohighlight">\(\mathbf{A B}\)</span> be given by</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
@@ -1065,15 +1061,15 @@ c_{i j}=\sum_{k=1}^{n} a_{i k} b_{k j}
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
-\mathbf{C B}^{-1} \mathbf{A}^{-1}=\mathbf{A B B}^{-1} \mathbf{A}^{-1}=\mathbf{I} 
+\mathbf{C B}^{-1} \mathbf{A}^{-1}=\mathbf{A B B}^{-1} \mathbf{A}^{-1}=I 
 \end{equation*}
 \]</div>
 <p>q.e.d.</p>
 </section>
-<section id="partioned-matrices">
-<h2>Partioned Matrices<a class="headerlink" href="#partioned-matrices" title="Link to this heading">#</a></h2>
+<section id="partioned-matrices-further-reading">
+<h2>Partioned Matrices (Further Reading)<a class="headerlink" href="#partioned-matrices-further-reading" title="Link to this heading">#</a></h2>
 <p>Frequently, I will find it convenient to deal with partitioned matrices <span class="math notranslate nohighlight">\({ }^{1}\)</span>. Such a representation, and the manipulation of this representation, are two of the relative advantages of the symbolic matrix notation.</p>
-<p>Definition 4 Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> be <span class="math notranslate nohighlight">\(m \times n\)</span> and write</p>
+<p><strong>Definition 4.</strong> Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> be <span class="math notranslate nohighlight">\(m \times n\)</span> and write</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 A=\left[\begin{array}{ll}
@@ -1081,8 +1077,8 @@ B &amp; C  \\
 D &amp; E
 \end{array}\right]
 \end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> is <span class="math notranslate nohighlight">\(\mathfrak{m}_{1} \times \mathfrak{n}_{1}, \mathbf{E}\)</span> is <span class="math notranslate nohighlight">\(\mathfrak{m}_{2} \times \mathfrak{n}_{2}, \mathbf{C}\)</span> is <span class="math notranslate nohighlight">\(\mathfrak{m}_{1} \times \mathfrak{n}_{2}, \mathbf{D}\)</span> is <span class="math notranslate nohighlight">\(\mathfrak{m}_{2} \times \mathfrak{n}_{1}, \mathfrak{m}_{1}+\mathfrak{m}_{2}=\mathfrak{m}\)</span>, and <span class="math notranslate nohighlight">\(\mathfrak{n}_{1}+\mathfrak{n}_{2}=\mathfrak{n}\)</span>. The above is said to be a partition of the matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>.</p>
-<p>[^0]Proposition 4 Let A be a square, nonsingular matrix of order m. Partition A as</p>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> is <span class="math notranslate nohighlight">\({m}_{1} \times {n}_{1}, \mathbf{E}\)</span> is <span class="math notranslate nohighlight">\({m}_{2} \times {n}_{2}, \mathbf{C}\)</span> is <span class="math notranslate nohighlight">\({m}_{1} \times {n}_{2}, \mathbf{D}\)</span> is <span class="math notranslate nohighlight">\({m}_{2} \times {n}_{1}, {m}_{1}+{m}_{2}={m}\)</span>, and <span class="math notranslate nohighlight">\({n}_{1}+{n}_{2}={n}\)</span>. The above is said to be a partition of the matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>.</p>
+<p><strong>Proposition 4.</strong> Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> be a square, nonsingular matrix of order <span class="math notranslate nohighlight">\(m\)</span>. Partition <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \mathbf{A}=\left[\begin{array}{ll}
@@ -1090,7 +1086,7 @@ D &amp; E
 \mathbf{A}_{21} &amp; \mathbf{A}_{22}
 \end{array}\right]
 \end{split}\]</div>
-<p>so that <span class="math notranslate nohighlight">\(\mathbf{A}_{11}\)</span> is a nonsingular matrix of order <span class="math notranslate nohighlight">\(\mathrm{m}_{1}, \mathbf{A}_{22}\)</span> is a nonsingular matrix of order <span class="math notranslate nohighlight">\(\mathrm{m}_{2}\)</span>, and <span class="math notranslate nohighlight">\(\mathrm{m}_{1}+\mathrm{m}_{2}=\mathrm{m}\)</span>. Then</p>
+<p>so that <span class="math notranslate nohighlight">\(\mathbf{A}_{11}\)</span> is a nonsingular matrix of order <span class="math notranslate nohighlight">\({m}_{1}, \mathbf{A}_{22}\)</span> is a nonsingular matrix of order <span class="math notranslate nohighlight">\({m}_{2}\)</span>, and <span class="math notranslate nohighlight">\({m}_{1}+{m}_{2}={m}\)</span>. Then</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \mathbf{A}^{-1}=\left[\begin{array}{cc}
@@ -1102,7 +1098,7 @@ D &amp; E
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
-\mathbf{A}^{-1} \mathbf{A}=\mathbf{I} 
+\mathbf{A}^{-1} \mathbf{A}=I
 \end{equation*}
 \]</div>
 <p>q.e.d.</p>
@@ -1110,9 +1106,7 @@ D &amp; E
 <section id="id2">
 <h2>Matrix Differentiation<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>In the following discussion I will differentiate matrix quantities with respect to the elements of the referenced matrices. Although no new concept is required to carry out such operations, the element-by-element calculations involve cumbersome manipulations and, thus, it is useful to derive the necessary results and have them readily available <span class="math notranslate nohighlight">\({ }^{2}\)</span>.</p>
-</section>
-<section id="convention-3">
-<h2>Convention 3<a class="headerlink" href="#convention-3" title="Link to this heading">#</a></h2>
+<p><strong>Convention 3</strong></p>
 <p>Let</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1131,22 +1125,16 @@ D &amp; E
 \end{array}\right]
 \end{split}\]</div>
 <p>will denote the <span class="math notranslate nohighlight">\(m \times n\)</span> matrix of first-order partial derivatives of the transformation from <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> to <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>. Such a matrix is called the Jacobian matrix of the transformation <span class="math notranslate nohighlight">\(\psi()\)</span>.</p>
-<p>Notice that if <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is actually a scalar in Convention 3 then the resulting Jacobian matrix is a <span class="math notranslate nohighlight">\(m \times 1\)</span> matrix; that is, a single column (a vector). On the other hand, if <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> is actually a scalar in Convention 3 then the resulting Jacobian matrix is a <span class="math notranslate nohighlight">\(1 \times \mathfrak{n}\)</span> matrix; that is, a single row (the transpose of a vector).</p>
-<p>Proposition 5 Let</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-y=A x 
-\end{equation*}
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> is <span class="math notranslate nohighlight">\(\mathrm{m} \times 1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is <span class="math notranslate nohighlight">\(\mathfrak{n} \times 1, \mathbf{A}\)</span> is <span class="math notranslate nohighlight">\(\mathfrak{m} \times \mathfrak{n}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> does not depend on <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, then</p>
+<p>Notice that if <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is actually a scalar in Convention 3 then the resulting Jacobian matrix is a <span class="math notranslate nohighlight">\(m \times 1\)</span> matrix; that is, a single column (a vector). On the other hand, if <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> is actually a scalar in Convention 3 then the resulting Jacobian matrix is a <span class="math notranslate nohighlight">\(1 \times {n}\)</span> matrix; that is, a single row (the transpose of a vector).</p>
+<p><strong>Proposition 5.</strong> Let <span class="math notranslate nohighlight">\(\mathbf{y}=\mathbf{A}\mathbf{x} \)</span>,
+where <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> is <span class="math notranslate nohighlight">\({m} \times 1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is <span class="math notranslate nohighlight">\({n} \times 1, \mathbf{A}\)</span> is <span class="math notranslate nohighlight">\({m} \times {n}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> does not depend on <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, then</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
 \frac{\partial \mathbf{y}}{\partial \mathbf{x}}=\mathbf{A} 
 \end{equation*}
 \]</div>
-<p>Proof: Since the <span class="math notranslate nohighlight">\(\mathbf{i}\)</span> th element of <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> is given by</p>
+<p>Proof: Since the <span class="math notranslate nohighlight">\(i\)</span> th element of <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> is given by</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
@@ -1160,7 +1148,7 @@ y_{i}=\sum_{k=1}^{n} a_{i k} x_{k}
 \frac{\partial y_{i}}{\partial x_{j}}=a_{i j} 
 \end{equation*}
 \]</div>
-<p>for all <span class="math notranslate nohighlight">\(\mathfrak{i}=1,2, \ldots, \mathfrak{m}, \quad \mathfrak{j}=1,2, \ldots, \boldsymbol{n}\)</span>. Hence</p>
+<p>for all <span class="math notranslate nohighlight">\({i}=1,2, \ldots, {m}, \quad {j}=1,2, \ldots, {n}\)</span>. Hence</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
@@ -1168,43 +1156,37 @@ y_{i}=\sum_{k=1}^{n} a_{i k} x_{k}
 \end{equation*}
 \]</div>
 <p>q.e.d.</p>
-<p>Proposition 6 Let</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-\mathbf{y}=\mathbf{A x} 
-\end{equation*}
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> is <span class="math notranslate nohighlight">\(\mathrm{m} \times 1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is <span class="math notranslate nohighlight">\(\mathfrak{n} \times 1, \mathbf{A}\)</span> is <span class="math notranslate nohighlight">\(\mathrm{m} \times \mathfrak{n}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> does not depend on <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, as in Proposition 5 . Suppose that <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is a function of the vector <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>, while <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is independent of <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>. Then</p>
+<p><strong>Proposition 6.</strong> Let <span class="math notranslate nohighlight">\(\mathbf{y}=\mathbf{A x} \)</span>,
+where <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> is <span class="math notranslate nohighlight">\({m} \times 1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is <span class="math notranslate nohighlight">\({n} \times 1, \mathbf{A}\)</span> is <span class="math notranslate nohighlight">\({m} \times {n}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> does not depend on <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, as in Proposition 5 . Suppose that <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is a function of the vector <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>, while <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is independent of <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>. Then</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
 \frac{\partial \mathbf{y}}{\partial \mathbf{z}}=\mathbf{A} \frac{\partial \mathbf{x}}{\partial \mathbf{z}} 
 \end{equation*}
 \]</div>
-<p>Proof: Since the <span class="math notranslate nohighlight">\(\mathbf{i}\)</span> th element of <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> is given by</p>
+<p>Proof: Since the <span class="math notranslate nohighlight">\(i\)</span> th element of <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> is given by</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
 y_{i}=\sum_{k=1}^{n} a_{i k} x_{k} 
 \end{equation*}
 \]</div>
-<p>for all <span class="math notranslate nohighlight">\(\mathfrak{i}=1,2, \ldots, m\)</span>, it follows that</p>
+<p>for all <span class="math notranslate nohighlight">\({i}=1,2, \ldots, m\)</span>, it follows that</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
 \frac{\partial y_{i}}{\partial z_{j}}=\sum_{k=1}^{n} a_{i k} \frac{\partial x_{k}}{\partial z_{j}} 
 \end{equation*}
 \]</div>
-<p>but the right hand side of the above is simply element <span class="math notranslate nohighlight">\((\mathfrak{i}, \mathfrak{j})\)</span> of <span class="math notranslate nohighlight">\(\mathbf{A} \frac{\partial \mathbf{x}}{\partial \mathrm{z}}\)</span>. Hence</p>
+<p>but the right hand side of the above is simply element <span class="math notranslate nohighlight">\(({i}, {j})\)</span> of <span class="math notranslate nohighlight">\(\mathbf{A} \frac{\partial \mathbf{x}}{\partial \mathrm{z}}\)</span>. Hence</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
-\frac{\partial \mathbf{y}}{\partial z}=\frac{\partial \mathbf{y}}{\partial \mathbf{x}} \frac{\partial \mathbf{x}}{\partial \mathbf{z}}=\mathbf{A} \frac{\partial \mathbf{x}}{\partial \mathbf{z}} 
+\frac{\partial \mathbf{y}}{\partial \mathbf{z}}=\frac{\partial \mathbf{y}}{\partial \mathbf{x}} \frac{\partial \mathbf{x}}{\partial \mathbf{z}}=\mathbf{A} \frac{\partial \mathbf{x}}{\partial \mathbf{z}} 
 \end{equation*}
 \]</div>
 <p>q.e.d.</p>
-<p>Proposition 7 Let the scalar <span class="math notranslate nohighlight">\(\alpha\)</span> be defined by</p>
+<p><strong>Proposition 7.</strong> Let the scalar <span class="math notranslate nohighlight">\(\alpha\)</span> be defined by</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
@@ -1261,14 +1243,14 @@ y_{i}=\sum_{k=1}^{n} a_{i k} x_{k}
 \end{equation*}
 \]</div>
 <p>q.e.d.</p>
-<p>Proposition 8 For the special case in which the scalar <span class="math notranslate nohighlight">\(\alpha\)</span> is given by the quadratic form</p>
+<p><strong>Proposition 8.</strong> For the special case in which the scalar <span class="math notranslate nohighlight">\(\alpha\)</span> is given by the quadratic form</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
 \alpha=\mathbf{x}^{\top} \mathbf{A} \mathbf{x} 
 \end{equation*}
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is <span class="math notranslate nohighlight">\(\mathfrak{n} \times 1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is <span class="math notranslate nohighlight">\(\mathfrak{n} \times \mathfrak{n}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> does not depend on <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, then</p>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is <span class="math notranslate nohighlight">\({n} \times 1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is <span class="math notranslate nohighlight">\({n} \times {n}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> does not depend on <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, then</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
@@ -1282,7 +1264,7 @@ y_{i}=\sum_{k=1}^{n} a_{i k} x_{k}
 \alpha=\sum_{j=1}^{n} \sum_{i=1}^{n} a_{i j} x_{i} x_{j} 
 \end{equation*}
 \]</div>
-<p>Differentiating with respect to the k th element of <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> we have</p>
+<p>Differentiating with respect to the <span class="math notranslate nohighlight">\(k^{th}\)</span> element of <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> we have</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
@@ -1297,7 +1279,7 @@ y_{i}=\sum_{k=1}^{n} a_{i k} x_{k}
 \end{equation*}
 \]</div>
 <p>q.e.d.</p>
-<p>Proposition 9 For the special case where <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is a symmetric matrix and</p>
+<p><strong>Proposition 9.</strong> For the special case where <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is a symmetric matrix and</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
@@ -1311,15 +1293,17 @@ y_{i}=\sum_{k=1}^{n} a_{i k} x_{k}
 \frac{\partial \alpha}{\partial \mathbf{x}}=2 \mathbf{x}^{\top} \mathbf{A} 
 \end{equation*}
 \]</div>
-<p>Proof: This is an obvious application of Proposition 8. q.e.d.
-Proposition 10 Let the scalar <span class="math notranslate nohighlight">\(\alpha\)</span> be defined by</p>
+<p>Proof: This is an obvious application of Proposition 8. q.e.d.</p>
+<section id="further-reading">
+<h3>Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h3>
+<p><strong>Proposition 10.</strong> Let the scalar <span class="math notranslate nohighlight">\(\alpha\)</span> be defined by</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
 \alpha=\mathbf{y}^{\top} \mathbf{x} 
 \end{equation*}
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> is <span class="math notranslate nohighlight">\(\mathfrak{n} \times 1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is <span class="math notranslate nohighlight">\(\mathfrak{n} \times 1\)</span>, and both <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> are functions of the vector <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>. Then</p>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> is <span class="math notranslate nohighlight">\({n} \times 1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is <span class="math notranslate nohighlight">\({n} \times 1\)</span>, and both <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> are functions of the vector <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>. Then</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
@@ -1370,7 +1354,7 @@ Proposition 12 Let the scalar <span class="math notranslate nohighlight">\(\alph
 \alpha=\mathbf{y}^{\top} \mathbf{A} \mathbf{x} 
 \end{equation*}
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> is <span class="math notranslate nohighlight">\(\mathrm{m} \times 1, \mathbf{x}\)</span> is <span class="math notranslate nohighlight">\(\mathrm{n} \times 1, \mathbf{A}\)</span> is <span class="math notranslate nohighlight">\(\mathrm{m} \times \mathfrak{n}\)</span>, and both <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> are functions of the vector <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>, while <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> does not depend on <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>. Then</p>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> is <span class="math notranslate nohighlight">\(\mathrm{m} \times 1, \mathbf{x}\)</span> is <span class="math notranslate nohighlight">\(\mathrm{n} \times 1, \mathbf{A}\)</span> is <span class="math notranslate nohighlight">\(\mathrm{m} \times {n}\)</span>, and both <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> are functions of the vector <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>, while <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> does not depend on <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>. Then</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
@@ -1413,7 +1397,7 @@ Proposition 12 Let the scalar <span class="math notranslate nohighlight">\(\alph
 \alpha=\mathbf{x}^{\top} \mathbf{A} \mathbf{x} 
 \end{equation*}
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is <span class="math notranslate nohighlight">\(\mathfrak{n} \times 1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is <span class="math notranslate nohighlight">\(\mathfrak{n} \times \mathfrak{n}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is a function of the vector <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>, while <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> does not depend on <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>. Then</p>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is <span class="math notranslate nohighlight">\({n} \times 1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is <span class="math notranslate nohighlight">\({n} \times {n}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is a function of the vector <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>, while <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> does not depend on <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>. Then</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
@@ -1428,7 +1412,7 @@ Proposition 14 For the special case where <span class="math notranslate nohighli
 \alpha=\mathbf{x}^{\top} \mathbf{A} \mathbf{x} 
 \end{equation*}
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is <span class="math notranslate nohighlight">\(\mathfrak{n} \times 1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is <span class="math notranslate nohighlight">\(\mathfrak{n} \times \mathfrak{n}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is a function of the vector <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>, while <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> does not depend on <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>. Then</p>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is <span class="math notranslate nohighlight">\({n} \times 1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is <span class="math notranslate nohighlight">\({n} \times {n}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is a function of the vector <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>, while <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> does not depend on <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>. Then</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
@@ -1436,7 +1420,7 @@ Proposition 14 For the special case where <span class="math notranslate nohighli
 \end{equation*}
 \]</div>
 <p>Proof: This is an obvious application of Proposition 13. q.e.d.
-Definition 5 Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> be a <span class="math notranslate nohighlight">\(\mathfrak{m} \times \mathfrak{n}\)</span> matrix whose elements are functions of the scalar parameter <span class="math notranslate nohighlight">\(\alpha\)</span>. Then the derivative of the matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> with respect to the scalar parameter <span class="math notranslate nohighlight">\(\alpha\)</span> is the <span class="math notranslate nohighlight">\(m \times n\)</span> matrix of element-by-element derivatives:</p>
+Definition 5 Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> be a <span class="math notranslate nohighlight">\({m} \times {n}\)</span> matrix whose elements are functions of the scalar parameter <span class="math notranslate nohighlight">\(\alpha\)</span>. Then the derivative of the matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> with respect to the scalar parameter <span class="math notranslate nohighlight">\(\alpha\)</span> is the <span class="math notranslate nohighlight">\(m \times n\)</span> matrix of element-by-element derivatives:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \frac{\partial \mathbf{A}}{\partial \alpha}=\left[\begin{array}{cccc}
@@ -1457,7 +1441,7 @@ Definition 5 Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
-\mathbf{A}^{-1} \mathbf{A}=\mathbf{I} 
+\mathbf{A}^{-1} \mathbf{A}=i 
 \end{equation*}
 \]</div>
 <p>and differentiate, yielding</p>
@@ -1475,6 +1459,7 @@ Definition 5 Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span
 \end{equation*}
 \]</div>
 <p>q.e.d.</p>
+</section>
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
@@ -1568,12 +1553,12 @@ Definition 5 Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-differentiation">Matrix Differentiation</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notation-and-nomenclature">Notation and Nomenclature</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convention-1">Convention 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convention-2">Convention 2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-multiplication">Matrix Multiplication</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partioned-matrices">Partioned Matrices</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Matrix Differentiation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convention-3">Convention 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partioned-matrices-further-reading">Partioned Matrices (Further Reading)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Matrix Differentiation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further Reading</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
 </li>

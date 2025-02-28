@@ -532,31 +532,43 @@ document.write(`
 <li><p>Unfortunately, computers can not always represent numbers as accurately as some of us might think</p></li>
 <li><p>The problem boils down to this: we have a finite amount of bits in our computer to store an infinite amount of numbers</p></li>
 <li><p>This inevitably leads to precision errors as we’ll explore in this lecture</p></li>
-<li><p>Some motivating examples:</p></li>
+<li><p>What are the results of the following examples?</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.2</span> <span class="o">==</span> <span class="mf">0.3</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">1e16</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="mf">1e16</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <ul class="simple">
 <li><p>In this lecture, we are going to take a journey to discover why this happens!</p></li>
@@ -790,26 +802,35 @@ signed max: 127
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">129</span><span class="p">,</span> <span class="mi">128</span><span class="p">],</span> <span class="s2">&quot;int8&quot;</span><span class="p">)</span>  <span class="c1"># these numbers are outside the allowable range!</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">129</span><span class="p">,</span> <span class="mi">128</span><span class="p">],</span> <span class="s2">&quot;int8&quot;</span><span class="p">)</span>  <span class="c1"># these numbers are outside the allowable range!</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\mathp\AppData\Local\Temp\ipykernel_20776\443777753.py:1: DeprecationWarning:
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\mamin\AppData\Local\Temp\ipykernel_1608\3597997819.py:1: DeprecationWarning:
 
 NumPy will stop allowing conversion of out-of-bound Python integers to integer arrays.  The conversion of -129 to int8 will fail in the future.
 For the old behavior, usually:
-    np.array(value).astype(dtype)
+    np.array(value).astype(dtype)`
 will give the desired result (the cast overflows).
 
-C:\Users\mathp\AppData\Local\Temp\ipykernel_20776\443777753.py:1: DeprecationWarning:
+C:\Users\mamin\AppData\Local\Temp\ipykernel_1608\3597997819.py:1: DeprecationWarning:
 
 NumPy will stop allowing conversion of out-of-bound Python integers to integer arrays.  The conversion of 128 to int8 will fail in the future.
 For the old behavior, usually:
-    np.array(value).astype(dtype)
+    np.array(value).astype(dtype)`
 will give the desired result (the cast overflows).
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 127, -128], dtype=int8)
 </pre></div>
 </div>
@@ -1078,18 +1099,18 @@ will give the desired result (the cast overflows).
 <div class="math notranslate nohighlight">
 \[1.M \times 2^E\]</div>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(M\)</span> = “mantissa”</p></li>
-<li><p><span class="math notranslate nohighlight">\(E\)</span> = “exponent”</p></li>
-<li><p>Note that the <span class="math notranslate nohighlight">\(.\)</span> is a “binary point”, digits on the left are 2’s with +ve exponents, digits on the right are 2’s with negative exponents</p></li>
+<li><p>Where <span class="math notranslate nohighlight">\(M\)</span> represents the “mantissa”.</p></li>
+<li><p><span class="math notranslate nohighlight">\(E\)</span> denotes the “exponent”.</p></li>
+<li><p>It is important to note that the dot (<span class="math notranslate nohighlight">\(.\)</span>) signifies a “binary point”; the digits to the left correspond to powers of 2 with positive exponents, while the digits to the right correspond to powers of 2 with negative exponents.</p></li>
 </ul>
 <ul class="simple">
 <li><p>Consider the number 10</p></li>
 <li><p><span class="math notranslate nohighlight">\(10 = 1.25 \times 8 = 1.25 \times 2^3\)</span></p></li>
 <li><p>So <span class="math notranslate nohighlight">\(M=.25\)</span> and <span class="math notranslate nohighlight">\(E=3\)</span></p></li>
 <li><p>But we want binary, not decimal, so <span class="math notranslate nohighlight">\(M=01\)</span> and <span class="math notranslate nohighlight">\(E=11\)</span></p></li>
-<li><p>Therefore, 10 in floating point is: <span class="math notranslate nohighlight">\(1.01 \times 2^{11}\)</span></p></li>
+<li><p>Therefore, 10 in floating point is: <span class="math notranslate nohighlight">\(1.01 \times \textbf{2}^{11}\)</span> (<span class="math notranslate nohighlight">\(1.01 \times {10}^{11}\)</span>)</p></li>
 <li><p>This is where the magic happens, just as the exponent of 10 in scientific notation defines the location of the decimal point, so too does the exponent of a floating point number define the location of the binary point</p></li>
-<li><p>For <span class="math notranslate nohighlight">\(1.01 \times 2^{11}\)</span>, the exponent is 11 in binary = 3 in decimal, so move the binary point three places to the right: <span class="math notranslate nohighlight">\(1.01 \times 2^{11} = 1010.\)</span></p></li>
+<li><p>For <span class="math notranslate nohighlight">\(1.01 \times \textbf{2}^{11}\)</span>, the exponent is 11 in binary (3 in decimal), so move the binary point three places to the right: <span class="math notranslate nohighlight">\(1.01 \times \textbf{2}^{11} = 1010.\)</span></p></li>
 <li><p>What is 1010 in binary?</p></li>
 </ul>
 <div class="cell docutils container">
@@ -1623,7 +1644,7 @@ Exponent: 1010011 (83)
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">OverflowError</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">47</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">48</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">10</span> <span class="o">**</span> <span class="mf">309.0</span>
 
 <span class="ne">OverflowError</span>: (34, &#39;Result too large&#39;)
@@ -1641,7 +1662,7 @@ Exponent: 1010011 (83)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\mathp\AppData\Local\Temp\ipykernel_20776\705321107.py:1: RuntimeWarning:
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\mamin\AppData\Local\Temp\ipykernel_1608\705321107.py:1: RuntimeWarning:
 
 overflow encountered in power
 </pre></div>
@@ -1655,7 +1676,7 @@ overflow encountered in power
 <li><p>Now let’s do the minimum value</p></li>
 <li><p>The minimum value will be the minimum mantissa multiplied by the minimum exponent</p></li>
 <li><p>The minimum mantissa is 0 (all bits sets to 0)</p></li>
-<li><p>You might think the minimum exponent is <span class="math notranslate nohighlight">\(-2^{10}=-1024\)</span> just as we’ve discussed through this lecture, but there are some bit patterns reserved for “special numbers” (like 0) which effectively reduce the minimum exponent to <span class="math notranslate nohighlight">\(-1022\)</span> (this is not important to know but you can read more <a class="reference external" href="https://people.orie.cornell.edu/snp32/orie_6125/ieee754/ieee754.html">here</a>)</p></li>
+<li><p>You might think the minimum exponent is <span class="math notranslate nohighlight">\(-2^{10}=-1024\)</span> just as we’ve discussed through this lecture, but there are some bit patterns reserved for “special numbers” (like 0) which effectively reduce the minimum exponent to <span class="math notranslate nohighlight">\(-1022\)</span> (this is not important to know)</p></li>
 <li><p>So the minimum value is actually:</p></li>
 </ul>
 <div class="cell docutils container">
@@ -1881,7 +1902,7 @@ overflow encountered in power
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\mathp\AppData\Local\Temp\ipykernel_20776\2578511584.py:2: RuntimeWarning:
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\mamin\AppData\Local\Temp\ipykernel_1608\2578511584.py:2: RuntimeWarning:
 
 overflow encountered in exp
 </pre></div>
@@ -1963,7 +1984,7 @@ Avoiding overflow error with approximation of 500!
 </div>
 </div>
 <ul class="simple">
-<li><p>Cool! We combined math + CS + our brains to write better code! You’ll explore this more in Lab 1</p></li>
+<li><p>Cool! We combined math + CS + our brains to write better code!</p></li>
 <li><p>But note that this is part of the reason we use libraries like <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">scipy</span></code>, <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>, etc. They’ve taken care of all of this for you!</p></li>
 </ul>
 </section>
@@ -2004,14 +2025,16 @@ Avoiding overflow error with approximation of 500!
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x64</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;array size: </span><span class="si">{</span><span class="n">x64</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;array type: </span><span class="si">{</span><span class="n">x64</span><span class="o">.</span><span class="n">dtype</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;mem. usage: </span><span class="si">{</span><span class="n">x64</span><span class="o">.</span><span class="n">nbytes</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">1000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="si">}</span><span class="s2"> MB&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Num Bytes: </span><span class="si">{</span><span class="n">x64</span><span class="o">.</span><span class="n">nbytes</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;mem. usage: </span><span class="si">{</span><span class="n">x64</span><span class="o">.</span><span class="n">nbytes</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">1000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="si">}</span><span class="s2"> MB&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array size: (1000, 1000)
 array type: float64
-mem. usage: 64.0 MB
+Num Bytes: 8000000
+mem. usage: 8.0 MB
 </pre></div>
 </div>
 </div>
@@ -2020,13 +2043,13 @@ mem. usage: 64.0 MB
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x32</span> <span class="o">=</span> <span class="n">x64</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;array type: </span><span class="si">{</span><span class="n">x32</span><span class="o">.</span><span class="n">dtype</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;mem. usage: </span><span class="si">{</span><span class="n">x32</span><span class="o">.</span><span class="n">nbytes</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">1000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="si">}</span><span class="s2"> MB&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;mem. usage: </span><span class="si">{</span><span class="n">x32</span><span class="o">.</span><span class="n">nbytes</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">1000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="si">}</span><span class="s2"> MB&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array type: float32
-mem. usage: 32.0 MB
+mem. usage: 4.0 MB
 </pre></div>
 </div>
 </div>
@@ -2043,7 +2066,7 @@ mem. usage: 32.0 MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float32 array is 2.37x faster than float64 array here.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float32 array is 2.07x faster than float64 array here.
 </pre></div>
 </div>
 </div>
